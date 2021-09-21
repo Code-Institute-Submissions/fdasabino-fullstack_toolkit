@@ -281,7 +281,7 @@
         "kind": 6,
         "importPath": "basket.basket",
         "description": "basket.basket",
-        "peekOfCode": "class Basket():\n    def __init__(self, request):\n        self.session = request.session\n        basket = self.session.get('session-key')\n        if 'session-key' not in request.session:\n            basket = self.session['session-key'] = {}\n        self.basket = basket\n    def add(self, product):\n        product_id = product.id\n        if product_id not in self.basket:",
+        "peekOfCode": "class Basket():\n    def __init__(self, request):\n        self.session = request.session\n        basket = self.session.get('session-key')\n        if 'session-key' not in request.session:\n            basket = self.session['session-key'] = {}\n        self.basket = basket\n    def add(self, product, qty):\n        product_id = product.id\n        if product_id not in self.basket:",
         "detail": "basket.basket",
         "documentation": {}
     },
@@ -317,7 +317,7 @@
         "kind": 2,
         "importPath": "basket.views",
         "description": "basket.views",
-        "peekOfCode": "def basket_summary(request):\n    return render(request, 'store/basket/summary.html')\ndef basket_add(request):\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product)\n        response = JsonResponse({'test': 'data'})\n        return response",
+        "peekOfCode": "def basket_summary(request):\n    return render(request, 'store/basket/summary.html')\ndef basket_add(request):  # sourcery skip: inline-immediately-returned-variable\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        product_qty = int(request.POST.get('productqty'))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product, qty=product_qty)\n        response = JsonResponse({'qty': product_qty})",
         "detail": "basket.views",
         "documentation": {}
     },
@@ -326,7 +326,7 @@
         "kind": 2,
         "importPath": "basket.views",
         "description": "basket.views",
-        "peekOfCode": "def basket_add(request):\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product)\n        response = JsonResponse({'test': 'data'})\n        return response",
+        "peekOfCode": "def basket_add(request):  # sourcery skip: inline-immediately-returned-variable\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        product_qty = int(request.POST.get('productqty'))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product, qty=product_qty)\n        response = JsonResponse({'qty': product_qty})\n        return response",
         "detail": "basket.views",
         "documentation": {}
     },
