@@ -1,0 +1,124 @@
+{% extends './main.html' %} {% block content %} {% load static %}
+<!-- Background image -->
+<header>
+  <div id="intro" class="bg-image shadow-2-strong">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.8)">
+      <div class="container d-flex align-items-center justify-content-center text-center h-100">
+        <div class="text-white">
+          <h1 class="mb-3 mt-3">STHLM-foodies</h1>
+          <h5 class="mb-4">Healthy food delivered to your door</h5>
+          <a class="btn btn-success btn-lg m-2" role="button" rel="nofollow" href="#">Place an Order!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!--Main layout-->
+<main class="mt-5">
+  <div class="container">
+    <!--Section: Content-->
+    <section>
+      <div class="row">
+        <div class="col-md-6 gx-5 mb-4">
+          <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5" data-mdb-ripple-color="light">
+            <img
+              src="https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+              class="img-fluid"
+            />
+            <a href="#">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-6 gx-5 mb-4 text-center">
+          <h4><strong>We use organic and fresh ingredients</strong></h4>
+          <p class="text-muted mb-3">
+            When eating you want to get the most flavor possible from your food, which is why it is important
+            to use fresh ingredients. Preserved food loses taste as time goes on, but fresh ingredients with
+            no preservatives provide a more true flavor. For the best result in flavor and nutrition, we use
+            fruits and vegetables within 48 hours of purchasing them.
+          </p>
+          <h5>
+            <strong>We have listed some benefits of eating healthy:</strong>
+          </h5>
+          <ul class="list-unstyled text-muted">
+            <li class="mb-1">Helps achieve and maintain a healthy weight</li>
+            <li class="mb-1">Boosts immunity</li>
+            <li class="mb-1">Supports muscles</li>
+            <li class="mb-1">Keeps skin, teeth, and eyes healthy</li>
+            <li class="mb-1">Lowers risk of heart disease</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!--Section: Content-->
+
+    <hr class="mt-5" />
+
+    <!--Section: Content-->
+    <section class="text-center">
+      <h4 class="mb-5"><strong></strong></h4>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-12 mb-4">
+          <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img
+                src="https://images.pexels.com/photos/2171077/pexels-photo-2171077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                class="img-fluid"
+              />
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Fresh</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img
+                src="https://images.pexels.com/photos/5966154/pexels-photo-5966154.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                class="img-fluid"
+              />
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Flavorsome</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="card">
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+              <img
+                src="https://images.pexels.com/photos/1268101/pexels-photo-1268101.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                class="img-fluid"
+              />
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Organic</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="btn btn-info btn-lg">Read More</a>
+    </section>
+    <!--Section: Content-->
+
+    {% endblock content %}
+  </div>
+</main>
