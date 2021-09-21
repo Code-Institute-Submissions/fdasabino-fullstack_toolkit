@@ -118,26 +118,6 @@
       </div>
       <a href="#" class="btn btn-info btn-lg">Read More</a>
     </section>
-    <section>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-        {% for product in products %}
-
-        <div class="col text-center">
-          <div class="card shadow-sm">
-            <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}" />
-            <div class="card-body">
-              <p class="card-text">
-                <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}"
-                  >{{ product.title }} {{product.price}}</a
-                >
-              </p>
-              <div class="d-flex justify-content-between align-items-center"></div>
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-    </section>
     <!--Section: Content-->
 
     {% endblock content %}
