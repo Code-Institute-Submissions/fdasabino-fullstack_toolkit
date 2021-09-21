@@ -261,6 +261,24 @@
         "documentation": {}
     },
     {
+        "label": "Basket",
+        "kind": 6,
+        "importPath": "basket.basket",
+        "description": "basket.basket",
+        "peekOfCode": "class Basket():\n    def __init__(self, request):\n        self.session = request.session\n        basket = self.session.get('session-key')\n        if 'session-key' not in request.session:\n            basket = self.session['session-key'] = {}\n        self.basket = basket",
+        "detail": "basket.basket",
+        "documentation": {}
+    },
+    {
+        "label": "basket",
+        "kind": 2,
+        "importPath": "basket.context_processors",
+        "description": "basket.context_processors",
+        "peekOfCode": "def basket(request):\n    return {'basket': Basket(request)}",
+        "detail": "basket.context_processors",
+        "documentation": {}
+    },
+    {
         "label": "app_name",
         "kind": 5,
         "importPath": "basket.urls",
