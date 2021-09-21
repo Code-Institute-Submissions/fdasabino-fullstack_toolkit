@@ -317,7 +317,7 @@
         "kind": 2,
         "importPath": "basket.views",
         "description": "basket.views",
-        "peekOfCode": "def basket_summary(request):\n    return render(request, 'store/basket/summary.html')\ndef basket_add(request):  # sourcery skip: inline-immediately-returned-variable\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        product_qty = int(request.POST.get('productqty'))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product, qty=product_qty)\n        response = JsonResponse({'qty': product_qty})",
+        "peekOfCode": "def basket_summary(request):\n    return render(request, 'store/basket/summary.html')\ndef basket_add(request):  # sourcery skip: inline-immediately-returned-variable\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        product_qty = int(request.POST.get('productqty'))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product, qty=product_qty)\n        basketqty = basket.__len__()",
         "detail": "basket.views",
         "documentation": {}
     },
@@ -326,7 +326,7 @@
         "kind": 2,
         "importPath": "basket.views",
         "description": "basket.views",
-        "peekOfCode": "def basket_add(request):  # sourcery skip: inline-immediately-returned-variable\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        product_qty = int(request.POST.get('productqty'))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product, qty=product_qty)\n        response = JsonResponse({'qty': product_qty})\n        return response",
+        "peekOfCode": "def basket_add(request):  # sourcery skip: inline-immediately-returned-variable\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        product_qty = int(request.POST.get('productqty'))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product, qty=product_qty)\n        basketqty = basket.__len__()\n        response = JsonResponse({'qty': basketqty})\n        return response",
         "detail": "basket.views",
         "documentation": {}
     },

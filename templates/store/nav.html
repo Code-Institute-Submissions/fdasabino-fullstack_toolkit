@@ -43,7 +43,6 @@
     </div>
     <a type="button" role="button" href="{% url 'basket:basket_summary' %}" class="btn btn-outline-light btn-sm">
       Shopping Cart
-
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"
@@ -60,7 +59,10 @@
           0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"
         />
       </svg>
-      <div id="basket-qty" class="d-inline-flex"></div>
+
+      {% with total_qty=basket|length %}
+      <div id="basket-qty" class="d-inline-flex">{% if total_qty > 0 %} {{ total_qty }} {% else %} 0 {% endif %}</div>
+      {% endwith %}
     </a>
   </div>
 </nav>
