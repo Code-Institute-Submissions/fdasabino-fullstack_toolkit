@@ -2,9 +2,17 @@ from django.shortcuts import render, get_object_or_404
 from .models import *
 
 
+def home(request):
+    return render(request, 'store/home.html')
+
+
+def about(request):
+    return render(request, 'store/about.html')
+
+
 def product_all(request):
     products = Product.products.all()
-    return render(request, 'store/home.html', {'products': products})
+    return render(request, 'store/order.html', {'products': products})
 
 
 def product_detail(request, slug):

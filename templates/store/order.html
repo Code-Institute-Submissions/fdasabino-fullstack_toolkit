@@ -1,20 +1,17 @@
-{% extends "../base.html" %}{% load static %}
-<!-- ------------------------------------------------------------------------------- -->
-{% block title %}{% if category %}{{ category.name }}{% else%}Products{% endif %}{% endblock %}
-<!-- ------------------------------------------------------------------------------- -->
-{% block content %}
+{% extends "./base.html" %} {% load static %}
+<!-- ------------------------------- -->
+{% block title %}Order{% endblock %} {% block content %}
 
-<main>
+<main class="pt-5">
   <div class="album py-5 bg-light">
     <div class="container">
-      <div class="pb-3 h5">{{category.name|title}}</div>
+      <div class="pb-3 h5">All Products</div>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
         {% for product in products %}
 
         <div class="col">
           <div class="card shadow-sm">
             <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}" />
-
             <div class="card-body">
               <p class="card-text">
                 <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">{{ product.title }}</a>
@@ -23,11 +20,9 @@
             </div>
           </div>
         </div>
-
         {% endfor %}
       </div>
     </div>
   </div>
+  {% endblock %}
 </main>
-
-{% endblock %}

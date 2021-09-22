@@ -16,6 +16,22 @@
         "documentation": {}
     },
     {
+        "label": "Product",
+        "importPath": "store.models",
+        "description": "store.models",
+        "isExtraImport": true,
+        "detail": "store.models",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -299,7 +315,7 @@
         "kind": 5,
         "importPath": "basket.urls",
         "description": "basket.urls",
-        "peekOfCode": "app_name = 'basket'\nurlpatterns = [\n    path('', views.basket_summary, name='basket_summary'),\n    path('add/', views.basket_add, name='basket_add'),\n]",
+        "peekOfCode": "app_name = 'basket'\nurlpatterns = [\n    path('', views.basket_summary, name='basket_summary'),\n    path('add/', views.basket_add, name='basket_add'),\n    path('delete/', views.basket_delete, name='basket_delete'),\n    path('update/', views.basket_update, name='basket_update'),\n]",
         "detail": "basket.urls",
         "documentation": {}
     },
@@ -308,7 +324,7 @@
         "kind": 5,
         "importPath": "basket.urls",
         "description": "basket.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.basket_summary, name='basket_summary'),\n    path('add/', views.basket_add, name='basket_add'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.basket_summary, name='basket_summary'),\n    path('add/', views.basket_add, name='basket_add'),\n    path('delete/', views.basket_delete, name='basket_delete'),\n    path('update/', views.basket_update, name='basket_update'),\n]",
         "detail": "basket.urls",
         "documentation": {}
     },
@@ -317,7 +333,7 @@
         "kind": 2,
         "importPath": "basket.views",
         "description": "basket.views",
-        "peekOfCode": "def basket_summary(request):\n    return render(request, 'store/basket/summary.html')\ndef basket_add(request):  # sourcery skip: inline-immediately-returned-variable\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        product_qty = int(request.POST.get('productqty'))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product, qty=product_qty)\n        basketqty = basket.__len__()",
+        "peekOfCode": "def basket_summary(request):\n    basket = Basket(request)\n    return render(request, 'store/basket/summary.html', {'basket': basket})\ndef basket_add(request):\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        product_qty = int(request.POST.get('productqty'))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product, qty=product_qty)",
         "detail": "basket.views",
         "documentation": {}
     },
@@ -326,7 +342,25 @@
         "kind": 2,
         "importPath": "basket.views",
         "description": "basket.views",
-        "peekOfCode": "def basket_add(request):  # sourcery skip: inline-immediately-returned-variable\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        product_qty = int(request.POST.get('productqty'))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product, qty=product_qty)\n        basketqty = basket.__len__()\n        response = JsonResponse({'qty': basketqty})\n        return response",
+        "peekOfCode": "def basket_add(request):\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        product_qty = int(request.POST.get('productqty'))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product, qty=product_qty)\n        basketqty = basket.__len__()\n        response = JsonResponse({'qty': basketqty})\n        return response",
+        "detail": "basket.views",
+        "documentation": {}
+    },
+    {
+        "label": "basket_delete",
+        "kind": 2,
+        "importPath": "basket.views",
+        "description": "basket.views",
+        "peekOfCode": "def basket_delete(request):\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        basket.delete(product=product_id)\n        basketqty = basket.__len__()\n        baskettotal = basket.get_total_price()\n        response = JsonResponse({'qty': basketqty, 'subtotal': baskettotal})\n        return response\ndef basket_update(request):",
+        "detail": "basket.views",
+        "documentation": {}
+    },
+    {
+        "label": "basket_update",
+        "kind": 2,
+        "importPath": "basket.views",
+        "description": "basket.views",
+        "peekOfCode": "def basket_update(request):\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        product_qty = int(request.POST.get('productqty'))\n        basket.update(product=product_id, qty=product_qty)\n        basketqty = basket.__len__()\n        baskettotal = basket.get_total_price()\n        response = JsonResponse({'qty': basketqty, 'subtotal': baskettotal})\n        return response",
         "detail": "basket.views",
         "documentation": {}
     },
@@ -632,7 +666,7 @@
         "kind": 5,
         "importPath": "store.urls",
         "description": "store.urls",
-        "peekOfCode": "app_name = 'store'\nurlpatterns = [\n    path('', views.product_all, name='product_all'),\n    path('<slug:slug>', views.product_detail, name='product_detail'),\n    path('shop/<slug:category_slug>/',\n         views.category_list, name='category_list'),\n]",
+        "peekOfCode": "app_name = 'store'\nurlpatterns = [\n    path('', views.home, name='home'),\n    path('about/', views.about, name='about'),\n    path('order/', views.product_all, name='product_all'),\n    path('<slug:slug>', views.product_detail, name='product_detail'),\n    path('shop/<slug:category_slug>/',\n         views.category_list, name='category_list'),\n]",
         "detail": "store.urls",
         "documentation": {}
     },
@@ -641,8 +675,26 @@
         "kind": 5,
         "importPath": "store.urls",
         "description": "store.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.product_all, name='product_all'),\n    path('<slug:slug>', views.product_detail, name='product_detail'),\n    path('shop/<slug:category_slug>/',\n         views.category_list, name='category_list'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.home, name='home'),\n    path('about/', views.about, name='about'),\n    path('order/', views.product_all, name='product_all'),\n    path('<slug:slug>', views.product_detail, name='product_detail'),\n    path('shop/<slug:category_slug>/',\n         views.category_list, name='category_list'),\n]",
         "detail": "store.urls",
+        "documentation": {}
+    },
+    {
+        "label": "home",
+        "kind": 2,
+        "importPath": "store.views",
+        "description": "store.views",
+        "peekOfCode": "def home(request):\n    return render(request, 'store/home.html')\ndef about(request):\n    return render(request, 'store/about.html')\ndef product_all(request):\n    products = Product.products.all()\n    return render(request, 'store/order.html', {'products': products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, 'store/products/product_detail.html', {'product': product})",
+        "detail": "store.views",
+        "documentation": {}
+    },
+    {
+        "label": "about",
+        "kind": 2,
+        "importPath": "store.views",
+        "description": "store.views",
+        "peekOfCode": "def about(request):\n    return render(request, 'store/about.html')\ndef product_all(request):\n    products = Product.products.all()\n    return render(request, 'store/order.html', {'products': products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, 'store/products/product_detail.html', {'product': product})\ndef category_list(request, category_slug):\n    category = get_object_or_404(Category, slug=category_slug)",
+        "detail": "store.views",
         "documentation": {}
     },
     {
@@ -650,7 +702,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def product_all(request):\n    products = Product.products.all()\n    return render(request, 'store/home.html', {'products': products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, 'store/products/product_detail.html', {'product': product})\ndef category_list(request, category_slug):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(request, 'store/products/category.html', {'category': category, 'products': products})",
+        "peekOfCode": "def product_all(request):\n    products = Product.products.all()\n    return render(request, 'store/order.html', {'products': products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, 'store/products/product_detail.html', {'product': product})\ndef category_list(request, category_slug):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(request, 'store/products/category.html', {'category': category, 'products': products})",
         "detail": "store.views",
         "documentation": {}
     },
