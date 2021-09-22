@@ -11,20 +11,18 @@
         <div class="border">
           <div class="col border-bottom">
             <div class="row p-3">
-              <div class="col-6">Sandwich</div>
+              <div class="col-6">{{ product.title }}</div>
               <div class="col-6 text-end"><span class="h4 fw-bold">£{{ product.price }}</span></div>
             </div>
           </div>
           <div class="col">
             <div class="row p-3">
               <div class="col-6">
-                <label for="select">Qty</label>
                 <select id="select">
                   <option value="">1</option>
-                  <option value="">2</option>
-                  <option value="">3</option>
-                  <option value="">4</option>
                 </select>
+                <br />
+                <small class="text-muted text-left text-small">You can edit item quantities in your shopping cart</small>
               </div>
               <div class="col-6 text-end">
                 <button type="button" id="add-button" value="{{product.id}}" class="btn btn-secondary btn-sm">
