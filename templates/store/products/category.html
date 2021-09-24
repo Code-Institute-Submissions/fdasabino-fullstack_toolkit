@@ -5,26 +5,32 @@
 {% block content %}
 
 <main>
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="pb-3 h5">{{category.name|title}}</div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-        {% for product in products %}
+  <div class="container">
+    <div class="row">
+      <div class="album py-5">
+        <div class="pb-3 h5 text-center">{{category.name|title}}</div>
 
-        <div class="col">
-          <div class="card-body">
-            <p class="card-text">
-              <a class="text-dark text-decoration-none text-center fw-bold" href="{{ product.get_absolute_url }}"
-                ><img class="img-fluid mb-2" alt="Responsive image" src="{{ product.image.url }}" /> {{ product.title }}</a
-              >
-              <br />
-              <small>{{product.description}}</small>
-            </p>
-            <small>{{product.price}} SEK</small>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+          {% for product in products %}
+
+          <div class="col">
+            <div class="card border-0">
+              <div class="card-body px-0">
+                <p class="card-text text-center">
+                  <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">
+                    <img class="img-fluid mb-3" alt="Responsive image" src="{{ product.image.url }}" />
+                    {{ product.title }}
+                  </a>
+                </p>
+                <div class="d-flex justify-content-center align-items-center">
+                  <small class="text-muted text-center">SEK {{product.price}}</small>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
 
-        {% endfor %}
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
