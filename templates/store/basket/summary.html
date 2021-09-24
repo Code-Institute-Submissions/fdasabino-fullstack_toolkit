@@ -1,64 +1,71 @@
-{% extends "../base.html" %} {% load static %} {% block title %}Basket Summary{% endblock %} {% block content %}
+{% extends "store/base.html" %} {% load static %} {% block title %}Basket Summary{% endblock %} {% block content %}
 
 <main class="pt-5">
-  <div class="container">
-    <h1 class="h5 text-center">Shopping basket</h1>
-    {% for item in basket %} {% with product=item.product %}
-    <div data-index="{{product.id}}" class="row mb-4 border product-item">
-      <div class="col-md-3 col-lg-2 order-md-first bg-light">
-        <img class="img-fluid mx-auto d-block" width="250px" src="{{ product.image.url }}" />
-      </div>
-      <div class="col-md-9 col-lg-10 ps-md-3 ps-lg-10">
-        <div class="border">
-          <div class="col border-bottom">
-            <div class="row p-3">
-              <div class="col-6 text-center">
-                <a href="{{ product.get_absolute_url }}" class="text-decoration-none text-reset">
-                  <h1 class="h5 mt-2">{{ product.title }}</h1>
-                </a>
-                <small>{{ product.description }}</small>
-              </div>
+  <div class="container text-center" style="max-width: 1000px">
+    <div class="col-12">
+      <h1 class="h2">Your Basket</h1>
+    </div>
+    <div class="col-12">
+      <p>Manage your <b>items</b> in your basket</p>
+    </div>
+    <div class="col-12 bg-light p-3 text-center">
+      <h3>Order Summary</h3>
+    </div>
+    <div class="container d-flex justify-content-center" style="max-width: 1000px">
+      <div class="row g-3"></div>
 
-              <div class="col-6 mt-2">
-                <p class="text-center"><strong>{{ product.price }} SEK x{{ item.qty}}</strong></p>
-                <p class="text-center">{{item.total_price}} SEK</p>
-              </div>
+      <div class="col-md-7 col-lg-8 p-0 mt-3 justify-content-center">
+        {% for item in basket %} {% with product=item.product %}
+
+        <div class="card mb-3 border-0 product-item text-center" data-index="{{product.id}}">
+          <div class="row g-0">
+            <div class="col-md-2 d-none d-md-block">
+              <img class="img-fluid mx-auto d-block" alt="Responsive image" src="{{ product.image.url }}" />
             </div>
-          </div>
-          <div class="col">
-            <div class="row p-3">
-              <div class="col-12">
+            <div class="col-md-10 ps-md-3">
+              <div class="card-body p-1">
+                <a class="text-decoration-none text-reset" href="{{item.product.get_absolute_url}}">
+                  <p class="card-text pb-3">{{product.title}}</p>
+                </a>
                 <label for="select">Qty</label>
                 <select class="1-100" id="select{{product.id}}">
                   <option selected>{{item.qty}}</option>
                 </select>
-                <button
+                <a
                   type="button"
                   id="update-button"
                   data-index="{{product.id}}"
-                  class="btn btn-outline-primary btn-sm update-button"
+                  class="btn btn-primary btn-sm update-button text-decoration-none small ps-3"
+                  >Update</a
                 >
-                  Update
-                </button>
-                <button
+                <a
                   type="button"
                   id="delete-button"
                   data-index="{{product.id}}"
-                  class="btn btn-outline-danger btn-sm delete-button"
+                  class="btn btn-danger btn-sm delete-button text-decoration-none small"
+                  >Delete</a
                 >
-                  Delete
-                </button>
               </div>
             </div>
           </div>
         </div>
+        {% endwith %} {% endfor %}
       </div>
     </div>
-    {% endwith %} {% endfor %}
-    <div class="col-12 text-center">
-      <div class="h6 fw-bold">
-        Sub Total: SEK
-        <div id="subtotal" class="d-inline-flex">{{basket.get_total_price}}</div>
+    <hr />
+
+    <div class="justify-content-center mt-5">
+      <a role="button" href="" class="btn btn-success fw-bold" type="button">Checkout</a>
+      <button class="btn btn-warning" type="button">Save for later</button>
+      <div class="mt-3">
+        <div class="">
+          Sub Total: <span class="fw-bold">SEK </span>
+          <div id="subtotal" class="d-inline-flex fw-bold">{{basket.get_subtotal_price}}</div>
+        </div>
+        <div id="">Shipping: <span class="fw-bold">(Free)</span></div>
+        <div class="pt-2">
+          Total to pay: <span class="fw-bold h5">SEK</span><span id="total" class="fw-bold h5">{{basket.get_total_price}}</span>
+        </div>
       </div>
     </div>
   </div>

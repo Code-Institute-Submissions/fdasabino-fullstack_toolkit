@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
+  letter-spacing: -0.02px;
+}
+
+#intro {
+  background-image: url("https://images.pexels.com/photos/1660030/pexels-photo-1660030.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+hr {
+  border-top: 2px solid black;
+  width: 100%;
+}
+
+ul li a:hover {
+  color: #ccc;
+  transition-delay: 0.2s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+}
+
+/* Bootstrap Over-ride */
+@media (min-width: 1000px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding: 0 24px;
+  }
+}
+.dropdown-toggle::after {
+  display: none;
+}
+.dropdown-menu {
+  top: 58px;
+  left: 0px;
+  padding: 10px;
+}
+
+/* Navigation-Main*/
+
+/* xs */
+@media (min-width: 768px) {
+  .logo {
+    width: 49px;
+  }
+}
+/* md */
+@media (min-width: 992px) {
+  .logo {
+    width: 60px;
+  }
+}
+/* lg */
+@media (min-width: 1200px) {
+  .logo {
+    width: 70px;
+  }
+}
+
+/* Footer */
+
+.footer > div > div > ul > li {
+  padding-bottom: 8px;
+}
