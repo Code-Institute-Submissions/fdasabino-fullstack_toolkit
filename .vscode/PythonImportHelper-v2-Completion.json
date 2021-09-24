@@ -342,7 +342,7 @@
         "kind": 2,
         "importPath": "basket.views",
         "description": "basket.views",
-        "peekOfCode": "def basket_summary(request):\n    basket = Basket(request)\n    return render(request, 'store/basket/summary.html', {'basket': basket})\ndef basket_add(request):\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        product_qty = int(request.POST.get('productqty'))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product, qty=product_qty)",
+        "peekOfCode": "def basket_summary(request):\n    basket = Basket(request)\n    return render(request, 'basket/summary.html', {'basket': basket})\ndef basket_add(request):\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        product_id = int(request.POST.get('productid'))\n        product_qty = int(request.POST.get('productqty'))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product, qty=product_qty)",
         "detail": "basket.views",
         "documentation": {}
     },
