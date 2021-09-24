@@ -1,8 +1,6 @@
 from django.http.response import JsonResponse
 from django.shortcuts import render
-
 from basket.basket import Basket
-
 from .models import Order, OrderItem
 
 

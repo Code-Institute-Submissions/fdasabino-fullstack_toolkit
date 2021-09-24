@@ -25,7 +25,7 @@
         <div class="text-white">
           <h1 class="mb-3 mt-3">STHLM-foodies</h1>
           <h5 class="mb-4">Healthy food delivered to your door</h5>
-          <a class="btn btn-success btn-lg m-2" role="button" href="{% url 'store:product_all'%}">Place an Order!</a>
+          <a class="btn btn-success btn-lg m-2" role="button" href="{% url 'store:product_all'%}">Order Now!</a>
         </div>
       </div>
     </div>
@@ -43,9 +43,17 @@
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi minima cum tempore ab est perspiciatis repellat
             eaque veniam ipsum atque!
           </p>
+          {% if user.is_authenticated %}
           <p>
-            <a href="#" class="btn btn-primary my-2">Create new account</a>
+            <a href="{% url 'account:dashboard' %}" class="btn btn-primary my-2">To Dashboard</a>
           </p>
+
+          {% else %}
+
+          <p>
+            <a href="{% url 'account:register' %}" class="btn btn-warning my-2">Create New Account</a>
+          </p>
+          {% endif %}
         </div>
       </div>
     </section>
