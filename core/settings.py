@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'store',
     'basket',
     'account',
+    'order',
 ]
 
 MIDDLEWARE = [
@@ -139,7 +140,12 @@ AUTH_USER_MODEL = 'account.UserBase'
 LOGIN_REDIRECT_URL = '/account/dashboard'
 LOGIN_URL = '/account/login/'
 
+# Basket session ID
+BASKET_SESSION_ID = 'basket'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email setting
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

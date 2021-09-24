@@ -16,6 +16,30 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -118,6 +142,22 @@
         "description": "django.contrib",
         "isExtraImport": true,
         "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "django.apps",
+        "description": "django.apps",
+        "isExtraImport": true,
+        "detail": "django.apps",
         "documentation": {}
     },
     {
@@ -233,59 +273,59 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "django.test",
         "documentation": {}
     },
     {
-        "label": "get_object_or_404",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "PasswordResetTokenGenerator",
+        "importPath": "django.contrib.auth.tokens",
+        "description": "django.contrib.auth.tokens",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "django.contrib.auth.tokens",
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "text_type",
+        "importPath": "six",
+        "description": "six",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "six",
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "views",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "django.contrib.auth",
         "documentation": {}
     },
     {
-        "label": "get_object_or_404",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "login",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "django.contrib.auth",
         "documentation": {}
     },
     {
-        "label": "Product",
-        "importPath": "store.models",
-        "description": "store.models",
+        "label": "logout",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
         "isExtraImport": true,
-        "detail": "store.models",
+        "detail": "django.contrib.auth",
         "documentation": {}
     },
     {
-        "label": "Decimal",
-        "importPath": "decimal",
-        "description": "decimal",
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
         "isExtraImport": true,
-        "detail": "decimal",
+        "detail": "django.urls",
         "documentation": {}
     },
     {
@@ -313,6 +353,14 @@
         "documentation": {}
     },
     {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "reverse",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -329,11 +377,179 @@
         "documentation": {}
     },
     {
+        "label": "TemplateView",
+        "importPath": "django.views.generic",
+        "description": "django.views.generic",
+        "isExtraImport": true,
+        "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_site",
+        "importPath": "django.contrib.sites.shortcuts",
+        "description": "django.contrib.sites.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.contrib.sites.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
         "label": "JsonResponse",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
         "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
+        "label": "render_to_string",
+        "importPath": "django.template.loader",
+        "description": "django.template.loader",
+        "isExtraImport": true,
+        "detail": "django.template.loader",
+        "documentation": {}
+    },
+    {
+        "label": "force_bytes",
+        "importPath": "django.utils.encoding",
+        "description": "django.utils.encoding",
+        "isExtraImport": true,
+        "detail": "django.utils.encoding",
+        "documentation": {}
+    },
+    {
+        "label": "force_text",
+        "importPath": "django.utils.encoding",
+        "description": "django.utils.encoding",
+        "isExtraImport": true,
+        "detail": "django.utils.encoding",
+        "documentation": {}
+    },
+    {
+        "label": "urlsafe_base64_decode",
+        "importPath": "django.utils.http",
+        "description": "django.utils.http",
+        "isExtraImport": true,
+        "detail": "django.utils.http",
+        "documentation": {}
+    },
+    {
+        "label": "urlsafe_base64_encode",
+        "importPath": "django.utils.http",
+        "description": "django.utils.http",
+        "isExtraImport": true,
+        "detail": "django.utils.http",
+        "documentation": {}
+    },
+    {
+        "label": "user_orders",
+        "importPath": "order.views",
+        "description": "order.views",
+        "isExtraImport": true,
+        "detail": "order.views",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "store.models",
+        "description": "store.models",
+        "isExtraImport": true,
+        "detail": "store.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "store.models",
+        "description": "store.models",
+        "isExtraImport": true,
+        "detail": "store.models",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
         "documentation": {}
     },
     {
@@ -394,6 +610,14 @@
         "documentation": {}
     },
     {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
         "label": "static",
         "importPath": "django.conf.urls.static",
         "description": "django.conf.urls.static",
@@ -407,6 +631,22 @@
         "description": "django.core.wsgi",
         "isExtraImport": true,
         "detail": "django.core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "JsonResponse",
+        "importPath": "django.http.response",
+        "description": "django.http.response",
+        "isExtraImport": true,
+        "detail": "django.http.response",
+        "documentation": {}
+    },
+    {
+        "label": "Basket",
+        "importPath": "basket.basket",
+        "description": "basket.basket",
+        "isExtraImport": true,
+        "detail": "basket.basket",
         "documentation": {}
     },
     {
@@ -468,6 +708,15 @@
         "description": "account.migrations.0001_initial",
         "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='UserBase',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
         "detail": "account.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "account.migrations.0002_userbase_last_name",
+        "description": "account.migrations.0002_userbase_last_name",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('account', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='userbase',\n            name='last_name',\n            field=models.CharField(blank=True, max_length=150),\n        ),",
+        "detail": "account.migrations.0002_userbase_last_name",
         "documentation": {}
     },
     {
@@ -538,8 +787,89 @@
         "kind": 6,
         "importPath": "account.models",
         "description": "account.models",
-        "peekOfCode": "class UserBase(AbstractBaseUser, PermissionsMixin):\n    email = models.EmailField(_('email address'), unique=True)\n    user_name = models.CharField(max_length=150, unique=True)\n    first_name = models.CharField(max_length=150, blank=True)\n    about = models.TextField(_(\n        'about'), max_length=500, blank=True)\n    # Delivery details\n    country = CountryField()\n    phone_number = models.CharField(max_length=15, blank=True)\n    postcode = models.CharField(max_length=12, blank=True)",
+        "peekOfCode": "class UserBase(AbstractBaseUser, PermissionsMixin):\n    email = models.EmailField(_('email address'), unique=True)\n    user_name = models.CharField(max_length=150, unique=True)\n    first_name = models.CharField(max_length=150, blank=True)\n    last_name = models.CharField(max_length=150, blank=True)\n    about = models.TextField(_(\n        'about'), max_length=500, blank=True)\n    # Delivery details\n    country = CountryField()\n    phone_number = models.CharField(max_length=15, blank=True)",
         "detail": "account.models",
+        "documentation": {}
+    },
+    {
+        "label": "AccountActivationTokenGenerator",
+        "kind": 6,
+        "importPath": "account.tokens",
+        "description": "account.tokens",
+        "peekOfCode": "class AccountActivationTokenGenerator(PasswordResetTokenGenerator):\n    def _make_hash_value(self, user, timestamp):\n        return (\n            text_type(user.pk) + text_type(timestamp) +\n            text_type(user.is_active)\n        )\naccount_activation_token = AccountActivationTokenGenerator()",
+        "detail": "account.tokens",
+        "documentation": {}
+    },
+    {
+        "label": "account_activation_token",
+        "kind": 5,
+        "importPath": "account.tokens",
+        "description": "account.tokens",
+        "peekOfCode": "account_activation_token = AccountActivationTokenGenerator()",
+        "detail": "account.tokens",
+        "documentation": {}
+    },
+    {
+        "label": "app_name",
+        "kind": 5,
+        "importPath": "account.urls",
+        "description": "account.urls",
+        "peekOfCode": "app_name = 'account'\nurlpatterns = [\n    path('login/', auth_views.LoginView.as_view(template_name='account/registration/login.html',\n                                                form_class=UserLoginForm), name='login'),\n    path('logout/', auth_views.LogoutView.as_view(next_page='/account/login/'), name='logout'),\n    path('register/', views.account_register, name='register'),\n    path('activate/<slug:uidb64>/<slug:token>)/',\n         views.account_activate, name='activate'),\n    # Reset password\n    path('password_reset/', auth_views.PasswordResetView.as_view(template_name=\"account/user/password_reset_form.html\",",
+        "detail": "account.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "account.urls",
+        "description": "account.urls",
+        "peekOfCode": "urlpatterns = [\n    path('login/', auth_views.LoginView.as_view(template_name='account/registration/login.html',\n                                                form_class=UserLoginForm), name='login'),\n    path('logout/', auth_views.LogoutView.as_view(next_page='/account/login/'), name='logout'),\n    path('register/', views.account_register, name='register'),\n    path('activate/<slug:uidb64>/<slug:token>)/',\n         views.account_activate, name='activate'),\n    # Reset password\n    path('password_reset/', auth_views.PasswordResetView.as_view(template_name=\"account/user/password_reset_form.html\",\n                                                                 success_url='password_reset_email_confirm',",
+        "detail": "account.urls",
+        "documentation": {}
+    },
+    {
+        "label": "dashboard",
+        "kind": 2,
+        "importPath": "account.views",
+        "description": "account.views",
+        "peekOfCode": "def dashboard(request):\n    orders = user_orders(request)\n    return render(request,\n                  'account/user/dashboard.html',\n                  {'section': 'profile', 'orders': orders})\n@login_required\ndef edit_details(request):\n    if request.method == 'POST':\n        user_form = UserEditForm(instance=request.user, data=request.POST)\n        if user_form.is_valid():",
+        "detail": "account.views",
+        "documentation": {}
+    },
+    {
+        "label": "edit_details",
+        "kind": 2,
+        "importPath": "account.views",
+        "description": "account.views",
+        "peekOfCode": "def edit_details(request):\n    if request.method == 'POST':\n        user_form = UserEditForm(instance=request.user, data=request.POST)\n        if user_form.is_valid():\n            user_form.save()\n    else:\n        user_form = UserEditForm(instance=request.user)\n    return render(request,\n                  'account/user/edit_details.html', {'user_form': user_form})\n@login_required",
+        "detail": "account.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_user",
+        "kind": 2,
+        "importPath": "account.views",
+        "description": "account.views",
+        "peekOfCode": "def delete_user(request):\n    user = UserBase.objects.get(user_name=request.user)\n    user.is_active = False\n    user.save()\n    logout(request)\n    return redirect('account:delete_confirmation')\ndef account_register(request):\n    if request.user.is_authenticated:\n        return redirect('account:dashboard')\n    if request.method == 'POST':",
+        "detail": "account.views",
+        "documentation": {}
+    },
+    {
+        "label": "account_register",
+        "kind": 2,
+        "importPath": "account.views",
+        "description": "account.views",
+        "peekOfCode": "def account_register(request):\n    if request.user.is_authenticated:\n        return redirect('account:dashboard')\n    if request.method == 'POST':\n        registerForm = RegistrationForm(request.POST)\n        if registerForm.is_valid():\n            user = registerForm.save(commit=False)\n            user.email = registerForm.cleaned_data['email']\n            user.set_password(registerForm.cleaned_data['password'])\n            user.is_active = False",
+        "detail": "account.views",
+        "documentation": {}
+    },
+    {
+        "label": "account_activate",
+        "kind": 2,
+        "importPath": "account.views",
+        "description": "account.views",
+        "peekOfCode": "def account_activate(request, uidb64, token):\n    try:\n        uid = force_text(urlsafe_base64_decode(uidb64))\n        user = UserBase.objects.get(pk=uid)\n    except(TypeError, ValueError, OverflowError, user.DoesNotExist):\n        user = None\n    if user is not None and account_activation_token.check_token(user, token):\n        user.is_active = True\n        user.save()\n        login(request, user)",
+        "detail": "account.views",
         "documentation": {}
     },
     {
@@ -790,7 +1120,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media/')\n# Custom user model\nAUTH_USER_MODEL = 'account.UserBase'\nLOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Default primary key field type",
+        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, \"static\")\n]\nMEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media/')\n# Custom user model\nAUTH_USER_MODEL = 'account.UserBase'\nLOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Basket session ID",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -799,7 +1129,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media/')\n# Custom user model\nAUTH_USER_MODEL = 'account.UserBase'\nLOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media/')\n# Custom user model\nAUTH_USER_MODEL = 'account.UserBase'\nLOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Basket session ID\nBASKET_SESSION_ID = 'basket'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -808,7 +1138,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')\n# Custom user model\nAUTH_USER_MODEL = 'account.UserBase'\nLOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')\n# Custom user model\nAUTH_USER_MODEL = 'account.UserBase'\nLOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Basket session ID\nBASKET_SESSION_ID = 'basket'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -817,7 +1147,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "AUTH_USER_MODEL = 'account.UserBase'\nLOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "AUTH_USER_MODEL = 'account.UserBase'\nLOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Basket session ID\nBASKET_SESSION_ID = 'basket'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email setting\nEMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -826,7 +1156,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "LOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "LOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Basket session ID\nBASKET_SESSION_ID = 'basket'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email setting\nEMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -835,7 +1165,16 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "LOGIN_URL = '/account/login/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "LOGIN_URL = '/account/login/'\n# Basket session ID\nBASKET_SESSION_ID = 'basket'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email setting\nEMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'",
+        "detail": "core.settings",
+        "documentation": {}
+    },
+    {
+        "label": "BASKET_SESSION_ID",
+        "kind": 5,
+        "importPath": "core.settings",
+        "description": "core.settings",
+        "peekOfCode": "BASKET_SESSION_ID = 'basket'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email setting\nEMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -844,7 +1183,16 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email setting\nEMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'",
+        "detail": "core.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_BACKEND",
+        "kind": 5,
+        "importPath": "core.settings",
+        "description": "core.settings",
+        "peekOfCode": "EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -853,7 +1201,7 @@
         "kind": 5,
         "importPath": "core.urls",
         "description": "core.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('store.urls', namespace='store')),\n    path('basket/', include('basket.urls', namespace='basket')),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.MEDIA_URL,\n                          document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('store.urls', namespace='store')),\n    path('basket/', include('basket.urls', namespace='basket')),\n    path('account/', include('account.urls', namespace='account')),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.MEDIA_URL,\n                          document_root=settings.MEDIA_ROOT)",
         "detail": "core.urls",
         "documentation": {}
     },
@@ -864,6 +1212,78 @@
         "description": "core.wsgi",
         "peekOfCode": "application = get_wsgi_application()",
         "detail": "core.wsgi",
+        "documentation": {}
+    },
+    {
+        "label": "OrderConfig",
+        "kind": 6,
+        "importPath": "order.apps",
+        "description": "order.apps",
+        "peekOfCode": "class OrderConfig(AppConfig):\n    name = 'order'",
+        "detail": "order.apps",
+        "documentation": {}
+    },
+    {
+        "label": "Order",
+        "kind": 6,
+        "importPath": "order.models",
+        "description": "order.models",
+        "peekOfCode": "class Order(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL,\n                             on_delete=models.CASCADE, related_name='order_user')\n    full_name = models.CharField(max_length=50)\n    address1 = models.CharField(max_length=250)\n    address2 = models.CharField(max_length=250)\n    city = models.CharField(max_length=100)\n    phone = models.CharField(max_length=100)\n    post_code = models.CharField(max_length=20)\n    created = models.DateTimeField(auto_now_add=True)",
+        "detail": "order.models",
+        "documentation": {}
+    },
+    {
+        "label": "OrderItem",
+        "kind": 6,
+        "importPath": "order.models",
+        "description": "order.models",
+        "peekOfCode": "class OrderItem(models.Model):\n    order = models.ForeignKey(Order,\n                              related_name='items',\n                              on_delete=models.CASCADE)\n    product = models.ForeignKey(Product,\n                                related_name='order_items',\n                                on_delete=models.CASCADE)\n    price = models.DecimalField(max_digits=5, decimal_places=2)\n    quantity = models.PositiveIntegerField(default=1)\n    def __str__(self):",
+        "detail": "order.models",
+        "documentation": {}
+    },
+    {
+        "label": "app_name",
+        "kind": 5,
+        "importPath": "order.urls",
+        "description": "order.urls",
+        "peekOfCode": "app_name = 'order'\nurlpatterns = [\n    path('add/', views.add, name='add'),\n]",
+        "detail": "order.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "order.urls",
+        "description": "order.urls",
+        "peekOfCode": "urlpatterns = [\n    path('add/', views.add, name='add'),\n]",
+        "detail": "order.urls",
+        "documentation": {}
+    },
+    {
+        "label": "add",
+        "kind": 2,
+        "importPath": "order.views",
+        "description": "order.views",
+        "peekOfCode": "def add(request):\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        order_key = request.POST.get('order_key')\n        user_id = request.user.id\n        baskettotal = basket.get_total_price()\n        # Check if order exists\n        if Order.objects.filter(order_key=order_key).exists():\n            pass\n        else:",
+        "detail": "order.views",
+        "documentation": {}
+    },
+    {
+        "label": "payment_confirmation",
+        "kind": 2,
+        "importPath": "order.views",
+        "description": "order.views",
+        "peekOfCode": "def payment_confirmation(data):\n    Order.objects.filter(order_key=data).update(billing_status=True)\ndef user_orders(request):\n    user_id = request.user.id\n    orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)\n    return orders",
+        "detail": "order.views",
+        "documentation": {}
+    },
+    {
+        "label": "user_orders",
+        "kind": 2,
+        "importPath": "order.views",
+        "description": "order.views",
+        "peekOfCode": "def user_orders(request):\n    user_id = request.user.id\n    orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)\n    return orders",
+        "detail": "order.views",
         "documentation": {}
     },
     {
