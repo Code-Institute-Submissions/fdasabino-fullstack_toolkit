@@ -145,6 +145,38 @@
         "documentation": {}
     },
     {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
+        "documentation": {}
+    },
+    {
+        "label": "AuthenticationForm",
+        "importPath": "django.contrib.auth.forms",
+        "description": "django.contrib.auth.forms",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.forms",
+        "documentation": {}
+    },
+    {
+        "label": "PasswordResetForm",
+        "importPath": "django.contrib.auth.forms",
+        "description": "django.contrib.auth.forms",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.forms",
+        "documentation": {}
+    },
+    {
+        "label": "SetPasswordForm",
+        "importPath": "django.contrib.auth.forms",
+        "description": "django.contrib.auth.forms",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.forms",
+        "documentation": {}
+    },
+    {
         "label": "AbstractBaseUser",
         "importPath": "django.contrib.auth.models",
         "description": "django.contrib.auth.models",
@@ -445,6 +477,51 @@
         "description": "account.apps",
         "peekOfCode": "class AccountConfig(AppConfig):\n    name = 'account'",
         "detail": "account.apps",
+        "documentation": {}
+    },
+    {
+        "label": "UserLoginForm",
+        "kind": 6,
+        "importPath": "account.forms",
+        "description": "account.forms",
+        "peekOfCode": "class UserLoginForm(AuthenticationForm):\n    username = forms.CharField(widget=forms.TextInput(\n        attrs={'class': 'form-control mb-3', 'placeholder': 'Username', 'id': 'login-username'}))\n    password = forms.CharField(widget=forms.PasswordInput(\n        attrs={\n            'class': 'form-control',\n            'placeholder': 'Password',\n            'id': 'login-pwd',\n        }\n    ))",
+        "detail": "account.forms",
+        "documentation": {}
+    },
+    {
+        "label": "RegistrationForm",
+        "kind": 6,
+        "importPath": "account.forms",
+        "description": "account.forms",
+        "peekOfCode": "class RegistrationForm(forms.ModelForm):\n    user_name = forms.CharField(\n        label='Enter Username', min_length=4, max_length=50, help_text='Required')\n    email = forms.EmailField(max_length=100, help_text='Required', error_messages={\n        'required': 'Sorry, you will need an email'})\n    password = forms.CharField(label='Password', widget=forms.PasswordInput)\n    password2 = forms.CharField(\n        label='Repeat password', widget=forms.PasswordInput)\n    class Meta:\n        model = UserBase",
+        "detail": "account.forms",
+        "documentation": {}
+    },
+    {
+        "label": "PwdResetForm",
+        "kind": 6,
+        "importPath": "account.forms",
+        "description": "account.forms",
+        "peekOfCode": "class PwdResetForm(PasswordResetForm):\n    email = forms.EmailField(max_length=254, widget=forms.TextInput(\n        attrs={'class': 'form-control mb-3', 'placeholder': 'Email', 'id': 'form-email'}))\n    def clean_email(self):\n        email = self.cleaned_data['email']\n        u = UserBase.objects.filter(email=email)\n        if not u:\n            raise forms.ValidationError(\n                'Unfortunately we can not find that email address')\n        return email",
+        "detail": "account.forms",
+        "documentation": {}
+    },
+    {
+        "label": "PwdResetConfirmForm",
+        "kind": 6,
+        "importPath": "account.forms",
+        "description": "account.forms",
+        "peekOfCode": "class PwdResetConfirmForm(SetPasswordForm):\n    new_password1 = forms.CharField(\n        label='New password', widget=forms.PasswordInput(\n            attrs={'class': 'form-control mb-3', 'placeholder': 'New Password', 'id': 'form-newpass'}))\n    new_password2 = forms.CharField(\n        label='Repeat password', widget=forms.PasswordInput(\n            attrs={'class': 'form-control mb-3', 'placeholder': 'New Password', 'id': 'form-new-pass2'}))\nclass UserEditForm(forms.ModelForm):\n    email = forms.EmailField(\n        label='Account email (can not be changed)', max_length=200, widget=forms.TextInput(",
+        "detail": "account.forms",
+        "documentation": {}
+    },
+    {
+        "label": "UserEditForm",
+        "kind": 6,
+        "importPath": "account.forms",
+        "description": "account.forms",
+        "peekOfCode": "class UserEditForm(forms.ModelForm):\n    email = forms.EmailField(\n        label='Account email (can not be changed)', max_length=200, widget=forms.TextInput(\n            attrs={'class': 'form-control mb-3', 'placeholder': 'email', 'id': 'form-email', 'readonly': 'readonly'}))\n    user_name = forms.CharField(\n        label='Firstname', min_length=4, max_length=50, widget=forms.TextInput(\n            attrs={'class': 'form-control mb-3', 'placeholder': 'Username', 'id': 'form-firstname', 'readonly': 'readonly'}))\n    first_name = forms.CharField(\n        label='Username', min_length=4, max_length=50, widget=forms.TextInput(\n            attrs={'class': 'form-control mb-3', 'placeholder': 'Firstname', 'id': 'form-lastname'}))",
+        "detail": "account.forms",
         "documentation": {}
     },
     {
