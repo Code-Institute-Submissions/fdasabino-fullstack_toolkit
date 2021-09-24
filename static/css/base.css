@@ -48,27 +48,6 @@ ul li a:hover {
   padding: 10px;
 }
 
-/* Navigation-Main*/
-
-/* xs */
-@media (min-width: 768px) {
-  .logo {
-    width: 49px;
-  }
-}
-/* md */
-@media (min-width: 992px) {
-  .logo {
-    width: 60px;
-  }
-}
-/* lg */
-@media (min-width: 1200px) {
-  .logo {
-    width: 70px;
-  }
-}
-
 /* Footer */
 
 .footer > div > div > ul > li {
