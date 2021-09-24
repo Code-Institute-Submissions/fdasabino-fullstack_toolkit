@@ -258,23 +258,6 @@
         "documentation": {}
     },
     {
-        "label": "warnings",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "warnings",
-        "description": "warnings",
-        "detail": "warnings",
-        "documentation": {}
-    },
-    {
-        "label": "management",
-        "importPath": "django.core",
-        "description": "django.core",
-        "isExtraImport": true,
-        "detail": "django.core",
-        "documentation": {}
-    },
-    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -722,15 +705,6 @@
         "description": "store.views",
         "peekOfCode": "def category_list(request, category_slug):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(request, 'store/products/category.html', {'category': category, 'products': products})",
         "detail": "store.views",
-        "documentation": {}
-    },
-    {
-        "label": "os.environ[\"SECRET_KEY\"]",
-        "kind": 5,
-        "importPath": "env",
-        "description": "env",
-        "peekOfCode": "os.environ[\"SECRET_KEY\"] = 'django-insecure-(6e2ww0%a)gz-q=2thwson$b7#4xs*j+(n2waask_lw^=^l^rn'",
-        "detail": "env",
         "documentation": {}
     },
     {
