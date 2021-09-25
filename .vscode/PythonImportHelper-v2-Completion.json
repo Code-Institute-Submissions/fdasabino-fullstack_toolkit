@@ -80,6 +80,14 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -1282,6 +1290,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "order.migrations.0002_remove_order_user",
+        "description": "order.migrations.0002_remove_order_user",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('order', '0001_initial'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='order',\n            name='user',\n        ),\n    ]",
+        "detail": "order.migrations.0002_remove_order_user",
+        "documentation": {}
+    },
+    {
         "label": "OrderConfig",
         "kind": 6,
         "importPath": "order.apps",
@@ -1295,7 +1312,7 @@
         "kind": 6,
         "importPath": "order.models",
         "description": "order.models",
-        "peekOfCode": "class Order(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL,\n                             on_delete=models.CASCADE, related_name='order_user')\n    full_name = models.CharField(max_length=50)\n    address1 = models.CharField(max_length=250)\n    address2 = models.CharField(max_length=250)\n    city = models.CharField(max_length=100)\n    phone = models.CharField(max_length=100)\n    post_code = models.CharField(max_length=20)\n    created = models.DateTimeField(auto_now_add=True)",
+        "peekOfCode": "class Order(models.Model):\n    full_name = models.CharField(max_length=50)\n    address1 = models.CharField(max_length=250)\n    address2 = models.CharField(max_length=250)\n    city = models.CharField(max_length=100)\n    phone = models.CharField(max_length=100)\n    post_code = models.CharField(max_length=20)\n    created = models.DateTimeField(auto_now_add=True)\n    updated = models.DateTimeField(auto_now=True)\n    total_paid = models.DecimalField(max_digits=5, decimal_places=2)",
         "detail": "order.models",
         "documentation": {}
     },
