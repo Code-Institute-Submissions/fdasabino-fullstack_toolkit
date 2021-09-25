@@ -60,7 +60,7 @@
               />
             </svg>
           </div>
-          <span><small>{{user.email}}</small></span>
+          <span><small>{{user.full_name}}</small></span>
         </a>
         {% else %}
         <a type="button" role="button" href="{% url 'account:dashboard' %}" class="btn btn-outline-secondary text-white border-0">

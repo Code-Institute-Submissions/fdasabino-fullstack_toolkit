@@ -32,6 +32,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -744,6 +760,24 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "account.migrations.0003_auto_20210925_1625",
+        "description": "account.migrations.0003_auto_20210925_1625",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('account', '0002_userbase_last_name'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='userbase',\n            old_name='first_name',\n            new_name='full_name',\n        ),",
+        "detail": "account.migrations.0003_auto_20210925_1625",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "account.migrations.0004_remove_userbase_user_name",
+        "description": "account.migrations.0004_remove_userbase_user_name",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('account', '0003_auto_20210925_1625'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='userbase',\n            name='user_name',\n        ),\n    ]",
+        "detail": "account.migrations.0004_remove_userbase_user_name",
+        "documentation": {}
+    },
+    {
         "label": "AccountConfig",
         "kind": 6,
         "importPath": "account.apps",
@@ -766,7 +800,7 @@
         "kind": 6,
         "importPath": "account.forms",
         "description": "account.forms",
-        "peekOfCode": "class RegistrationForm(forms.ModelForm):\n    user_name = forms.CharField(\n        label='Enter Username', min_length=4, max_length=50, help_text='Required')\n    email = forms.EmailField(max_length=100, help_text='Required', error_messages={\n        'required': 'Sorry, you will need an email'})\n    password = forms.CharField(label='Password', widget=forms.PasswordInput)\n    password2 = forms.CharField(\n        label='Repeat password', widget=forms.PasswordInput)\n    class Meta:\n        model = UserBase",
+        "peekOfCode": "class RegistrationForm(forms.ModelForm):\n    full_name = forms.CharField(\n        label='Enter Full Name', min_length=4, max_length=50, help_text='Required')\n    email = forms.EmailField(max_length=100, help_text='Required', error_messages={\n        'required': 'Sorry, you will need an email'})\n    password = forms.CharField(label='Password', widget=forms.PasswordInput)\n    password2 = forms.CharField(\n        label='Repeat password', widget=forms.PasswordInput)\n    class Meta:\n        model = UserBase",
         "detail": "account.forms",
         "documentation": {}
     },
@@ -793,7 +827,7 @@
         "kind": 6,
         "importPath": "account.forms",
         "description": "account.forms",
-        "peekOfCode": "class UserEditForm(forms.ModelForm):\n    email = forms.EmailField(\n        label='Account email (can not be changed)', max_length=200, widget=forms.TextInput(\n            attrs={'class': 'form-control mb-3', 'placeholder': 'email', 'id': 'form-email', 'readonly': 'readonly'}))\n    user_name = forms.CharField(\n        label='Firstname', min_length=4, max_length=50, widget=forms.TextInput(\n            attrs={'class': 'form-control mb-3', 'placeholder': 'Username', 'id': 'form-firstname', 'readonly': 'readonly'}))\n    first_name = forms.CharField(\n        label='Username', min_length=4, max_length=50, widget=forms.TextInput(\n            attrs={'class': 'form-control mb-3', 'placeholder': 'Firstname', 'id': 'form-lastname'}))",
+        "peekOfCode": "class UserEditForm(forms.ModelForm):\n    email = forms.EmailField(\n        label='Account email (can not be changed)', max_length=200, widget=forms.TextInput(\n            attrs={'class': 'form-control mb-3', 'placeholder': 'email', 'id': 'form-email', 'readonly': 'readonly'}))\n    full_name = forms.CharField(\n        label='Firstname', min_length=4, max_length=50, widget=forms.TextInput(\n            attrs={'class': 'form-control mb-3', 'placeholder': 'Username', 'id': 'form-firstname', 'readonly': 'readonly'}))\n    first_name = forms.CharField(\n        label='Username', min_length=4, max_length=50, widget=forms.TextInput(\n            attrs={'class': 'form-control mb-3', 'placeholder': 'Firstname', 'id': 'form-lastname'}))",
         "detail": "account.forms",
         "documentation": {}
     },
@@ -802,7 +836,7 @@
         "kind": 6,
         "importPath": "account.models",
         "description": "account.models",
-        "peekOfCode": "class CustomAccountManager(BaseUserManager):\n    def create_superuser(self, email, user_name, password, **other_fields):\n        other_fields.setdefault('is_staff', True)\n        other_fields.setdefault('is_superuser', True)\n        other_fields.setdefault('is_active', True)\n        if other_fields.get('is_staff') is not True:\n            raise ValueError(\n                'Superuser must be assigned to is_staff=True.')\n        if other_fields.get('is_superuser') is not True:\n            raise ValueError(",
+        "peekOfCode": "class CustomAccountManager(BaseUserManager):\n    def create_superuser(self, email, full_name, password, **other_fields):\n        other_fields.setdefault('is_staff', True)\n        other_fields.setdefault('is_superuser', True)\n        other_fields.setdefault('is_active', True)\n        if other_fields.get('is_staff') is not True:\n            raise ValueError(\n                'Superuser must be assigned to is_staff=True.')\n        if other_fields.get('is_superuser') is not True:\n            raise ValueError(",
         "detail": "account.models",
         "documentation": {}
     },
@@ -811,7 +845,7 @@
         "kind": 6,
         "importPath": "account.models",
         "description": "account.models",
-        "peekOfCode": "class UserBase(AbstractBaseUser, PermissionsMixin):\n    email = models.EmailField(_('email address'), unique=True)\n    user_name = models.CharField(max_length=150, unique=True)\n    first_name = models.CharField(max_length=150, blank=True)\n    last_name = models.CharField(max_length=150, blank=True)\n    about = models.TextField(_(\n        'about'), max_length=500, blank=True)\n    # Delivery details\n    country = CountryField()\n    phone_number = models.CharField(max_length=15, blank=True)",
+        "peekOfCode": "class UserBase(AbstractBaseUser, PermissionsMixin):\n    email = models.EmailField(_('email address'), unique=True)\n    full_name= models.CharField(max_length=150, blank=True, null=False)\n    about = models.TextField(_(\n        'about'), max_length=500, blank=True)\n    # Delivery details\n    country = CountryField()\n    phone_number = models.CharField(max_length=15, blank=True)\n    postcode = models.CharField(max_length=12, blank=True)\n    address_line_1 = models.CharField(max_length=150, blank=True)",
         "detail": "account.models",
         "documentation": {}
     },

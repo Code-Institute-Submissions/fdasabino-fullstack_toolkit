@@ -34,32 +34,6 @@
 <!--Main layout-->
 <main class="mt-5">
   <div class="container">
-    <!--Section: Create account-->
-    <section class="py-5 text-center container">
-      <div class="row py-lg-3">
-        <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="h1 fw-bold">Search, Order, Buy, Enjoy</h1>
-          <p class="lead text-muted">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi minima cum tempore ab est perspiciatis repellat
-            eaque veniam ipsum atque!
-          </p>
-          {% if user.is_authenticated %}
-          <p>
-            <a href="{% url 'account:dashboard' %}" class="btn btn-primary my-2">To Dashboard</a>
-          </p>
-
-          {% else %}
-
-          <p>
-            <a href="{% url 'account:register' %}" class="btn btn-warning my-2">Create New Account</a>
-          </p>
-          {% endif %}
-        </div>
-      </div>
-    </section>
-
-    <hr />
-
     <!--Section: Content-->
     <section>
       <div class="row">

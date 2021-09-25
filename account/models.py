@@ -8,7 +8,7 @@ from django_countries.fields import CountryField
 
 class CustomAccountManager(BaseUserManager):
 
-    def create_superuser(self, email, user_name, password, **other_fields):
+    def create_superuser(self, email, full_name, password, **other_fields):
 
         other_fields.setdefault('is_staff', True)
         other_fields.setdefault('is_superuser', True)
@@ -21,15 +21,15 @@ class CustomAccountManager(BaseUserManager):
             raise ValueError(
                 'Superuser must be assigned to is_superuser=True.')
 
-        return self.create_user(email, user_name, password, **other_fields)
+        return self.create_user(email, full_name, password, **other_fields)
 
-    def create_user(self, email, user_name, password, **other_fields):
+    def create_user(self, email, full_name , password, **other_fields):
 
         if not email:
             raise ValueError(_('You must provide an email address'))
 
         email = self.normalize_email(email)
-        user = self.model(email=email, user_name=user_name,
+        user = self.model(email=email, full_name=full_name,
                           **other_fields)
         user.set_password(password)
         user.save()
@@ -39,9 +39,7 @@ class CustomAccountManager(BaseUserManager):
 class UserBase(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(_('email address'), unique=True)
-    user_name = models.CharField(max_length=150, unique=True)
-    first_name = models.CharField(max_length=150, blank=True)
-    last_name = models.CharField(max_length=150, blank=True)
+    full_name= models.CharField(max_length=150, blank=True, null=False)
     about = models.TextField(_(
         'about'), max_length=500, blank=True)
     # Delivery details
@@ -60,7 +58,7 @@ class UserBase(AbstractBaseUser, PermissionsMixin):
     objects = CustomAccountManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['user_name']
+    REQUIRED_FIELDS = ['full_name']
 
     class Meta:
         verbose_name = "Accounts"
@@ -76,4 +74,4 @@ class UserBase(AbstractBaseUser, PermissionsMixin):
         )
 
     def __str__(self):
-        return self.user_name
+        return self.full_name
