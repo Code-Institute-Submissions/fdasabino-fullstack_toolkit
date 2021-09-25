@@ -45,3 +45,7 @@ ul li a:hover {
 .footer > div > div > ul > li {
   padding-bottom: 8px;
 }
+
+input::placeholder {
+text-align: center;
+}

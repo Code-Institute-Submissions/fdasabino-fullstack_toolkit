@@ -433,6 +433,14 @@
         "documentation": {}
     },
     {
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "reverse",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -454,6 +462,14 @@
         "description": "django.views.generic",
         "isExtraImport": true,
         "detail": "django.views.generic",
+        "documentation": {}
+    },
+    {
+        "label": "login_required",
+        "importPath": "django.contrib.auth.decorators",
+        "description": "django.contrib.auth.decorators",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.decorators",
         "documentation": {}
     },
     {
@@ -744,6 +760,23 @@
         "description": "basket.basket",
         "isExtraImport": true,
         "detail": "basket.basket",
+        "documentation": {}
+    },
+    {
+        "label": "Basket",
+        "importPath": "basket.basket",
+        "description": "basket.basket",
+        "isExtraImport": true,
+        "detail": "basket.basket",
+        "documentation": {}
+    },
+    {
+        "label": "stripe",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "stripe",
+        "description": "stripe",
+        "detail": "stripe",
         "documentation": {}
     },
     {
@@ -1307,7 +1340,7 @@
         "kind": 5,
         "importPath": "core.urls",
         "description": "core.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('store.urls', namespace='store')),\n    path('basket/', include('basket.urls', namespace='basket')),\n    path('account/', include('account.urls', namespace='account')),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.MEDIA_URL,\n                          document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('store.urls', namespace='store')),\n    path('basket/', include('basket.urls', namespace='basket')),\n    path('account/', include('account.urls', namespace='account')),\n    path('payment/', include('payment.urls', namespace='payment')),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.MEDIA_URL,\n                          document_root=settings.MEDIA_ROOT)",
         "detail": "core.urls",
         "documentation": {}
     },
@@ -1417,6 +1450,33 @@
         "description": "payment.apps",
         "peekOfCode": "class PaymentConfig(AppConfig):\n    name = 'payment'",
         "detail": "payment.apps",
+        "documentation": {}
+    },
+    {
+        "label": "app_name",
+        "kind": 5,
+        "importPath": "payment.urls",
+        "description": "payment.urls",
+        "peekOfCode": "app_name = 'payment'\nurlpatterns = [\n    path('', views.BasketView, name='basket'),\n    # path('orderplaced/', views.order_placed, name='order_placed'),\n    # path('error/', views.Error.as_view(), name='error'),\n    # path('webhook/', views.stripe_webhook),\n]",
+        "detail": "payment.urls",
+        "documentation": {}
+    },
+    {
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "payment.urls",
+        "description": "payment.urls",
+        "peekOfCode": "urlpatterns = [\n    path('', views.BasketView, name='basket'),\n    # path('orderplaced/', views.order_placed, name='order_placed'),\n    # path('error/', views.Error.as_view(), name='error'),\n    # path('webhook/', views.stripe_webhook),\n]",
+        "detail": "payment.urls",
+        "documentation": {}
+    },
+    {
+        "label": "BasketView",
+        "kind": 2,
+        "importPath": "payment.views",
+        "description": "payment.views",
+        "peekOfCode": "def BasketView(request):\n    basket = Basket(request)\n    total = str(basket.get_total_price())\n    total = total.replace('.', '')\n    total = int(total)\n    stripe.api_key = 'pk_test_51JdcCvLxCavNaE0z8e1Ef5xTfVgdLoa87K7EjtWMhu66bH0fncbVYJPji3E4M3CUPq9rQuU0g4z8jDiRpdS4p1Oy003t5zqzFT'\n    intent = stripe.PaymentIntent.create(\n        amount=total,\n        currency='SEK',\n        metadata={'user_id': request.user.id}",
+        "detail": "payment.views",
         "documentation": {}
     },
     {
