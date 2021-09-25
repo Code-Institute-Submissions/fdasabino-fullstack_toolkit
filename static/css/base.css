@@ -39,14 +39,6 @@ ul li a:hover {
     padding: 0 24px;
   }
 }
-.dropdown-toggle::after {
-  display: none;
-}
-.dropdown-menu {
-  top: 58px;
-  left: 0px;
-  padding: 10px;
-}
 
 /* Footer */
 

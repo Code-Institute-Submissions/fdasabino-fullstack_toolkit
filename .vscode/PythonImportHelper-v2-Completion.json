@@ -757,7 +757,7 @@
         "kind": 6,
         "importPath": "account.forms",
         "description": "account.forms",
-        "peekOfCode": "class UserLoginForm(AuthenticationForm):\n    username = forms.CharField(widget=forms.TextInput(\n        attrs={'class': 'form-control mb-3', 'placeholder': 'Username', 'id': 'login-username'}))\n    password = forms.CharField(widget=forms.PasswordInput(\n        attrs={\n            'class': 'form-control',\n            'placeholder': 'Password',\n            'id': 'login-pwd',\n        }\n    ))",
+        "peekOfCode": "class UserLoginForm(AuthenticationForm):\n    username = forms.CharField(widget=forms.TextInput(\n        attrs={'class': 'form-control mb-3', 'placeholder': 'Email Address', 'id': 'login-username'}))\n    password = forms.CharField(widget=forms.PasswordInput(\n        attrs={\n            'class': 'form-control',\n            'placeholder': 'Password',\n            'id': 'login-pwd',\n        }\n    ))",
         "detail": "account.forms",
         "documentation": {}
     },

@@ -8,7 +8,7 @@ from .models import UserBase
 class UserLoginForm(AuthenticationForm):
 
     username = forms.CharField(widget=forms.TextInput(
-        attrs={'class': 'form-control mb-3', 'placeholder': 'Username', 'id': 'login-username'}))
+        attrs={'class': 'form-control mb-3', 'placeholder': 'Email Address', 'id': 'login-username'}))
     password = forms.CharField(widget=forms.PasswordInput(
         attrs={
             'class': 'form-control',
@@ -57,7 +57,7 @@ class RegistrationForm(forms.ModelForm):
         self.fields['user_name'].widget.attrs.update(
             {'class': 'form-control mb-3', 'placeholder': 'Username'})
         self.fields['email'].widget.attrs.update(
-            {'class': 'form-control mb-3', 'placeholder': 'E-mail', 'name': 'email', 'id': 'id_email'})
+            {'class': 'form-control mb-3', 'placeholder': 'E-mail Address', 'name': 'email', 'id': 'id_email'})
         self.fields['password'].widget.attrs.update(
             {'class': 'form-control mb-3', 'placeholder': 'Password'})
         self.fields['password2'].widget.attrs.update(
