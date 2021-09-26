@@ -665,19 +665,11 @@
         "documentation": {}
     },
     {
-        "label": "Product",
-        "importPath": "store.models",
-        "description": "store.models",
+        "label": "payment_confirmation",
+        "importPath": "order.views",
+        "description": "order.views",
         "isExtraImport": true,
-        "detail": "store.models",
-        "documentation": {}
-    },
-    {
-        "label": "Product",
-        "importPath": "store.models",
-        "description": "store.models",
-        "isExtraImport": true,
-        "detail": "store.models",
+        "detail": "order.views",
         "documentation": {}
     },
     {
@@ -694,6 +686,70 @@
         "description": "decimal",
         "isExtraImport": true,
         "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "store.models",
+        "description": "store.models",
+        "isExtraImport": true,
+        "detail": "store.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "store.models",
+        "description": "store.models",
+        "isExtraImport": true,
+        "detail": "store.models",
         "documentation": {}
     },
     {
@@ -730,46 +786,6 @@
         "documentation": {}
     },
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
         "label": "static",
         "importPath": "django.conf.urls.static",
         "description": "django.conf.urls.static",
@@ -803,6 +819,14 @@
         "documentation": {}
     },
     {
+        "label": "HttpResponse",
+        "importPath": "django.http.response",
+        "description": "django.http.response",
+        "isExtraImport": true,
+        "detail": "django.http.response",
+        "documentation": {}
+    },
+    {
         "label": "Basket",
         "importPath": "basket.basket",
         "description": "basket.basket",
@@ -816,6 +840,15 @@
         "description": "basket.basket",
         "isExtraImport": true,
         "detail": "basket.basket",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
         "documentation": {}
     },
     {
@@ -825,6 +858,22 @@
         "importPath": "stripe",
         "description": "stripe",
         "detail": "stripe",
+        "documentation": {}
+    },
+    {
+        "label": "csrf_exempt",
+        "importPath": "django.views.decorators.csrf",
+        "description": "django.views.decorators.csrf",
+        "isExtraImport": true,
+        "detail": "django.views.decorators.csrf",
+        "documentation": {}
+    },
+    {
+        "label": "TemplateView",
+        "importPath": "django.views.generic.base",
+        "description": "django.views.generic.base",
+        "isExtraImport": true,
+        "detail": "django.views.generic.base",
         "documentation": {}
     },
     {
@@ -1082,7 +1131,7 @@
         "kind": 6,
         "importPath": "basket.basket",
         "description": "basket.basket",
-        "peekOfCode": "class Basket():\n    def __init__(self, request):\n        self.session = request.session\n        basket = self.session.get('session-key')\n        if 'session-key' not in request.session:\n            basket = self.session['session-key'] = {}\n        self.basket = basket\n    def add(self, product, qty):\n        product_id = product.id\n        if product_id not in self.basket:",
+        "peekOfCode": "class Basket():\n    \"\"\"\n    A base Basket class, providing some default behaviors that\n    can be inherited or override, as necessary.\n    \"\"\"\n    def __init__(self, request):\n        self.session = request.session\n        basket = self.session.get(settings.BASKET_SESSION_ID)\n        if settings.BASKET_SESSION_ID not in request.session:\n            basket = self.session[settings.BASKET_SESSION_ID] = {}",
         "detail": "basket.basket",
         "documentation": {}
     },
@@ -1163,7 +1212,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = SECRET_KEY = os.environ.get('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = SECRET_KEY = os.environ.get('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['127.0.0.1', 'localhost']\n# Application definition\nINSTALLED_APPS = [",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1172,7 +1221,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "SECRET_KEY = SECRET_KEY = os.environ.get('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = SECRET_KEY = os.environ.get('SECRET_KEY')\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = ['127.0.0.1', 'localhost']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1181,7 +1230,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = ['127.0.0.1', 'localhost']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1190,7 +1239,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'store',",
+        "peekOfCode": "ALLOWED_HOSTS = ['127.0.0.1', 'localhost']\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'store',",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1325,7 +1374,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media/')\n# Custom user model\nAUTH_USER_MODEL = 'account.UserBase'\nLOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Basket session ID\nBASKET_SESSION_ID = 'basket'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field",
+        "peekOfCode": "MEDIA_URL = '/media/'\nMEDIA_ROOT = os.path.join(BASE_DIR, 'media/')\n# Custom user model\nAUTH_USER_MODEL = 'account.UserBase'\nLOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Basket session ID\nBASKET_SESSION_ID = 'basket'\n# Stripe Payment\nPUBLISHABLE_KEY = 'pk_test_51JdcCvLxCavNaE0z8e1Ef5xTfVgdLoa87K7EjtWMhu66bH0fncbVYJPji3E4M3CUPq9rQuU0g4z8jDiRpdS4p1Oy003t5zqzFT'",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1334,7 +1383,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')\n# Custom user model\nAUTH_USER_MODEL = 'account.UserBase'\nLOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Basket session ID\nBASKET_SESSION_ID = 'basket'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')\n# Custom user model\nAUTH_USER_MODEL = 'account.UserBase'\nLOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Basket session ID\nBASKET_SESSION_ID = 'basket'\n# Stripe Payment\nPUBLISHABLE_KEY = 'pk_test_51JdcCvLxCavNaE0z8e1Ef5xTfVgdLoa87K7EjtWMhu66bH0fncbVYJPji3E4M3CUPq9rQuU0g4z8jDiRpdS4p1Oy003t5zqzFT'\nSECRET_KEY = 'sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9'",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1343,7 +1392,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "AUTH_USER_MODEL = 'account.UserBase'\nLOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Basket session ID\nBASKET_SESSION_ID = 'basket'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email setting\nEMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'",
+        "peekOfCode": "AUTH_USER_MODEL = 'account.UserBase'\nLOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Basket session ID\nBASKET_SESSION_ID = 'basket'\n# Stripe Payment\nPUBLISHABLE_KEY = 'pk_test_51JdcCvLxCavNaE0z8e1Ef5xTfVgdLoa87K7EjtWMhu66bH0fncbVYJPji3E4M3CUPq9rQuU0g4z8jDiRpdS4p1Oy003t5zqzFT'\nSECRET_KEY = 'sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9'\nSTRIPE_ENDPOINT_SECRET = 'whsec_2EVjTZmdaITf34dqw980klp5eBI5zR77'\n# stripe listen --forward-to localhost:8000/payment/webhook/",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1352,7 +1401,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "LOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Basket session ID\nBASKET_SESSION_ID = 'basket'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email setting\nEMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'",
+        "peekOfCode": "LOGIN_REDIRECT_URL = '/account/dashboard'\nLOGIN_URL = '/account/login/'\n# Basket session ID\nBASKET_SESSION_ID = 'basket'\n# Stripe Payment\nPUBLISHABLE_KEY = 'pk_test_51JdcCvLxCavNaE0z8e1Ef5xTfVgdLoa87K7EjtWMhu66bH0fncbVYJPji3E4M3CUPq9rQuU0g4z8jDiRpdS4p1Oy003t5zqzFT'\nSECRET_KEY = 'sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9'\nSTRIPE_ENDPOINT_SECRET = 'whsec_2EVjTZmdaITf34dqw980klp5eBI5zR77'\n# stripe listen --forward-to localhost:8000/payment/webhook/\n# Default primary key field type",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1361,7 +1410,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "LOGIN_URL = '/account/login/'\n# Basket session ID\nBASKET_SESSION_ID = 'basket'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email setting\nEMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'",
+        "peekOfCode": "LOGIN_URL = '/account/login/'\n# Basket session ID\nBASKET_SESSION_ID = 'basket'\n# Stripe Payment\nPUBLISHABLE_KEY = 'pk_test_51JdcCvLxCavNaE0z8e1Ef5xTfVgdLoa87K7EjtWMhu66bH0fncbVYJPji3E4M3CUPq9rQuU0g4z8jDiRpdS4p1Oy003t5zqzFT'\nSECRET_KEY = 'sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9'\nSTRIPE_ENDPOINT_SECRET = 'whsec_2EVjTZmdaITf34dqw980klp5eBI5zR77'\n# stripe listen --forward-to localhost:8000/payment/webhook/\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1370,7 +1419,34 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "BASKET_SESSION_ID = 'basket'\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email setting\nEMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'",
+        "peekOfCode": "BASKET_SESSION_ID = 'basket'\n# Stripe Payment\nPUBLISHABLE_KEY = 'pk_test_51JdcCvLxCavNaE0z8e1Ef5xTfVgdLoa87K7EjtWMhu66bH0fncbVYJPji3E4M3CUPq9rQuU0g4z8jDiRpdS4p1Oy003t5zqzFT'\nSECRET_KEY = 'sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9'\nSTRIPE_ENDPOINT_SECRET = 'whsec_2EVjTZmdaITf34dqw980klp5eBI5zR77'\n# stripe listen --forward-to localhost:8000/payment/webhook/\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email setting",
+        "detail": "core.settings",
+        "documentation": {}
+    },
+    {
+        "label": "PUBLISHABLE_KEY",
+        "kind": 5,
+        "importPath": "core.settings",
+        "description": "core.settings",
+        "peekOfCode": "PUBLISHABLE_KEY = 'pk_test_51JdcCvLxCavNaE0z8e1Ef5xTfVgdLoa87K7EjtWMhu66bH0fncbVYJPji3E4M3CUPq9rQuU0g4z8jDiRpdS4p1Oy003t5zqzFT'\nSECRET_KEY = 'sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9'\nSTRIPE_ENDPOINT_SECRET = 'whsec_2EVjTZmdaITf34dqw980klp5eBI5zR77'\n# stripe listen --forward-to localhost:8000/payment/webhook/\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email setting\nEMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'",
+        "detail": "core.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SECRET_KEY",
+        "kind": 5,
+        "importPath": "core.settings",
+        "description": "core.settings",
+        "peekOfCode": "SECRET_KEY = 'sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9'\nSTRIPE_ENDPOINT_SECRET = 'whsec_2EVjTZmdaITf34dqw980klp5eBI5zR77'\n# stripe listen --forward-to localhost:8000/payment/webhook/\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email setting\nEMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'",
+        "detail": "core.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STRIPE_ENDPOINT_SECRET",
+        "kind": 5,
+        "importPath": "core.settings",
+        "description": "core.settings",
+        "peekOfCode": "STRIPE_ENDPOINT_SECRET = 'whsec_2EVjTZmdaITf34dqw980klp5eBI5zR77'\n# stripe listen --forward-to localhost:8000/payment/webhook/\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n# Email setting\nEMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1487,7 +1563,7 @@
         "kind": 2,
         "importPath": "order.views",
         "description": "order.views",
-        "peekOfCode": "def add(request):\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        order_key = request.POST.get('order_key')\n        full_name = request.user.full_name\n        baskettotal = basket.get_total_price()\n        # Check if order exists\n        if Order.objects.filter(order_key=order_key).exists():\n            pass\n        else:",
+        "peekOfCode": "def add(request):\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        order_key = request.POST.get('order_key')\n        full_name = request.user.full_name\n        baskettotal = basket.get_total_price()\n        # Check if order exists\n        if not Order.objects.filter(order_key=order_key).exists():\n            order = Order.objects.create(full_name=full_name, address1='add1',\n                                         address2='add2', total_paid=baskettotal, order_key=order_key)",
         "detail": "order.views",
         "documentation": {}
     },
@@ -1496,7 +1572,7 @@
         "kind": 2,
         "importPath": "order.views",
         "description": "order.views",
-        "peekOfCode": "def payment_confirmation(data):\n    Order.objects.filter(order_key=data).update(billing_status=True)\ndef user_orders(request):\n    full_name = request.user.full_name\n    orders = Order.objects.filter(full_name=full_name).filter(billing_status=True)\n    return orders",
+        "peekOfCode": "def payment_confirmation(data):\n    Order.objects.filter(order_key=data).update(billing_status=True)\ndef user_orders(request):\n    full_name = request.user.full_name\n    return Order.objects.filter(full_name=full_name).filter(billing_status=True)",
         "detail": "order.views",
         "documentation": {}
     },
@@ -1505,7 +1581,7 @@
         "kind": 2,
         "importPath": "order.views",
         "description": "order.views",
-        "peekOfCode": "def user_orders(request):\n    full_name = request.user.full_name\n    orders = Order.objects.filter(full_name=full_name).filter(billing_status=True)\n    return orders",
+        "peekOfCode": "def user_orders(request):\n    full_name = request.user.full_name\n    return Order.objects.filter(full_name=full_name).filter(billing_status=True)",
         "detail": "order.views",
         "documentation": {}
     },
@@ -1523,7 +1599,7 @@
         "kind": 5,
         "importPath": "payment.urls",
         "description": "payment.urls",
-        "peekOfCode": "app_name = 'payment'\nurlpatterns = [\n    path('', views.BasketView, name='basket'),\n    # path('orderplaced/', views.order_placed, name='order_placed'),\n    # path('error/', views.Error.as_view(), name='error'),\n    # path('webhook/', views.stripe_webhook),\n]",
+        "peekOfCode": "app_name = 'payment'\nurlpatterns = [\n    path('', views.BasketView, name='basket'),\n    path('orderplaced/', views.order_placed, name='order_placed'),\n    path('webhook/', views.stripe_webhook),\n    # path('error/', views.Error.as_view(), name='error'),\n]",
         "detail": "payment.urls",
         "documentation": {}
     },
@@ -1532,7 +1608,7 @@
         "kind": 5,
         "importPath": "payment.urls",
         "description": "payment.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.BasketView, name='basket'),\n    # path('orderplaced/', views.order_placed, name='order_placed'),\n    # path('error/', views.Error.as_view(), name='error'),\n    # path('webhook/', views.stripe_webhook),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.BasketView, name='basket'),\n    path('orderplaced/', views.order_placed, name='order_placed'),\n    path('webhook/', views.stripe_webhook),\n    # path('error/', views.Error.as_view(), name='error'),\n]",
         "detail": "payment.urls",
         "documentation": {}
     },
@@ -1542,6 +1618,24 @@
         "importPath": "payment.views",
         "description": "payment.views",
         "peekOfCode": "def BasketView(request):\n    basket = Basket(request)\n    total = str(basket.get_total_price())\n    total = total.replace('.', '')\n    total = int(total)\n    stripe.api_key = 'sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9'\n    intent = stripe.PaymentIntent.create(\n        amount=total,\n        currency='SEK',\n        metadata={'user_id': request.user.id}",
+        "detail": "payment.views",
+        "documentation": {}
+    },
+    {
+        "label": "stripe_webhook",
+        "kind": 2,
+        "importPath": "payment.views",
+        "description": "payment.views",
+        "peekOfCode": "def stripe_webhook(request):\n    payload = request.body\n    event = None\n    try:\n        event = stripe.Event.construct_from(\n            json.loads(payload), stripe.api_key\n        )\n    except ValueError as e:\n        print(e)\n        return HttpResponse(status=400)",
+        "detail": "payment.views",
+        "documentation": {}
+    },
+    {
+        "label": "order_placed",
+        "kind": 2,
+        "importPath": "payment.views",
+        "description": "payment.views",
+        "peekOfCode": "def order_placed(request):\n    basket = Basket(request)\n    basket.clear()\n    return render(request, 'payment/orderplaced.html')",
         "detail": "payment.views",
         "documentation": {}
     },
