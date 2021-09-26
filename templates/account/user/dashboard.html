@@ -3,7 +3,7 @@
 <main class="pt-5">
   <div class="container" style="max-width: 1000px">
     <div class="col-12">
-      <h1 class="h2">User Dashboard</h1>
+      <h1 class="h2">{{user.full_name}}'s Dashboard</h1>
     </div>
     <div>Manage your <b>orders</b> and personal details</div>
     <div class="col-12 d-flex justify-content-end">
@@ -110,6 +110,7 @@
                 <a class="text-decoration-none" href="{{ item.product.get_absolute_url }}">
                   <p class="card-text small">{{item.product|title}}</p>
                 </a>
+                <p class="card-text small">x {{item.quantity}} <span class="card-text small">{{item.price}} SEK</span></p>
               </div>
             </div>
           </div>
@@ -118,6 +119,7 @@
         {% endfor %}
       </div>
     </div>
+    <hr>
     {% endfor %}
   </div>
 </main>
