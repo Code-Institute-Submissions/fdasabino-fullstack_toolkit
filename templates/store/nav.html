@@ -41,8 +41,8 @@
         </li>
       </ul>
     </div>
-    <ul>
-      <li>
+    <div>
+      <div>
         <!--Account button -->
         {% if user.is_authenticated %}
         <a type="button" role="button" href="{% url 'account:dashboard' %}" class="btn btn-outline-secondary text-white border-0">
@@ -106,7 +106,7 @@
             {% endwith %}
           </svg>
         </a>
-      </li>
-    </ul>
+      </div>
+    </div>
   </div>
 </nav>

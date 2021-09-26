@@ -2,7 +2,7 @@
 {% load static %}
 <html lang="en">
   <head>
-    <title>{% block title %}STHLM-foodies{% endblock %}</title>
+    <title>{% block title %}STHLM-foodies - Fresh Food {% endblock %}</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8" />
@@ -14,6 +14,7 @@
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
+
     <script
       src="https://code.jquery.com/jquery-3.6.0.js"
       integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -35,10 +36,10 @@
     <link rel="stylesheet" href="{% static 'css/basket.css' %}" />
   </head>
   <body>
-    {% include "./nav.html"%}
-
-    <div class="container-fluid p-0 mb-5">{% block content %} {% endblock content %}</div>
-
-    {% include "./footer.html"%}
+    {% include 'store/nav.html' %}
+    <main>
+        <div class="container-fluid p-0 mb-5">{% block content %} {% endblock content %}</div>
+    </main>
+    {% include 'store/footer.html' %}
   </body>
 </html>

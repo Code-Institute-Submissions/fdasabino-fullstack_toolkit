@@ -1826,7 +1826,7 @@
         "kind": 5,
         "importPath": "store.urls",
         "description": "store.urls",
-        "peekOfCode": "app_name = 'store'\nurlpatterns = [\n    path('', views.home, name='home'),\n    path('about/', views.about, name='about'),\n    path('order/', views.product_all, name='product_all'),\n    path('<slug:slug>', views.product_detail, name='product_detail'),\n    path('shop/<slug:category_slug>/',\n         views.category_list, name='category_list'),\n]",
+        "peekOfCode": "app_name = 'store'\nurlpatterns = [\n    path('', views.home, name='home'),\n    path('about/', views.about, name='about'),\n    path('order/', views.product_all, name='product_all'),\n    path('<slug:slug>', views.product_detail, name='product_detail'),\n    path('store/<slug:category_slug>/',\n         views.category_list, name='category_list'),\n]",
         "detail": "store.urls",
         "documentation": {}
     },
@@ -1835,7 +1835,7 @@
         "kind": 5,
         "importPath": "store.urls",
         "description": "store.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.home, name='home'),\n    path('about/', views.about, name='about'),\n    path('order/', views.product_all, name='product_all'),\n    path('<slug:slug>', views.product_detail, name='product_detail'),\n    path('shop/<slug:category_slug>/',\n         views.category_list, name='category_list'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.home, name='home'),\n    path('about/', views.about, name='about'),\n    path('order/', views.product_all, name='product_all'),\n    path('<slug:slug>', views.product_detail, name='product_detail'),\n    path('store/<slug:category_slug>/',\n         views.category_list, name='category_list'),\n]",
         "detail": "store.urls",
         "documentation": {}
     },
@@ -1844,7 +1844,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def home(request):\n    return render(request, 'store/home.html')\ndef about(request):\n    return render(request, 'store/about.html')\ndef product_all(request):\n    products = Product.products.all()\n    return render(request, 'store/order.html', {'products': products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, 'store/products/product_detail.html', {'product': product})",
+        "peekOfCode": "def home(request):\n    return render(request, 'store/home.html')\ndef about(request):\n    return render(request, 'store/about.html')\ndef product_all(request):\n    products = Product.products.all()\n    return render(request, 'store/order.html', {'products': products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, 'store/product_detail.html', {'product': product})",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1853,7 +1853,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def about(request):\n    return render(request, 'store/about.html')\ndef product_all(request):\n    products = Product.products.all()\n    return render(request, 'store/order.html', {'products': products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, 'store/products/product_detail.html', {'product': product})\ndef category_list(request, category_slug):\n    category = get_object_or_404(Category, slug=category_slug)",
+        "peekOfCode": "def about(request):\n    return render(request, 'store/about.html')\ndef product_all(request):\n    products = Product.products.all()\n    return render(request, 'store/order.html', {'products': products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, 'store/product_detail.html', {'product': product})\ndef category_list(request, category_slug):\n    category = get_object_or_404(Category, slug=category_slug)",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1862,7 +1862,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def product_all(request):\n    products = Product.products.all()\n    return render(request, 'store/order.html', {'products': products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, 'store/products/product_detail.html', {'product': product})\ndef category_list(request, category_slug):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(request, 'store/products/category.html', {'category': category, 'products': products})",
+        "peekOfCode": "def product_all(request):\n    products = Product.products.all()\n    return render(request, 'store/order.html', {'products': products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, 'store/product_detail.html', {'product': product})\ndef category_list(request, category_slug):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(request, 'store/category.html', {'category': category, 'products': products})",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1871,7 +1871,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, 'store/products/product_detail.html', {'product': product})\ndef category_list(request, category_slug):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(request, 'store/products/category.html', {'category': category, 'products': products})",
+        "peekOfCode": "def product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, 'store/product_detail.html', {'product': product})\ndef category_list(request, category_slug):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(request, 'store/category.html', {'category': category, 'products': products})",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1880,7 +1880,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def category_list(request, category_slug):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(request, 'store/products/category.html', {'category': category, 'products': products})",
+        "peekOfCode": "def category_list(request, category_slug):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(request, 'store/category.html', {'category': category, 'products': products})",
         "detail": "store.views",
         "documentation": {}
     },
