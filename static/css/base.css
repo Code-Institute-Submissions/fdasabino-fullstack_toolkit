@@ -4,7 +4,6 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "PT Sans", sans-serif;
-  letter-spacing: -0.02px;
 }
 
 #intro {
@@ -13,11 +12,6 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-hr {
-  border-top: 2px solid black;
-  width: 100%;
 }
 
 ul li a:hover {

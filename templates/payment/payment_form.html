@@ -1,11 +1,10 @@
 {% extends "../store/base.html" %} {% load static %} {% block title %}Payment{% endblock %} {% block content %}
 
-<div class="container text-center">
-  <div class="row no-gutter">
-    <div class="col-md-12">
+  <div class="row no-gutter justify-content-center">
+    <div class="col-lg-4">
       <div class="login d-flex align-items-center py-5">
         <div class="container">
-          <div id="payment-form" class="col-12 col-lg-6 mx-auto">
+          <div id="payment-form" class="col-12 mx-auto">
             <h3 class="mb-3">Billing address</h3>
             <!-- Error messages in this element -->
             <div id="card-errors" class="a" role="alert"></div>
@@ -54,7 +53,6 @@
       </div>
     </div>
   </div>
-</div>
 
 <script>
   //   Make csrf token available in JS files

@@ -31,23 +31,23 @@
                 <div class="alert alert-primary" role="alert">Error: Username or Password not correct!</div>
                 {% endif %}
 
-                <label class="form-label">{{ form.username.label}}</label>
+                <label class="form-label">{{ form.username.label}}:</label>
                 {{ form.username}}
 
-                <label class="form-label">{{ form.password.label}}</label>
+                <label class="form-label">{{ form.password.label}}:</label>
                 {{ form.password}}
                 <div class="d-grid gap-2">
                   <input type="hidden" name="next" value="{{ next }}" />
                   <button class="btn btn-primary py-2 mb-4 mt-5 fw-bold" type="submit" value="Log-in">Sign in</button>
                 </div>
                 <p class="text-center">
-                  <a href="{% url 'account:register' %}">Create an account</a>
+                  <a class="text-decoration-none text-dark" href="{% url 'account:register' %}">Create an account</a>
                 </p>
                 <p class="text-center">
-                  <a href="{% url 'account:pwdreset' %}">Forgotten Password?</a>
+                  <a class="text-decoration-none text-dark" href="{% url 'account:pwdreset' %}">Forgotten Password?</a>
                 </p>
                 <p class="text-center">
-                  <a href="{% url 'account:register' %}">Help Center?</a>
+                  <a class="text-decoration-none text-dark" href="#">Help Center?</a>
                 </p>
               </form>
             </div>
