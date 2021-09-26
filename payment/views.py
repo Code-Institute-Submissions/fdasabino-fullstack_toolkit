@@ -1,6 +1,6 @@
 import json
-
 import stripe
+from order.models import Order
 from django.contrib.auth.decorators import login_required
 from django.http.response import HttpResponse
 from django.shortcuts import render
@@ -54,4 +54,5 @@ def stripe_webhook(request):
 def order_placed(request):
     basket = Basket(request)
     basket.clear()
+    Order.objects.update(billing_status=True)
     return render(request, 'payment/orderplaced.html')

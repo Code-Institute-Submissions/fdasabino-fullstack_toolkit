@@ -70,10 +70,10 @@ class Basket():
 
         subtotal = sum(Decimal(item['price']) * item['qty'] for item in self.basket.values())
 
-        if subtotal == 0:
-            shipping = Decimal(0.00)
+        if subtotal < 100:
+            shipping = Decimal(25.00)
         else:
-            shipping = Decimal(11.50)
+            shipping = Decimal(0)
 
         total = subtotal + Decimal(shipping)
         return total
