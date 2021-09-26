@@ -10,7 +10,7 @@ def BasketView(request):
     total = total.replace('.', '')
     total = int(total)
     
-    stripe.api_key = 'pk_test_51JdcCvLxCavNaE0z8e1Ef5xTfVgdLoa87K7EjtWMhu66bH0fncbVYJPji3E4M3CUPq9rQuU0g4z8jDiRpdS4p1Oy003t5zqzFT'
+    stripe.api_key = 'sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9'
     intent = stripe.PaymentIntent.create(
         amount=total,
         currency='SEK',

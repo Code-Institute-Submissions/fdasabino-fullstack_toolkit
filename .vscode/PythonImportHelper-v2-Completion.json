@@ -48,6 +48,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -88,6 +104,22 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -121,6 +153,22 @@
     },
     {
         "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -859,6 +907,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "account.migrations.0005_alter_userbase_id",
+        "description": "account.migrations.0005_alter_userbase_id",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('account', '0004_remove_userbase_user_name'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='userbase',\n            name='id',\n            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),\n        ),",
+        "detail": "account.migrations.0005_alter_userbase_id",
+        "documentation": {}
+    },
+    {
         "label": "AccountConfig",
         "kind": 6,
         "importPath": "account.apps",
@@ -1340,7 +1397,7 @@
         "kind": 5,
         "importPath": "core.urls",
         "description": "core.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('store.urls', namespace='store')),\n    path('basket/', include('basket.urls', namespace='basket')),\n    path('account/', include('account.urls', namespace='account')),\n    path('payment/', include('payment.urls', namespace='payment')),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.MEDIA_URL,\n                          document_root=settings.MEDIA_ROOT)",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', include('store.urls', namespace='store')),\n    path('basket/', include('basket.urls', namespace='basket')),\n    path('account/', include('account.urls', namespace='account')),\n    path('payment/', include('payment.urls', namespace='payment')),\n    path('order/', include('order.urls', namespace='order')),\n]\nif settings.DEBUG:\n    urlpatterns += static(settings.MEDIA_URL,",
         "detail": "core.urls",
         "documentation": {}
     },
@@ -1369,6 +1426,15 @@
         "description": "order.migrations.0002_remove_order_user",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('order', '0001_initial'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='order',\n            name='user',\n        ),\n    ]",
         "detail": "order.migrations.0002_remove_order_user",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "order.migrations.0003_auto_20210926_0930",
+        "description": "order.migrations.0003_auto_20210926_0930",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('order', '0002_remove_order_user'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='order',\n            name='id',\n            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),\n        ),",
+        "detail": "order.migrations.0003_auto_20210926_0930",
         "documentation": {}
     },
     {
@@ -1421,7 +1487,7 @@
         "kind": 2,
         "importPath": "order.views",
         "description": "order.views",
-        "peekOfCode": "def add(request):\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        order_key = request.POST.get('order_key')\n        user_id = request.user.id\n        baskettotal = basket.get_total_price()\n        # Check if order exists\n        if Order.objects.filter(order_key=order_key).exists():\n            pass\n        else:",
+        "peekOfCode": "def add(request):\n    basket = Basket(request)\n    if request.POST.get('action') == 'post':\n        order_key = request.POST.get('order_key')\n        full_name = request.user.full_name\n        baskettotal = basket.get_total_price()\n        # Check if order exists\n        if Order.objects.filter(order_key=order_key).exists():\n            pass\n        else:",
         "detail": "order.views",
         "documentation": {}
     },
@@ -1430,7 +1496,7 @@
         "kind": 2,
         "importPath": "order.views",
         "description": "order.views",
-        "peekOfCode": "def payment_confirmation(data):\n    Order.objects.filter(order_key=data).update(billing_status=True)\ndef user_orders(request):\n    user_id = request.user.id\n    orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)\n    return orders",
+        "peekOfCode": "def payment_confirmation(data):\n    Order.objects.filter(order_key=data).update(billing_status=True)\ndef user_orders(request):\n    full_name = request.user.full_name\n    orders = Order.objects.filter(full_name=full_name).filter(billing_status=True)\n    return orders",
         "detail": "order.views",
         "documentation": {}
     },
@@ -1439,7 +1505,7 @@
         "kind": 2,
         "importPath": "order.views",
         "description": "order.views",
-        "peekOfCode": "def user_orders(request):\n    user_id = request.user.id\n    orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)\n    return orders",
+        "peekOfCode": "def user_orders(request):\n    full_name = request.user.full_name\n    orders = Order.objects.filter(full_name=full_name).filter(billing_status=True)\n    return orders",
         "detail": "order.views",
         "documentation": {}
     },
@@ -1475,7 +1541,7 @@
         "kind": 2,
         "importPath": "payment.views",
         "description": "payment.views",
-        "peekOfCode": "def BasketView(request):\n    basket = Basket(request)\n    total = str(basket.get_total_price())\n    total = total.replace('.', '')\n    total = int(total)\n    stripe.api_key = 'pk_test_51JdcCvLxCavNaE0z8e1Ef5xTfVgdLoa87K7EjtWMhu66bH0fncbVYJPji3E4M3CUPq9rQuU0g4z8jDiRpdS4p1Oy003t5zqzFT'\n    intent = stripe.PaymentIntent.create(\n        amount=total,\n        currency='SEK',\n        metadata={'user_id': request.user.id}",
+        "peekOfCode": "def BasketView(request):\n    basket = Basket(request)\n    total = str(basket.get_total_price())\n    total = total.replace('.', '')\n    total = int(total)\n    stripe.api_key = 'sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9'\n    intent = stripe.PaymentIntent.create(\n        amount=total,\n        currency='SEK',\n        metadata={'user_id': request.user.id}",
         "detail": "payment.views",
         "documentation": {}
     },
@@ -1504,6 +1570,15 @@
         "description": "store.migrations.0003_auto_20210924_1450",
         "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('store', '0002_alter_category_options'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='category',\n            name='id',\n            field=models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),\n        ),",
         "detail": "store.migrations.0003_auto_20210924_1450",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "store.migrations.0004_auto_20210926_0930",
+        "description": "store.migrations.0004_auto_20210926_0930",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('store', '0003_auto_20210924_1450'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='category',\n            name='id',\n            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),\n        ),",
+        "detail": "store.migrations.0004_auto_20210926_0930",
         "documentation": {}
     },
     {

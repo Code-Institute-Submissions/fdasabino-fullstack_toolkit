@@ -9,14 +9,14 @@ def add(request):
     if request.POST.get('action') == 'post':
 
         order_key = request.POST.get('order_key')
-        user_id = request.user.id
+        full_name = request.user.full_name
         baskettotal = basket.get_total_price()
 
         # Check if order exists
         if Order.objects.filter(order_key=order_key).exists():
             pass
         else:
-            order = Order.objects.create(user_id=user_id, full_name='name', address1='add1',
+            order = Order.objects.create(full_name=full_name, address1='add1',
                                          address2='add2', total_paid=baskettotal, order_key=order_key)
             order_id = order.pk
 
@@ -33,6 +33,6 @@ def payment_confirmation(data):
 
 
 def user_orders(request):
-    user_id = request.user.id
-    orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)
+    full_name = request.user.full_name
+    orders = Order.objects.filter(full_name=full_name).filter(billing_status=True)
     return orders
