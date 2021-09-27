@@ -4,36 +4,38 @@
 <!-- ------------------------------------------------------------------------------- -->
 {% block content %}
 
-<main>
-  <div class="container">
-    <div class="row">
-      <div class="album py-5">
-        <div class="pb-3 h5 text-center">{{category.name|title}}</div>
-        <hr />
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-          {% for product in products %}
-
-          <div class="col">
-            <div class="card border-0">
-              <div class="card-body px-0">
-                <p class="card-text text-center">
-                  <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">
-                    <img class="img-fluid mb-3" alt="Responsive image" src="{{ product.image.url }}" />
-                    {{ product.title }}
-                  </a>
-                </p>
-                <div class="d-flex justify-content-center align-items-center">
-                  <small class="text-muted text-center">SEK {{product.price}}</small>
-                </div>
-              </div>
-            </div>
+<div class="container mt-5" style="max-width: 1000px">
+  <div class="col-12">
+    <h1 class="h2">{{ category.name|title }}</h1>
+  </div>
+  <div class="col-12 d-flex justify-content-between">
+    <div><b>Popular</b> products purchased</div>
+  </div>
+  <hr />
+  {% if not products %}
+  <div class="col-12 text-center">
+    There aren't any active products at the moment! <a href="{% url 'store:home'%}">Back to Home Page</a>
+  </div>
+  {% else %}
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+    {% for product in products %}
+    <div class="col">
+      <div class="card border-0">
+        <div class="card-body px-0">
+          <p class="card-text text-center">
+            <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">
+              <img class="img-fluid mb-3" alt="Responsive image" src="{{ product.image.url }}" />
+              {{ product.title }}
+            </a>
+          </p>
+          <div class="d-flex justify-content-center align-items-center">
+            <small class="text-muted text-center">SEK {{product.price}}</small>
           </div>
-
-          {% endfor %}
         </div>
       </div>
     </div>
+    {% endfor %}
   </div>
-</main>
-
+  {% endif %}
+</div>
 {% endblock %}
