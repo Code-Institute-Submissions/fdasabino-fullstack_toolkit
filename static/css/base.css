@@ -14,9 +14,15 @@
   background-size: cover;
 }
 
+/* navbar */
+.nav-icons {
+  position: absolute;
+  right: 25px;
+  top: 0;
+}
+
 ul li a:hover {
   color: #ccc;
-  border: 1px solid #ccc;
   transition-delay: 0.2s;
   transition-duration: 0.2s;
   transition-timing-function: ease-in;
