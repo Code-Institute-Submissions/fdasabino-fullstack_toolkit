@@ -1209,7 +1209,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def delete_user(request):\n    user = UserBase.objects.get(user_name=request.user)\n    user.is_active = False\n    user.save()\n    logout(request)\n    return redirect('account:delete_confirmation')\ndef account_register(request):\n    if request.user.is_authenticated:\n        return redirect('account:dashboard')\n    if request.method == 'POST':",
+        "peekOfCode": "def delete_user(request):\n    user = UserBase.objects.get(full_name=request.user)\n    user.is_active = False\n    user.save()\n    logout(request)\n    return redirect('account:delete_confirmation')\ndef account_register(request):\n    if request.user.is_authenticated:\n        return redirect('account:dashboard')\n    if request.method == 'POST':",
         "detail": "account.views",
         "documentation": {}
     },

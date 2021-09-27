@@ -1,4 +1,4 @@
-{% extends "../account_base.html" %} {% block title %}Register Account{% endblock %} {% block sub-content %}
+{% extends "../account_base.html" %} {% block title %}Create an account{% endblock %} {% block sub-content %}
 
 <form class="account-form p-4 rounded col-lg-10 mx-auto" action="." method="post">
   {% csrf_token %}
@@ -21,7 +21,7 @@
   {{ form.password2 }}
   <button class="btn btn-primary btn-block py-2 mb-4 mt-5 fw500 w-100" type="submit">Register</button>
   <p class="text-center">
-    <a href="{% url 'account:login' %}">Already have an account?</a>
+    <a class="text-decoration-none text-dark" href="{% url 'account:login' %}">Already have an account?</a>
   </p>
 </form>
 {% endblock %}
