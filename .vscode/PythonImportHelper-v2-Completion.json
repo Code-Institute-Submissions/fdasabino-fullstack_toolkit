@@ -1739,7 +1739,7 @@
         "kind": 5,
         "importPath": "payment.urls",
         "description": "payment.urls",
-        "peekOfCode": "app_name = 'payment'\nurlpatterns = [\n    path('', views.BasketView, name='basket'),\n    path('orderplaced/', views.order_placed, name='order_placed'),\n    path('webhook/', views.stripe_webhook),\n    # path('error/', views.Error.as_view(), name='error'),\n]",
+        "peekOfCode": "app_name = 'payment'\nurlpatterns = [\n    path('', views.BasketView, name='basket'),\n    path('orderplaced/', views.order_placed, name='order_placed'),\n    path('webhook/', views.stripe_webhook),\n    path('error/', views.Error.as_view(), name='error'),\n]",
         "detail": "payment.urls",
         "documentation": {}
     },
@@ -1748,8 +1748,17 @@
         "kind": 5,
         "importPath": "payment.urls",
         "description": "payment.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.BasketView, name='basket'),\n    path('orderplaced/', views.order_placed, name='order_placed'),\n    path('webhook/', views.stripe_webhook),\n    # path('error/', views.Error.as_view(), name='error'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path('', views.BasketView, name='basket'),\n    path('orderplaced/', views.order_placed, name='order_placed'),\n    path('webhook/', views.stripe_webhook),\n    path('error/', views.Error.as_view(), name='error'),\n]",
         "detail": "payment.urls",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "kind": 6,
+        "importPath": "payment.views",
+        "description": "payment.views",
+        "peekOfCode": "class Error(TemplateView):\n    template_name = 'payment/error.html'",
+        "detail": "payment.views",
         "documentation": {}
     },
     {
@@ -1775,7 +1784,7 @@
         "kind": 2,
         "importPath": "payment.views",
         "description": "payment.views",
-        "peekOfCode": "def order_placed(request):\n    basket = Basket(request)\n    basket.clear()\n    Order.objects.update(billing_status=True)\n    return render(request, 'payment/orderplaced.html')",
+        "peekOfCode": "def order_placed(request):\n    basket = Basket(request)\n    basket.clear()\n    Order.objects.update(billing_status=True)\n    return render(request, 'payment/orderplaced.html')\nclass Error(TemplateView):\n    template_name = 'payment/error.html'",
         "detail": "payment.views",
         "documentation": {}
     },

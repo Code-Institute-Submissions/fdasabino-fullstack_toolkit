@@ -58,3 +58,7 @@ def order_placed(request):
     basket.clear()
     Order.objects.update(billing_status=True)
     return render(request, 'payment/orderplaced.html')
+
+
+class Error(TemplateView):
+    template_name = 'payment/error.html'
