@@ -1,6 +1,8 @@
-{% extends "base.html" %} {% load static %} {% block title %}Basket Summary{%endblock %} {% block content %}
+{% extends "../account_base.html" %} {% load static %} {% block title %}{{user.full_name}} | Dashboard {% endblock %}
+<!-- --------------------  -->
+{% block content %}
 
-<div class="container mt-5" style="max-width: 1000px">
+<div class="container mt-5">
   <div class="col-12">
     <h1 class="h2">{{user.full_name}}'s Dashboard</h1>
   </div>
@@ -48,7 +50,13 @@
   </div>
   <hr />
 </div>
-<div class="container" style="max-width: 1000px">
+{% if orders|length == 0 %}
+<div class="col-12 text-center">
+  You have not yet purchased any products.
+  <a href="{% url 'store:product_all'%}" class="text-decoration-none">To Order Page</a>
+</div>
+{% else %}
+<div class="container">
   {% for order in orders %}
   <div class="row g-3">
     <div class="col-12 bg-light p-3 d-flex justify-content-between">
@@ -114,12 +122,10 @@
           </div>
         </div>
       </div>
-
       {% endfor %}
     </div>
   </div>
   <hr />
   {% endfor %}
 </div>
-
-{% endblock %}
+{% endif %} {% endblock %}

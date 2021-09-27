@@ -1,4 +1,6 @@
 import json
+import os
+from django.conf import settings
 import stripe
 from order.models import Order
 from django.contrib.auth.decorators import login_required
@@ -16,16 +18,16 @@ def BasketView(request):
     total = str(basket.get_total_price())
     total = total.replace('.', '')
     total = int(total)
-    
-    stripe.api_key = 'sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9'
+
+    stripe.api_key = settings.STRIPE_SECRET_KEY
     intent = stripe.PaymentIntent.create(
         amount=total,
         currency='SEK',
         metadata={'user_id': request.user.id}
     )
-    
-    return render(request, 'payment/payment_form.html', {'client_secret': intent.client_secret})
-        
+
+    return render(request, 'payment/payment_form.html', {'client_secret': intent.client_secret,
+                                                         'STRIPE_PUBLISHABLE_KEY': os.environ.get('STRIPE_PUBLISHABLE_KEY')})
 
 
 @csrf_exempt

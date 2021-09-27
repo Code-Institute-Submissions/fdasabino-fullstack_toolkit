@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -146,9 +146,9 @@ LOGIN_URL = '/account/login/'
 BASKET_SESSION_ID = 'basket'
 
 # Stripe Payment
-PUBLISHABLE_KEY = 'pk_test_51JdcCvLxCavNaE0z8e1Ef5xTfVgdLoa87K7EjtWMhu66bH0fncbVYJPji3E4M3CUPq9rQuU0g4z8jDiRpdS4p1Oy003t5zqzFT'
-SECRET_KEY = 'sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9'
-STRIPE_ENDPOINT_SECRET = 'whsec_2EVjTZmdaITf34dqw980klp5eBI5zR77'
+STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+STRIPE_ENDPOINT_SECRET = os.environ.get('STRIPE_ENDPOINT_SECRET')
 
 # stripe listen --forward-to localhost:8000/payment/webhook/
 
