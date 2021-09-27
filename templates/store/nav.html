@@ -14,17 +14,22 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item active">
-          <a class="nav-link" aria-current="page" href="/">Home</a>
+          <a class="nav-link btn btn-outline-secondary text-white border-0" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'store:about'%}">About</a>
+          <a class="nav-link btn btn-outline-secondary text-white border-0" href="{% url 'store:about'%}">About</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" aria-current="page" href="{% url 'store:product_all'%}">Order</a>
+          <a
+            class="nav-link btn btn-outline-secondary text-white border-0"
+            aria-current="page"
+            href="{% url 'store:product_all'%}"
+            >Order</a
+          >
         </li>
         <li class="nav-item dropdown">
           <a
-            class="nav-link dropdown-toggle"
+            class="nav-link btn btn-outline-secondary text-white border-0 dropdown-toggle"
             href="#"
             id="navbarDropdown"
             role="button"
