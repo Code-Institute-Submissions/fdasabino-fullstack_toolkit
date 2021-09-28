@@ -16,55 +16,7 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
@@ -128,180 +80,11 @@
         "documentation": {}
     },
     {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
         "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "migrations",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "models",
-        "importPath": "django.db",
-        "description": "django.db",
-        "isExtraImport": true,
-        "detail": "django.db",
-        "documentation": {}
-    },
-    {
-        "label": "django_countries.fields",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "django_countries.fields",
-        "description": "django_countries.fields",
-        "detail": "django_countries.fields",
         "documentation": {}
     },
     {
@@ -382,6 +165,14 @@
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
         "documentation": {}
     },
     {
@@ -817,22 +608,6 @@
         "documentation": {}
     },
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
-        "isExtraImport": true,
-        "detail": "django.conf",
-        "documentation": {}
-    },
-    {
         "label": "Product",
         "importPath": "store.models",
         "description": "store.models",
@@ -981,6 +756,23 @@
         "documentation": {}
     },
     {
+        "label": "mptt.fields",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mptt.fields",
+        "description": "mptt.fields",
+        "detail": "mptt.fields",
+        "documentation": {}
+    },
+    {
+        "label": "MPTTModelAdmin",
+        "importPath": "mptt.admin",
+        "description": "mptt.admin",
+        "isExtraImport": true,
+        "detail": "mptt.admin",
+        "documentation": {}
+    },
+    {
         "label": "MPTTModel",
         "importPath": "mptt.models",
         "description": "mptt.models",
@@ -1038,60 +830,6 @@
         "description": "account.migrations.0001_initial",
         "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('auth', '0012_alter_user_first_name_max_length'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='UserBase',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
         "detail": "account.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "account.migrations.0002_userbase_last_name",
-        "description": "account.migrations.0002_userbase_last_name",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('account', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='userbase',\n            name='last_name',\n            field=models.CharField(blank=True, max_length=150),\n        ),",
-        "detail": "account.migrations.0002_userbase_last_name",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "account.migrations.0003_auto_20210925_1625",
-        "description": "account.migrations.0003_auto_20210925_1625",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('account', '0002_userbase_last_name'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='userbase',\n            old_name='first_name',\n            new_name='full_name',\n        ),",
-        "detail": "account.migrations.0003_auto_20210925_1625",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "account.migrations.0004_remove_userbase_user_name",
-        "description": "account.migrations.0004_remove_userbase_user_name",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('account', '0003_auto_20210925_1625'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='userbase',\n            name='user_name',\n        ),\n    ]",
-        "detail": "account.migrations.0004_remove_userbase_user_name",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "account.migrations.0005_alter_userbase_id",
-        "description": "account.migrations.0005_alter_userbase_id",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('account', '0004_remove_userbase_user_name'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='userbase',\n            name='id',\n            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),\n        ),",
-        "detail": "account.migrations.0005_alter_userbase_id",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "account.migrations.0006_auto_20210926_1240",
-        "description": "account.migrations.0006_auto_20210926_1240",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('account', '0005_alter_userbase_id'),\n    ]\n    operations = [\n        migrations.RenameField(\n            model_name='userbase',\n            old_name='address_line_1',\n            new_name='address1',\n        ),",
-        "detail": "account.migrations.0006_auto_20210926_1240",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "account.migrations.0007_alter_userbase_id",
-        "description": "account.migrations.0007_alter_userbase_id",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('account', '0006_auto_20210926_1240'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='userbase',\n            name='id',\n            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),\n        ),",
-        "detail": "account.migrations.0007_alter_userbase_id",
         "documentation": {}
     },
     {
@@ -1261,7 +999,7 @@
         "kind": 6,
         "importPath": "basket.basket",
         "description": "basket.basket",
-        "peekOfCode": "class Basket():\n    \"\"\"\n    A base Basket class, providing some default behaviors that\n    can be inherited or override, as necessary.\n    \"\"\"\n    def __init__(self, request):\n        self.session = request.session\n        basket = self.session.get(settings.BASKET_SESSION_ID)\n        if settings.BASKET_SESSION_ID not in request.session:\n            basket = self.session[settings.BASKET_SESSION_ID] = {}",
+        "peekOfCode": "class Basket:\n    \"\"\"\n    A base Basket class, providing some default behaviors that\n    can be inherited or override, as necessary.\n    \"\"\"\n    def __init__(self, request):\n        self.session = request.session\n        basket = self.session.get(settings.BASKET_SESSION_ID)\n        if settings.BASKET_SESSION_ID not in request.session:\n            basket = self.session[settings.BASKET_SESSION_ID] = {}",
         "detail": "basket.basket",
         "documentation": {}
     },
@@ -1621,44 +1359,8 @@
         "kind": 6,
         "importPath": "order.migrations.0001_initial",
         "description": "order.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('store', '0003_auto_20210924_1450'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Order',\n            fields=[",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        ('store', '0001_initial'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Order',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
         "detail": "order.migrations.0001_initial",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "order.migrations.0002_remove_order_user",
-        "description": "order.migrations.0002_remove_order_user",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('order', '0001_initial'),\n    ]\n    operations = [\n        migrations.RemoveField(\n            model_name='order',\n            name='user',\n        ),\n    ]",
-        "detail": "order.migrations.0002_remove_order_user",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "order.migrations.0003_auto_20210926_0930",
-        "description": "order.migrations.0003_auto_20210926_0930",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('order', '0002_remove_order_user'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='order',\n            name='id',\n            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),\n        ),",
-        "detail": "order.migrations.0003_auto_20210926_0930",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "order.migrations.0004_auto_20210926_1240",
-        "description": "order.migrations.0004_auto_20210926_1240",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('order', '0003_auto_20210926_0930'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='order',\n            name='id',\n            field=models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),\n        ),",
-        "detail": "order.migrations.0004_auto_20210926_1240",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "order.migrations.0005_auto_20210927_0520",
-        "description": "order.migrations.0005_auto_20210927_0520",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('order', '0004_auto_20210926_1240'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='order',\n            name='id',\n            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),\n        ),",
-        "detail": "order.migrations.0005_auto_20210927_0520",
         "documentation": {}
     },
     {
@@ -1801,61 +1503,43 @@
         "kind": 6,
         "importPath": "store.migrations.0001_initial",
         "description": "store.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Category',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Category',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('name', models.CharField(help_text='Required and unique', max_length=255, unique=True, verbose_name='Category Name')),",
         "detail": "store.migrations.0001_initial",
         "documentation": {}
     },
     {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "store.migrations.0002_alter_category_options",
-        "description": "store.migrations.0002_alter_category_options",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('store', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterModelOptions(\n            name='category',\n            options={'verbose_name_plural': 'categories'},\n        ),\n    ]",
-        "detail": "store.migrations.0002_alter_category_options",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "store.migrations.0003_auto_20210924_1450",
-        "description": "store.migrations.0003_auto_20210924_1450",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('store', '0002_alter_category_options'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='category',\n            name='id',\n            field=models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),\n        ),",
-        "detail": "store.migrations.0003_auto_20210924_1450",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "store.migrations.0004_auto_20210926_0930",
-        "description": "store.migrations.0004_auto_20210926_0930",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('store', '0003_auto_20210924_1450'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='category',\n            name='id',\n            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),\n        ),",
-        "detail": "store.migrations.0004_auto_20210926_0930",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "store.migrations.0005_auto_20210926_1240",
-        "description": "store.migrations.0005_auto_20210926_1240",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('store', '0004_auto_20210926_0930'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='category',\n            name='id',\n            field=models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),\n        ),",
-        "detail": "store.migrations.0005_auto_20210926_1240",
-        "documentation": {}
-    },
-    {
-        "label": "Migration",
-        "kind": 6,
-        "importPath": "store.migrations.0006_auto_20210927_0520",
-        "description": "store.migrations.0006_auto_20210927_0520",
-        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('store', '0005_auto_20210926_1240'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='category',\n            name='id',\n            field=models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID'),\n        ),",
-        "detail": "store.migrations.0006_auto_20210927_0520",
-        "documentation": {}
-    },
-    {
-        "label": "CategoryAdmin",
+        "label": "ProductSpecificationInline",
         "kind": 6,
         "importPath": "store.admin",
         "description": "store.admin",
-        "peekOfCode": "class CategoryAdmin(admin.ModelAdmin):\n    list_display = ['name', 'slug']\n    prepopulated_fields = {'slug': ('name',)}\n@admin.register(Product)\nclass ProductAdmin(admin.ModelAdmin):\n    list_display = ['title', 'slug', 'price', 'in_stock', 'created', 'updated']\n    list_filter = ['in_stock', 'is_active']\n    list_editable = ['price', 'in_stock']\n    prepopulated_fields = {'slug': ('title',)}",
+        "peekOfCode": "class ProductSpecificationInline(admin.TabularInline):\n    model = ProductSpecification\n@admin.register(ProductType)\nclass ProductTypeAdmin(admin.ModelAdmin):\n    inlines = [\n        ProductSpecificationInline,\n    ]\nclass ProductImageInline(admin.TabularInline):\n    model = ProductImage\nclass ProductSpecificationValueInline(admin.TabularInline):",
+        "detail": "store.admin",
+        "documentation": {}
+    },
+    {
+        "label": "ProductTypeAdmin",
+        "kind": 6,
+        "importPath": "store.admin",
+        "description": "store.admin",
+        "peekOfCode": "class ProductTypeAdmin(admin.ModelAdmin):\n    inlines = [\n        ProductSpecificationInline,\n    ]\nclass ProductImageInline(admin.TabularInline):\n    model = ProductImage\nclass ProductSpecificationValueInline(admin.TabularInline):\n    model = ProductSpecificationValue\n@admin.register(Product)\nclass ProductAdmin(admin.ModelAdmin):",
+        "detail": "store.admin",
+        "documentation": {}
+    },
+    {
+        "label": "ProductImageInline",
+        "kind": 6,
+        "importPath": "store.admin",
+        "description": "store.admin",
+        "peekOfCode": "class ProductImageInline(admin.TabularInline):\n    model = ProductImage\nclass ProductSpecificationValueInline(admin.TabularInline):\n    model = ProductSpecificationValue\n@admin.register(Product)\nclass ProductAdmin(admin.ModelAdmin):\n    inlines = [\n        ProductSpecificationValueInline,\n        ProductImageInline,\n    ]",
+        "detail": "store.admin",
+        "documentation": {}
+    },
+    {
+        "label": "ProductSpecificationValueInline",
+        "kind": 6,
+        "importPath": "store.admin",
+        "description": "store.admin",
+        "peekOfCode": "class ProductSpecificationValueInline(admin.TabularInline):\n    model = ProductSpecificationValue\n@admin.register(Product)\nclass ProductAdmin(admin.ModelAdmin):\n    inlines = [\n        ProductSpecificationValueInline,\n        ProductImageInline,\n    ]",
         "detail": "store.admin",
         "documentation": {}
     },
@@ -1864,7 +1548,7 @@
         "kind": 6,
         "importPath": "store.admin",
         "description": "store.admin",
-        "peekOfCode": "class ProductAdmin(admin.ModelAdmin):\n    list_display = ['title', 'slug', 'price', 'in_stock', 'created', 'updated']\n    list_filter = ['in_stock', 'is_active']\n    list_editable = ['price', 'in_stock']\n    prepopulated_fields = {'slug': ('title',)}",
+        "peekOfCode": "class ProductAdmin(admin.ModelAdmin):\n    inlines = [\n        ProductSpecificationValueInline,\n        ProductImageInline,\n    ]",
         "detail": "store.admin",
         "documentation": {}
     },
@@ -1963,7 +1647,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def home(request):\n    return render(request, \"store/home.html\")\ndef about(request):\n    return render(request, \"store/about.html\")\ndef product_all(request):\n    products = Product.products.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.products.filter(category=category)",
+        "peekOfCode": "def home(request):\n    return render(request, \"store/home.html\")\ndef about(request):\n    return render(request, \"store/about.html\")\ndef product_all(request):\n    products = Product.objects.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1972,7 +1656,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def about(request):\n    return render(request, \"store/about.html\")\ndef product_all(request):\n    products = Product.products.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.products.filter(category=category)\n    return render(request, \"store/category.html\", {\"category\": category, \"products\": products})\ndef product_detail(request, slug):",
+        "peekOfCode": "def about(request):\n    return render(request, \"store/about.html\")\ndef product_all(request):\n    products = Product.objects.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(request, \"store/category.html\", {\"category\": category, \"products\": products})\ndef product_detail(request, slug):",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1981,7 +1665,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def product_all(request):\n    products = Product.products.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.products.filter(category=category)\n    return render(request, \"store/category.html\", {\"category\": category, \"products\": products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
+        "peekOfCode": "def product_all(request):\n    products = Product.objects.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(request, \"store/category.html\", {\"category\": category, \"products\": products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, is_active=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1990,7 +1674,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.products.filter(category=category)\n    return render(request, \"store/category.html\", {\"category\": category, \"products\": products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
+        "peekOfCode": "def category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(request, \"store/category.html\", {\"category\": category, \"products\": products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, is_active=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1999,7 +1683,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
+        "peekOfCode": "def product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, is_active=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
         "detail": "store.views",
         "documentation": {}
     },

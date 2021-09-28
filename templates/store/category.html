@@ -4,7 +4,7 @@
 <!-- ------------------------------------------------------------------------------- -->
 {% block content %}
 
-<div class="container mt-5" style="max-width: 1000px">
+<div class="container" style="max-width: 1000px">
   <div class="col-12">
     <h1 class="h2">{{ category.name|title }}</h1>
   </div>
@@ -12,30 +12,33 @@
     <div><b>Popular</b> products purchased</div>
   </div>
   <hr />
-  {% if not products %}
-  <div class="col-12 text-center">
-    There aren't any active products at the moment! <a href="{% url 'store:home'%}">Back to Home Page</a>
-  </div>
-  {% else %}
-  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-    {% for product in products %}
-    <div class="col">
-      <div class="card border-0">
-        <div class="card-body px-0">
-          <p class="card-text text-center">
-            <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">
-              <img class="img-fluid mb-3" alt="Responsive image" src="{{ product.image.url }}" />
-              {{ product.title }}
-            </a>
-          </p>
-          <div class="d-flex justify-content-center align-items-center">
-            <small class="text-muted text-center">SEK {{product.price}}</small>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="album">
+      {% if not products %}
+      <div class="col-12">There are currently no products active <a href="{% url 'store:store_home' %}">Home</a></div>
+      {% else %}
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+        {% for product in products %}
+        <div class="col">
+          <div class="card border-0">
+            <div class="card-body px-0 text-center">
+              <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">
+                {% for image in product.product_image.all %} {% if image.is_feature%}
+                <img class="img-fluid" alt="Responsive image" src="{{ image.image.url }}" alt="{{ image.image.alt_text }}" />
+                <p class="card-text">{{ product.title }}</p></a
+              >
+              <div class="fw-bold mt-1">SEK {{product.regular_price}}</div>
+            </div>
+            {% endif %} {% endfor %}
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
+    {% endif %}
   </div>
-  {% endif %}
 </div>
+
 {% endblock %}

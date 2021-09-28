@@ -5,10 +5,11 @@
 
     <div class="col-md-5 ps-3 col-lg-5 order-md-last p-0 order-1">
       <div class="d-grid gap-2">
-        <div class="d-flex d-flex-inline justify-content-between">
+        <div class="d-flex d-flex-inline justify-content-center">
           <div>
-            <span class="h3">SEK {{ product.price }}</span>
+            <span class="h3">SEK {{ product.regular_price }}</span>
             <p class="text-muted">includes tax</p>
+            <small class="text-muted">You can update {{product.title}} quantity in your cart.</small>
           </div>
           <div class="">
             <label for="select">Qty</label>
@@ -30,8 +31,23 @@
             <div class="p-1 text-center">
               <h1 class="mb-0 h2 pe-4 pb-4">{{ product.title }}</h1>
               <div class="bg-light">
-                <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="{{ product.image.url }}" />
-                <small>{{product.description}}</small>
+                {% for image in product.product_image.all %} {% if image.is_feature %}
+                <img
+                  class="img-fluid mx-auto d-block"
+                  width="200px"
+                  alt="Responsive image"
+                  src="{{ image.image.url }}"
+                  alt="{{ image.image.alt_text }}"
+                />
+                {% else %}
+                <img
+                  class="img-fluid d-block-inline pt-3"
+                  width="100px"
+                  alt="Responsive image"
+                  src="{{ image.image.url }}"
+                  alt="{{ image.image.alt_text }}"
+                />
+                {% endif %} {% endfor %}
               </div>
             </div>
           </div>
