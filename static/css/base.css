@@ -6,14 +6,6 @@
   font-family: "PT Sans", sans-serif;
 }
 
-#intro {
-  background-image: url("https://images.pexels.com/photos/1660030/pexels-photo-1660030.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
-  height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 /* navbar */
 .nav-icons {
   position: absolute;

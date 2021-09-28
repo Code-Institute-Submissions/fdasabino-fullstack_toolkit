@@ -20,7 +20,7 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'store:about'%}">About</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" aria-current="page" href="{% url 'store:product_all'%}">Order</a>
         </li>
         <li class="nav-item dropdown">
@@ -35,7 +35,7 @@
             Browse by Category
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            {% for c in categories %} <li{% if category.slug == c.slug %}class="selected" {% endif %}>
+            {% for c in categories %} <li {% if category.slug == c.slug %}class="selected" {% endif %}>
             <a class="dropdown-item" href="{{ c.get_absolute_url }}">{{ c.name|title }}</a>
             {% endfor %}
           </ul>
@@ -43,8 +43,25 @@
       </ul>
     </div>
     <div class="nav-icons">
-      <!--Account button -->
       {% if user.is_authenticated %}
+      <!-- logout button -->
+      <a type="button" role="button" href="{% url 'account:logout' %}" class="btn btn-outline-secondary border-0">
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            fill="white"
+            class="bi bi-door-closed"
+            viewBox="0 0 16 16"
+          >
+            <path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z" />
+            <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z" />
+          </svg>
+        </div>
+        <span><small class="text-white">Logout</small></span>
+      </a>
+      <!--Account button -->
       <a type="button" role="button" href="{% url 'account:dashboard' %}" class="btn btn-outline-secondary text-white border-0">
         <div>
           <svg
