@@ -305,14 +305,6 @@
         "documentation": {}
     },
     {
-        "label": "CountryField",
-        "importPath": "django_countries.fields",
-        "description": "django_countries.fields",
-        "isExtraImport": true,
-        "detail": "django_countries.fields",
-        "documentation": {}
-    },
-    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -697,7 +689,7 @@
         "documentation": {}
     },
     {
-        "label": "render",
+        "label": "get_object_or_404",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -705,7 +697,7 @@
         "documentation": {}
     },
     {
-        "label": "get_object_or_404",
+        "label": "render",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
         "isExtraImport": true,
@@ -1154,7 +1146,7 @@
         "kind": 6,
         "importPath": "account.models",
         "description": "account.models",
-        "peekOfCode": "class UserBase(AbstractBaseUser, PermissionsMixin):\n    email = models.EmailField(_('email address'), unique=True)\n    full_name= models.CharField(max_length=150, blank=True, null=False)\n    about = models.TextField(_(\n        'about'), max_length=500, blank=True)\n    # Delivery details\n    country = CountryField()\n    phone_number = models.CharField(max_length=15, blank=True)\n    postcode = models.CharField(max_length=12, blank=True)\n    address1 = models.CharField(max_length=150, blank=True)",
+        "peekOfCode": "class UserBase(AbstractBaseUser, PermissionsMixin):\n    email = models.EmailField(_('email address'), unique=True)\n    full_name = models.CharField(max_length=150, blank=True, null=False)\n    about = models.TextField(_(\n        'about'), max_length=500, blank=True)\n    # Delivery details\n    phone_number = models.CharField(max_length=15, blank=True)\n    postcode = models.CharField(max_length=12, blank=True)\n    address1 = models.CharField(max_length=150, blank=True)\n    address2 = models.CharField(max_length=150, blank=True)",
         "detail": "account.models",
         "documentation": {}
     },
@@ -1181,7 +1173,7 @@
         "kind": 5,
         "importPath": "account.urls",
         "description": "account.urls",
-        "peekOfCode": "app_name = 'account'\nurlpatterns = [\n    path('login/', auth_views.LoginView.as_view(template_name='account/login.html',\n                                                form_class=UserLoginForm), name='login'),\n    path('logout/', auth_views.LogoutView.as_view(next_page='/account/login/'), name='logout'),\n    path('register/', views.account_register, name='register'),\n    path('activate/<slug:uidb64>/<slug:token>)/',\n         views.account_activate, name='activate'),\n    # Reset password\n    path('password_reset/', auth_views.PasswordResetView.as_view(template_name=\"account/password_reset/password_reset_form.html\",",
+        "peekOfCode": "app_name = \"account\"\nurlpatterns = [\n    path(\n        \"login/\",\n        auth_views.LoginView.as_view(template_name=\"account/login.html\", form_class=UserLoginForm),\n        name=\"login\",\n    ),\n    path(\"logout/\", auth_views.LogoutView.as_view(next_page=\"/account/login/\"), name=\"logout\"),\n    path(\"register/\", views.account_register, name=\"register\"),\n    path(\"activate/<slug:uidb64>/<slug:token>)/\", views.account_activate, name=\"activate\"),",
         "detail": "account.urls",
         "documentation": {}
     },
@@ -1190,7 +1182,7 @@
         "kind": 5,
         "importPath": "account.urls",
         "description": "account.urls",
-        "peekOfCode": "urlpatterns = [\n    path('login/', auth_views.LoginView.as_view(template_name='account/login.html',\n                                                form_class=UserLoginForm), name='login'),\n    path('logout/', auth_views.LogoutView.as_view(next_page='/account/login/'), name='logout'),\n    path('register/', views.account_register, name='register'),\n    path('activate/<slug:uidb64>/<slug:token>)/',\n         views.account_activate, name='activate'),\n    # Reset password\n    path('password_reset/', auth_views.PasswordResetView.as_view(template_name=\"account/password_reset/password_reset_form.html\",\n                                                                 success_url='password_reset_email_confirm',",
+        "peekOfCode": "urlpatterns = [\n    path(\n        \"login/\",\n        auth_views.LoginView.as_view(template_name=\"account/login.html\", form_class=UserLoginForm),\n        name=\"login\",\n    ),\n    path(\"logout/\", auth_views.LogoutView.as_view(next_page=\"/account/login/\"), name=\"logout\"),\n    path(\"register/\", views.account_register, name=\"register\"),\n    path(\"activate/<slug:uidb64>/<slug:token>)/\", views.account_activate, name=\"activate\"),\n    # Reset password",
         "detail": "account.urls",
         "documentation": {}
     },
@@ -1874,7 +1866,7 @@
         "kind": 2,
         "importPath": "store.context_processors",
         "description": "store.context_processors",
-        "peekOfCode": "def categories(request):\n    return{\n        'categories': Category.objects.all()\n    }",
+        "peekOfCode": "def categories(request):\n    return {\"categories\": Category.objects.all()}",
         "detail": "store.context_processors",
         "documentation": {}
     },
@@ -1883,7 +1875,7 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class ProductManager(models.Manager):\n    def get_queryset(self):\n        return super(ProductManager, self).get_queryset().filter(is_active=True)\nclass Category(models.Model):\n    name = models.CharField(max_length=255, db_index=True)\n    slug = models.SlugField(max_length=255, unique=True)\n    class Meta:\n        verbose_name_plural = 'categories'\n    def get_absolute_url(self):\n        return reverse('store:category_list', args=[self.slug])",
+        "peekOfCode": "class ProductManager(models.Manager):\n    def get_queryset(self):\n        return super(ProductManager, self).get_queryset().filter(is_active=True)\nclass Category(models.Model):\n    name = models.CharField(max_length=255, db_index=True)\n    slug = models.SlugField(max_length=255, unique=True)\n    class Meta:\n        verbose_name_plural = \"categories\"\n    def get_absolute_url(self):\n        return reverse(\"store:category_list\", args=[self.slug])",
         "detail": "store.models",
         "documentation": {}
     },
@@ -1892,7 +1884,7 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class Category(models.Model):\n    name = models.CharField(max_length=255, db_index=True)\n    slug = models.SlugField(max_length=255, unique=True)\n    class Meta:\n        verbose_name_plural = 'categories'\n    def get_absolute_url(self):\n        return reverse('store:category_list', args=[self.slug])\n    def __str__(self):\n        return self.name\nclass Product(models.Model):",
+        "peekOfCode": "class Category(models.Model):\n    name = models.CharField(max_length=255, db_index=True)\n    slug = models.SlugField(max_length=255, unique=True)\n    class Meta:\n        verbose_name_plural = \"categories\"\n    def get_absolute_url(self):\n        return reverse(\"store:category_list\", args=[self.slug])\n    def __str__(self):\n        return self.name\nclass Product(models.Model):",
         "detail": "store.models",
         "documentation": {}
     },
@@ -1901,7 +1893,7 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class Product(models.Model):\n    category = models.ForeignKey(Category, related_name='product', on_delete=models.CASCADE)\n    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='product_creator')\n    title = models.CharField(max_length=255)\n    author = models.CharField(max_length=255, default='admin')\n    description = models.TextField(blank=True)\n    image = models.ImageField(upload_to='images/', default='images/default.png')\n    slug = models.SlugField(max_length=255)\n    price = models.DecimalField(max_digits=4, decimal_places=2)\n    in_stock = models.BooleanField(default=True)",
+        "peekOfCode": "class Product(models.Model):\n    category = models.ForeignKey(Category, related_name=\"product\", on_delete=models.CASCADE)\n    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name=\"product_creator\")\n    title = models.CharField(max_length=255)\n    author = models.CharField(max_length=255, default=\"admin\")\n    description = models.TextField(blank=True)\n    image = models.ImageField(upload_to=\"images/\", default=\"images/default.png\")\n    slug = models.SlugField(max_length=255)\n    price = models.DecimalField(max_digits=4, decimal_places=2)\n    in_stock = models.BooleanField(default=True)",
         "detail": "store.models",
         "documentation": {}
     },
@@ -1910,7 +1902,7 @@
         "kind": 5,
         "importPath": "store.urls",
         "description": "store.urls",
-        "peekOfCode": "app_name = 'store'\nurlpatterns = [\n    path('', views.home, name='home'),\n    path('about/', views.about, name='about'),\n    path('order/', views.product_all, name='product_all'),\n    path('<slug:slug>', views.product_detail, name='product_detail'),\n    path('store/<slug:category_slug>/',\n         views.category_list, name='category_list'),\n]",
+        "peekOfCode": "app_name = \"store\"\nurlpatterns = [\n    path(\"\", views.home, name=\"home\"),\n    path(\"about/\", views.about, name=\"about\"),\n    path(\"order/\", views.product_all, name=\"product_all\"),\n    path(\"<slug:slug>\", views.product_detail, name=\"product_detail\"),\n    path(\"store/<slug:category_slug>/\", views.category_list, name=\"category_list\"),\n]",
         "detail": "store.urls",
         "documentation": {}
     },
@@ -1919,7 +1911,7 @@
         "kind": 5,
         "importPath": "store.urls",
         "description": "store.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', views.home, name='home'),\n    path('about/', views.about, name='about'),\n    path('order/', views.product_all, name='product_all'),\n    path('<slug:slug>', views.product_detail, name='product_detail'),\n    path('store/<slug:category_slug>/',\n         views.category_list, name='category_list'),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"\", views.home, name=\"home\"),\n    path(\"about/\", views.about, name=\"about\"),\n    path(\"order/\", views.product_all, name=\"product_all\"),\n    path(\"<slug:slug>\", views.product_detail, name=\"product_detail\"),\n    path(\"store/<slug:category_slug>/\", views.category_list, name=\"category_list\"),\n]",
         "detail": "store.urls",
         "documentation": {}
     },
@@ -1928,7 +1920,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def home(request):\n    return render(request, 'store/home.html')\ndef about(request):\n    return render(request, 'store/about.html')\ndef product_all(request):\n    products = Product.products.all()\n    return render(request, 'store/order.html', {'products': products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.products.filter(category=category)",
+        "peekOfCode": "def home(request):\n    return render(request, \"store/home.html\")\ndef about(request):\n    return render(request, \"store/about.html\")\ndef product_all(request):\n    products = Product.products.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.products.filter(category=category)",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1937,7 +1929,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def about(request):\n    return render(request, 'store/about.html')\ndef product_all(request):\n    products = Product.products.all()\n    return render(request, 'store/order.html', {'products': products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.products.filter(category=category)\n    return render(request, 'store/category.html', {'category': category, 'products': products})\ndef product_detail(request, slug):",
+        "peekOfCode": "def about(request):\n    return render(request, \"store/about.html\")\ndef product_all(request):\n    products = Product.products.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.products.filter(category=category)\n    return render(request, \"store/category.html\", {\"category\": category, \"products\": products})\ndef product_detail(request, slug):",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1946,7 +1938,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def product_all(request):\n    products = Product.products.all()\n    return render(request, 'store/order.html', {'products': products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.products.filter(category=category)\n    return render(request, 'store/category.html', {'category': category, 'products': products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, 'store/product_detail.html', {'product': product})",
+        "peekOfCode": "def product_all(request):\n    products = Product.products.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.products.filter(category=category)\n    return render(request, \"store/category.html\", {\"category\": category, \"products\": products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1955,7 +1947,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.products.filter(category=category)\n    return render(request, 'store/category.html', {'category': category, 'products': products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, 'store/product_detail.html', {'product': product})",
+        "peekOfCode": "def category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.products.filter(category=category)\n    return render(request, \"store/category.html\", {\"category\": category, \"products\": products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1964,7 +1956,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, 'store/product_detail.html', {'product': product})",
+        "peekOfCode": "def product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, in_stock=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
         "detail": "store.views",
         "documentation": {}
     },

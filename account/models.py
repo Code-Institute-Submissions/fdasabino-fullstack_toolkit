@@ -3,7 +3,6 @@ from django.contrib.auth.models import (AbstractBaseUser, BaseUserManager,
 from django.core.mail import send_mail
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from django_countries.fields import CountryField
 
 
 class CustomAccountManager(BaseUserManager):
@@ -23,7 +22,7 @@ class CustomAccountManager(BaseUserManager):
 
         return self.create_user(email, full_name, password, **other_fields)
 
-    def create_user(self, email, full_name , password, **other_fields):
+    def create_user(self, email, full_name, password, **other_fields):
 
         if not email:
             raise ValueError(_('You must provide an email address'))
@@ -39,11 +38,10 @@ class CustomAccountManager(BaseUserManager):
 class UserBase(AbstractBaseUser, PermissionsMixin):
 
     email = models.EmailField(_('email address'), unique=True)
-    full_name= models.CharField(max_length=150, blank=True, null=False)
+    full_name = models.CharField(max_length=150, blank=True, null=False)
     about = models.TextField(_(
         'about'), max_length=500, blank=True)
     # Delivery details
-    country = CountryField()
     phone_number = models.CharField(max_length=15, blank=True)
     postcode = models.CharField(max_length=12, blank=True)
     address1 = models.CharField(max_length=150, blank=True)
