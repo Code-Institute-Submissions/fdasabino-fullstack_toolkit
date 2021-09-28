@@ -1991,7 +1991,25 @@
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "os.environ[\"SECRET_KEY\"] = \"mysecretkey2021!!!\"\nos.environ[\"STRIPE_PUBLISHABLE_KEY\"] = \"pk_test_51JdcCvLxCavNaE0z8e1Ef5xTfVgdLoa87K7EjtWMhu66bH0fncbVYJPji3E4M3CUPq9rQuU0g4z8jDiRpdS4p1Oy003t5zqzFT\"\nos.environ[\"STRIPE_SECRET_KEY\"] = \"sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9\"\nos.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_2EVjTZmdaITf34dqw980klp5eBI5zR77\"",
+        "peekOfCode": "os.environ[\"SECRET_KEY\"] = \"mysecretkey2021!!!\"\nos.environ[\"DATABASE_URL\"] = \"postgres://xfklsejxjqqyso:6f6bb108d24e5397263bdfe633536f96892cdc80e867cf8ad322b80b6611fd38@ec2-54-154-101-45.eu-west-1.compute.amazonaws.com:5432/d5fc5c22gcm66e\"\nos.environ[\"CLOUDINARY_URL\"] = \"cloudinary://458241221221697:9gnhcXbuQayWFOJduQi3aGXWivg@frank2021\"\nos.environ[\"STRIPE_PUBLISHABLE_KEY\"] = \"pk_test_51JdcCvLxCavNaE0z8e1Ef5xTfVgdLoa87K7EjtWMhu66bH0fncbVYJPji3E4M3CUPq9rQuU0g4z8jDiRpdS4p1Oy003t5zqzFT\"\nos.environ[\"STRIPE_SECRET_KEY\"] = \"sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9\"\nos.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_2EVjTZmdaITf34dqw980klp5eBI5zR77\"",
+        "detail": "env",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"DATABASE_URL\"]",
+        "kind": 5,
+        "importPath": "env",
+        "description": "env",
+        "peekOfCode": "os.environ[\"DATABASE_URL\"] = \"postgres://xfklsejxjqqyso:6f6bb108d24e5397263bdfe633536f96892cdc80e867cf8ad322b80b6611fd38@ec2-54-154-101-45.eu-west-1.compute.amazonaws.com:5432/d5fc5c22gcm66e\"\nos.environ[\"CLOUDINARY_URL\"] = \"cloudinary://458241221221697:9gnhcXbuQayWFOJduQi3aGXWivg@frank2021\"\nos.environ[\"STRIPE_PUBLISHABLE_KEY\"] = \"pk_test_51JdcCvLxCavNaE0z8e1Ef5xTfVgdLoa87K7EjtWMhu66bH0fncbVYJPji3E4M3CUPq9rQuU0g4z8jDiRpdS4p1Oy003t5zqzFT\"\nos.environ[\"STRIPE_SECRET_KEY\"] = \"sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9\"\nos.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_2EVjTZmdaITf34dqw980klp5eBI5zR77\"",
+        "detail": "env",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"CLOUDINARY_URL\"]",
+        "kind": 5,
+        "importPath": "env",
+        "description": "env",
+        "peekOfCode": "os.environ[\"CLOUDINARY_URL\"] = \"cloudinary://458241221221697:9gnhcXbuQayWFOJduQi3aGXWivg@frank2021\"\nos.environ[\"STRIPE_PUBLISHABLE_KEY\"] = \"pk_test_51JdcCvLxCavNaE0z8e1Ef5xTfVgdLoa87K7EjtWMhu66bH0fncbVYJPji3E4M3CUPq9rQuU0g4z8jDiRpdS4p1Oy003t5zqzFT\"\nos.environ[\"STRIPE_SECRET_KEY\"] = \"sk_test_51JdcCvLxCavNaE0zm5abdkEKUXfpJ6QKXSc6XkidZSqrWQ1fbN18L4sbJLfqnJ6OGisW7VtbFevb8Xfyrs8bfy9n00MYN8fPS9\"\nos.environ[\"STRIPE_ENDPOINT_SECRET\"] = \"whsec_2EVjTZmdaITf34dqw980klp5eBI5zR77\"",
         "detail": "env",
         "documentation": {}
     },
