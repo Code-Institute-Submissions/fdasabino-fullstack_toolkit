@@ -1,5 +1,5 @@
 {% extends "../account_base.html" %} {% block title %}Edit Addresses{% endblock %} {% block sub-content %}
-<div class="col-6 mx-auto">
+<div class="col-10 mx-auto">
   <h1 class="h3">Create/Edit Address</h1>
   <div>Add a new delivery <b>address</b> and delivery preferences</div>
   <hr />
@@ -7,6 +7,8 @@
     {% if form.errors %}
     <div class="alert alert-primary" role="alert">Error: Please try again!</div>
     {% endif %} {% csrf_token %}
+    <label class="small fw-bold">{{ form.full_name.label}}</label>
+    {{ form.full_name }}
     <label class="small fw-bold">{{ form.phone.label}}</label>
     {{ form.phone }}
     <label class="small fw-bold">{{ form.address_line.label}}</label>

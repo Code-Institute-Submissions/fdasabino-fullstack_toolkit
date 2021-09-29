@@ -1,4 +1,3 @@
-from checkout.views import delivery_address
 from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
@@ -9,6 +8,7 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from order.models import Order
 from order.views import user_orders
 from store.models import Product
 
@@ -28,10 +28,10 @@ def add_to_wishlist(request, id):
     product = get_object_or_404(Product, id=id)
     if product.users_wishlist.filter(id=request.user.id).exists():
         product.users_wishlist.remove(request.user)
-        messages.success(request, product.title + " Was removed from Your Favorites")
+        messages.success(request, product.title + " has been removed from your WishList")
     else:
         product.users_wishlist.add(request.user)
-        messages.success(request, product.title + " Was Added to Your Favorites")
+        messages.success(request, "Added " + product.title + " to your WishList")
     return HttpResponseRedirect(request.META["HTTP_REFERER"])
 
 
@@ -56,7 +56,7 @@ def edit_details(request):
 
 @login_required
 def delete_user(request):
-    user = Customer.objects.get(full_name=request.user)
+    user = Customer.objects.get(user_name=request.user)
     user.is_active = False
     user.save()
     logout(request)
@@ -88,7 +88,7 @@ def account_register(request):
                 },
             )
             user.email_user(subject=subject, message=message)
-            return HttpResponse("registered successfully and activation sent")
+            return render(request, "account/registration/register_email_confirm.html", {"form": registerForm})
     else:
         registerForm = RegistrationForm()
     return render(request, "account/registration/register.html", {"form": registerForm})
@@ -100,16 +100,18 @@ def account_activate(request, uidb64, token):
         user = Customer.objects.get(pk=uid)
     except (TypeError, ValueError, OverflowError, user.DoesNotExist):
         user = None
-    if user is None or not account_activation_token.check_token(user, token):
+    if user is not None and account_activation_token.check_token(user, token):
+        user.is_active = True
+        user.save()
+        login(request, user)
+        return redirect("account:dashboard")
+    else:
         return render(request, "account/registration/activation_invalid.html")
 
-    user.is_active = True
-    user.save()
-    login(request, user)
-    return redirect("account:dashboard")
+
+# Addresses
 
 
-# Address section
 @login_required
 def view_address(request):
     addresses = Address.objects.filter(customer=request.user)
@@ -154,10 +156,17 @@ def delete_address(request, id):
 def set_default(request, id):
     Address.objects.filter(customer=request.user, default=True).update(default=False)
     Address.objects.filter(pk=id, customer=request.user).update(default=True)
-    
-    previous_url = request.META.get('HTTP_REFERER')
-    
-    if 'delivery_address' in previous_url:
-        return redirect('checkout:delivery_address')
-    
+
+    previous_url = request.META.get("HTTP_REFERER")
+
+    if "delivery_address" in previous_url:
+        return redirect("checkout:delivery_address")
+
     return redirect("account:addresses")
+
+
+@login_required
+def user_orders(request):
+    user_id = request.user.id
+    orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)
+    return render(request, "account/dashboard/user_orders.html", {"orders": orders})
