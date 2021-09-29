@@ -410,6 +410,14 @@
         "documentation": {}
     },
     {
+        "label": "reverse",
+        "importPath": "django.urls",
+        "description": "django.urls",
+        "isExtraImport": true,
+        "detail": "django.urls",
+        "documentation": {}
+    },
+    {
         "label": "path",
         "importPath": "django.urls",
         "description": "django.urls",
@@ -499,6 +507,14 @@
     },
     {
         "label": "HttpResponse",
+        "importPath": "django.http",
+        "description": "django.http",
+        "isExtraImport": true,
+        "detail": "django.http",
+        "documentation": {}
+    },
+    {
+        "label": "HttpResponseRedirect",
         "importPath": "django.http",
         "description": "django.http",
         "isExtraImport": true,
@@ -884,6 +900,15 @@
         "documentation": {}
     },
     {
+        "label": "UserAddressForm",
+        "kind": 6,
+        "importPath": "account.forms",
+        "description": "account.forms",
+        "peekOfCode": "class UserAddressForm(forms.ModelForm):\n    class Meta:\n        model = Address\n        fields = [\"full_name\", \"phone\", \"address_line\", \"address_line2\", \"town_city\", \"postcode\"]\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.fields[\"full_name\"].widget.attrs.update(\n            {\"class\": \"form-control mb-2 account-form\", \"placeholder\": \"Full Name\"}\n        )\n        self.fields[\"phone\"].widget.attrs.update({\"class\": \"form-control mb-2 account-form\", \"placeholder\": \"Phone\"})",
+        "detail": "account.forms",
+        "documentation": {}
+    },
+    {
         "label": "UserLoginForm",
         "kind": 6,
         "importPath": "account.forms",
@@ -1032,7 +1057,52 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def account_activate(request, uidb64, token):\n    try:\n        uid = force_text(urlsafe_base64_decode(uidb64))\n        user = Customer.objects.get(pk=uid)\n    except (TypeError, ValueError, OverflowError, user.DoesNotExist):\n        user = None\n    if user is not None and account_activation_token.check_token(user, token):\n        user.is_active = True\n        user.save()\n        login(request, user)",
+        "peekOfCode": "def account_activate(request, uidb64, token):\n    try:\n        uid = force_text(urlsafe_base64_decode(uidb64))\n        user = Customer.objects.get(pk=uid)\n    except (TypeError, ValueError, OverflowError, user.DoesNotExist):\n        user = None\n    if user is None or not account_activation_token.check_token(user, token):\n        return render(request, \"account/registration/activation_invalid.html\")\n    user.is_active = True\n    user.save()",
+        "detail": "account.views",
+        "documentation": {}
+    },
+    {
+        "label": "view_address",
+        "kind": 2,
+        "importPath": "account.views",
+        "description": "account.views",
+        "peekOfCode": "def view_address(request):\n    addresses = Address.objects.filter(customer=request.user)\n    return render(request, \"account/dashboard/addresses.html\", {\"addresses\": addresses})\n@login_required\ndef add_address(request):\n    if request.method == \"POST\":\n        address_form = UserAddressForm(data=request.POST)\n        if address_form.is_valid():\n            address_form = address_form.save(commit=False)\n            address_form.customer = request.user",
+        "detail": "account.views",
+        "documentation": {}
+    },
+    {
+        "label": "add_address",
+        "kind": 2,
+        "importPath": "account.views",
+        "description": "account.views",
+        "peekOfCode": "def add_address(request):\n    if request.method == \"POST\":\n        address_form = UserAddressForm(data=request.POST)\n        if address_form.is_valid():\n            address_form = address_form.save(commit=False)\n            address_form.customer = request.user\n            address_form.save()\n            return HttpResponseRedirect(reverse(\"account:addresses\"))\n    else:\n        address_form = UserAddressForm()",
+        "detail": "account.views",
+        "documentation": {}
+    },
+    {
+        "label": "edit_address",
+        "kind": 2,
+        "importPath": "account.views",
+        "description": "account.views",
+        "peekOfCode": "def edit_address(request, id):\n    if request.method == \"POST\":\n        address = Address.objects.get(pk=id, customer=request.user)\n        address_form = UserAddressForm(instance=address, data=request.POST)\n        if address_form.is_valid():\n            address_form.save()\n            return HttpResponseRedirect(reverse(\"account:addresses\"))\n    else:\n        address = Address.objects.get(pk=id, customer=request.user)\n        address_form = UserAddressForm(instance=address)",
+        "detail": "account.views",
+        "documentation": {}
+    },
+    {
+        "label": "delete_address",
+        "kind": 2,
+        "importPath": "account.views",
+        "description": "account.views",
+        "peekOfCode": "def delete_address(request, id):\n    address = Address.objects.filter(pk=id, customer=request.user).delete()\n    return redirect(\"account:addresses\")\n@login_required\ndef set_default(request, id):\n    Address.objects.filter(customer=request.user, default=True).update(default=False)\n    Address.objects.filter(pk=id, customer=request.user).update(default=True)\n    return redirect(\"account:addresses\")",
+        "detail": "account.views",
+        "documentation": {}
+    },
+    {
+        "label": "set_default",
+        "kind": 2,
+        "importPath": "account.views",
+        "description": "account.views",
+        "peekOfCode": "def set_default(request, id):\n    Address.objects.filter(customer=request.user, default=True).update(default=False)\n    Address.objects.filter(pk=id, customer=request.user).update(default=True)\n    return redirect(\"account:addresses\")",
         "detail": "account.views",
         "documentation": {}
     },
