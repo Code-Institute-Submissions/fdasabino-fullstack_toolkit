@@ -10,6 +10,7 @@ class DeliveryOptions(models.Model):
     DELIVERY_CHOICES = [
         ("IS", "In Store"),
         ("HD", "Home Delivery"),
+        ("DD", "Digital Delivery"),
     ]
 
     delivery_name = models.CharField(

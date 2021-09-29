@@ -11,10 +11,13 @@ from .models import Address, Customer
 class UserAddressForm(forms.ModelForm):
     class Meta:
         model = Address
-        fields = ["phone", "address_line", "address_line2", "town_city", "postcode"]
+        fields = ["full_name", "phone", "address_line", "address_line2", "town_city", "postcode"]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.fields["full_name"].widget.attrs.update(
+            {"class": "form-control mb-2 account-form", "placeholder": "Full Name"}
+        )
         self.fields["phone"].widget.attrs.update({"class": "form-control mb-2 account-form", "placeholder": "Phone"})
         self.fields["address_line"].widget.attrs.update(
             {"class": "form-control mb-2 account-form", "placeholder": "Full Name"}
@@ -33,9 +36,7 @@ class UserAddressForm(forms.ModelForm):
 class UserLoginForm(AuthenticationForm):
 
     username = forms.CharField(
-        widget=forms.TextInput(
-            attrs={"class": "form-control mb-3", "placeholder": "Email Address", "id": "login-username"}
-        )
+        widget=forms.TextInput(attrs={"class": "form-control mb-3", "placeholder": "Username", "id": "login-username"})
     )
     password = forms.CharField(
         widget=forms.PasswordInput(
@@ -50,7 +51,7 @@ class UserLoginForm(AuthenticationForm):
 
 class RegistrationForm(forms.ModelForm):
 
-    full_name = forms.CharField(label="Enter Full Name", min_length=4, max_length=50, help_text="Required")
+    user_name = forms.CharField(label="Enter Username", min_length=4, max_length=50, help_text="Required")
     email = forms.EmailField(
         max_length=100, help_text="Required", error_messages={"required": "Sorry, you will need an email"}
     )
@@ -60,16 +61,16 @@ class RegistrationForm(forms.ModelForm):
     class Meta:
         model = Customer
         fields = (
-            "full_name",
+            "user_name",
             "email",
         )
 
     def clean_username(self):
-        full_name = self.cleaned_data["full_name"].lower()
-        r = Customer.objects.filter(full_name=full_name)
+        user_name = self.cleaned_data["user_name"].lower()
+        r = Customer.objects.filter(user_name=user_name)
         if r.count():
             raise forms.ValidationError("Username already exists")
-        return full_name
+        return user_name
 
     def clean_password2(self):
         cd = self.cleaned_data
@@ -85,9 +86,9 @@ class RegistrationForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["full_name"].widget.attrs.update({"class": "form-control mb-3", "placeholder": "Full Name"})
+        self.fields["user_name"].widget.attrs.update({"class": "form-control mb-3", "placeholder": "Username"})
         self.fields["email"].widget.attrs.update(
-            {"class": "form-control mb-3", "placeholder": "E-mail Address", "name": "email", "id": "id_email"}
+            {"class": "form-control mb-3", "placeholder": "E-mail", "name": "email", "id": "id_email"}
         )
         self.fields["password"].widget.attrs.update({"class": "form-control mb-3", "placeholder": "Password"})
         self.fields["password2"].widget.attrs.update({"class": "form-control", "placeholder": "Repeat Password"})
@@ -104,7 +105,7 @@ class PwdResetForm(PasswordResetForm):
         email = self.cleaned_data["email"]
         u = Customer.objects.filter(email=email)
         if not u:
-            raise forms.ValidationError("Unfortunately we can not find that email address")
+            raise forms.ValidationError("Unfortunatley we can not find that email address")
         return email
 
 
@@ -133,7 +134,7 @@ class UserEditForm(forms.ModelForm):
         ),
     )
 
-    full_name = forms.CharField(
+    user_name = forms.CharField(
         label="Firstname",
         min_length=4,
         max_length=50,
@@ -160,10 +161,11 @@ class UserEditForm(forms.ModelForm):
         model = Customer
         fields = (
             "email",
-            "full_name",
+            "user_name",
+            "first_name",
         )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["full_name"].required = True
+        self.fields["user_name"].required = True
         self.fields["email"].required = True
