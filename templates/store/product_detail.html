@@ -1,5 +1,13 @@
 {% extends "base.html" %} {% load static %} {% block title %} {{ product.name }} {% endblock %} {% block content %}
 <div class="container mt-5">
+  {% if messages %}
+
+  <div class="alert alert-warning" alert-{{message.tags}}" role="alert">
+    {% for message in messages%} {{message|safe}} -
+    <a href="{%  url 'account:dashboard'%}" class="alert-link">Dashboard</a>
+    {% endfor %}
+  </div>
+  {% endif %}
   <div class="row g-3">
     <div class="col-12 d-flex justify-content-between"></div>
 
@@ -9,18 +17,38 @@
           <div>
             <span class="h3">SEK {{ product.regular_price }}</span>
             <p class="text-muted">includes tax</p>
-            <small class="text-muted">You can update {{product.title}} quantity in your cart.</small>
+            <small class="text-muted small">You can also update {{product.title}} quantity later.</small>
           </div>
           <div class="">
             <label for="select">Qty</label>
             <select id="select" class="h6" style="width: 50px; height: 40px">
               <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
             </select>
           </div>
         </div>
         <hr />
-        <button type="button" id="add-button" value="{{product.id}}" class="btn btn-success fw500">Add to basket</button>
-        <button type="button" id="add-button" value="{{product.id}}" class="btn btn-light fw500">Add to Favorites</button>
+        <button type="button" id="add-button" value="{{product.id}}" class="btn btn-success fw500">Add to Basket</button>
+        {% if product.users_wishlist.exists %} 
+        <a
+          href="{% url 'account:user_wishlist' product.id %}"
+          class="btn btn-outline-danger fw-500"
+          tabindex="-1"
+          role="button"
+          aria-disabled="true"
+          >Remove from Favorites</a>
+        {% else %}
+        <a
+          href="{% url 'account:user_wishlist' product.id %}"
+          class="btn btn-outline-primary fw-500"
+          tabindex="-1"
+          role="button"
+          aria-disabled="true"
+          >Add to Favorites</a>
+        {% endif %}
       </div>
     </div>
 

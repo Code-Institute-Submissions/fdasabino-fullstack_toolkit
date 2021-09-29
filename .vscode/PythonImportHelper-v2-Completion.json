@@ -96,11 +96,43 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
         "isExtraImport": true,
         "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -163,6 +195,14 @@
     },
     {
         "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
         "importPath": "django.contrib",
         "description": "django.contrib",
         "isExtraImport": true,
@@ -530,6 +570,14 @@
         "documentation": {}
     },
     {
+        "label": "get_object_or_404",
+        "importPath": "django.shortcuts",
+        "description": "django.shortcuts",
+        "isExtraImport": true,
+        "detail": "django.shortcuts",
+        "documentation": {}
+    },
+    {
         "label": "redirect",
         "importPath": "django.shortcuts",
         "description": "django.shortcuts",
@@ -650,22 +698,6 @@
         "documentation": {}
     },
     {
-        "label": "Decimal",
-        "importPath": "decimal",
-        "description": "decimal",
-        "isExtraImport": true,
-        "detail": "decimal",
-        "documentation": {}
-    },
-    {
-        "label": "Decimal",
-        "importPath": "decimal",
-        "description": "decimal",
-        "isExtraImport": true,
-        "detail": "decimal",
-        "documentation": {}
-    },
-    {
         "label": "Product",
         "importPath": "store.models",
         "description": "store.models",
@@ -679,6 +711,30 @@
         "description": "store.models",
         "isExtraImport": true,
         "detail": "store.models",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "importPath": "store.models",
+        "description": "store.models",
+        "isExtraImport": true,
+        "detail": "store.models",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
         "documentation": {}
     },
     {
@@ -1014,6 +1070,24 @@
         "description": "account.urls",
         "peekOfCode": "urlpatterns = [\n    path(\n        \"login/\",\n        auth_views.LoginView.as_view(template_name=\"account/login.html\", form_class=UserLoginForm),\n        name=\"login\",\n    ),\n    path(\"logout/\", auth_views.LogoutView.as_view(next_page=\"/account/login/\"), name=\"logout\"),\n    path(\"register/\", views.account_register, name=\"register\"),\n    path(\"activate/<slug:uidb64>/<slug:token>)/\", views.account_activate, name=\"activate\"),\n    # Reset password",
         "detail": "account.urls",
+        "documentation": {}
+    },
+    {
+        "label": "wishlist",
+        "kind": 2,
+        "importPath": "account.views",
+        "description": "account.views",
+        "peekOfCode": "def wishlist(request):\n    products = Product.objects.filter(users_wishlist=request.user)\n    return render(request, \"account/dashboard/wishlist.html\", {\"wishlist\": products})\n@login_required\ndef add_to_wishlist(request, id):\n    product = get_object_or_404(Product, id=id)\n    if product.users_wishlist.filter(id=request.user.id).exists():\n        product.users_wishlist.remove(request.user)\n        messages.success(request, product.title + \" Was removed from Your Favorites\")\n    else:",
+        "detail": "account.views",
+        "documentation": {}
+    },
+    {
+        "label": "add_to_wishlist",
+        "kind": 2,
+        "importPath": "account.views",
+        "description": "account.views",
+        "peekOfCode": "def add_to_wishlist(request, id):\n    product = get_object_or_404(Product, id=id)\n    if product.users_wishlist.filter(id=request.user.id).exists():\n        product.users_wishlist.remove(request.user)\n        messages.success(request, product.title + \" Was removed from Your Favorites\")\n    else:\n        product.users_wishlist.add(request.user)\n        messages.success(request, product.title + \" Was Added to Your Favorites\")\n    return HttpResponseRedirect(request.META[\"HTTP_REFERER\"])\n@login_required",
+        "detail": "account.views",
         "documentation": {}
     },
     {
@@ -1626,6 +1700,15 @@
         "description": "store.migrations.0001_initial",
         "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Category',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('name', models.CharField(help_text='Required and unique', max_length=255, unique=True, verbose_name='Category Name')),",
         "detail": "store.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "store.migrations.0002_product_users_wishlist",
+        "description": "store.migrations.0002_product_users_wishlist",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('store', '0001_initial'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='product',\n            name='users_wishlist',\n            field=models.ManyToManyField(blank=True, related_name='user_whishlist', to=settings.AUTH_USER_MODEL),",
+        "detail": "store.migrations.0002_product_users_wishlist",
         "documentation": {}
     },
     {
