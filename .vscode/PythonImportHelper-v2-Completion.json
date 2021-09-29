@@ -904,7 +904,7 @@
         "kind": 6,
         "importPath": "account.forms",
         "description": "account.forms",
-        "peekOfCode": "class UserAddressForm(forms.ModelForm):\n    class Meta:\n        model = Address\n        fields = [\"full_name\", \"phone\", \"address_line\", \"address_line2\", \"town_city\", \"postcode\"]\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.fields[\"full_name\"].widget.attrs.update(\n            {\"class\": \"form-control mb-2 account-form\", \"placeholder\": \"Full Name\"}\n        )\n        self.fields[\"phone\"].widget.attrs.update({\"class\": \"form-control mb-2 account-form\", \"placeholder\": \"Phone\"})",
+        "peekOfCode": "class UserAddressForm(forms.ModelForm):\n    class Meta:\n        model = Address\n        fields = [\"phone\", \"address_line\", \"address_line2\", \"town_city\", \"postcode\"]\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.fields[\"phone\"].widget.attrs.update({\"class\": \"form-control mb-2 account-form\", \"placeholder\": \"Phone\"})\n        self.fields[\"address_line\"].widget.attrs.update(\n            {\"class\": \"form-control mb-2 account-form\", \"placeholder\": \"Full Name\"}\n        )",
         "detail": "account.forms",
         "documentation": {}
     },

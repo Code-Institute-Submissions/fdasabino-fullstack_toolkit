@@ -7,8 +7,6 @@
     {% if form.errors %}
     <div class="alert alert-primary" role="alert">Error: Please try again!</div>
     {% endif %} {% csrf_token %}
-    <label class="small fw-bold">{{ form.full_name.label}}</label>
-    {{ form.full_name }}
     <label class="small fw-bold">{{ form.phone.label}}</label>
     {{ form.phone }}
     <label class="small fw-bold">{{ form.address_line.label}}</label>
