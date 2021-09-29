@@ -25,14 +25,15 @@
             Sub Total:
             <div id="subtotal" class="d-inline-flex fw-bold">{{basket.get_subtotal_price}} SEK</div>
           </div>
-          <small>Delivery 25 SEK for orders under 100 SEK</small>
+          <small>You may be subject to delivery charges</small>
           <div class="pt-2">Total to pay: <span id="total" class="fw-bold h5">{{basket.get_total_price}} SEK</span></div>
         </div>
       </div>
       <div class="col-md-5 col-lg-4 order-md-last p-0 order-3">
         <div class="d-grid gap-2">
-          <a role="button" href="{% url 'payment:basket' %}" class="btn btn-success fw-bold" type="button">Checkout</a>
-          <button class="btn btn-light" type="button">Save for later</button>
+          <a role="button" href="{% url 'checkout:deliverychoices' %}" class="btn btn-success fw-bold" type="button"
+            >Checkout Securely</a
+          >
         </div>
       </div>
       <div class="col-md-7 col-lg-8 p-0">

@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "account",
     "order",
     "mptt",
+    "checkout",
 ]
 
 MIDDLEWARE = [
@@ -144,12 +145,6 @@ LOGIN_URL = "/account/login/"
 # Basket session ID
 BASKET_SESSION_ID = "basket"
 
-# Stripe Payment
-STRIPE_PUBLISHABLE_KEY = os.environ.get("STRIPE_PUBLISHABLE_KEY")
-STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY")
-STRIPE_ENDPOINT_SECRET = os.environ.get("STRIPE_ENDPOINT_SECRET")
-
-# stripe listen --forward-to localhost:8000/payment/webhook/
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
