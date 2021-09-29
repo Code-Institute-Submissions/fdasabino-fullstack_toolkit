@@ -1,3 +1,4 @@
+from checkout.views import delivery_address
 from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
@@ -153,4 +154,10 @@ def delete_address(request, id):
 def set_default(request, id):
     Address.objects.filter(customer=request.user, default=True).update(default=False)
     Address.objects.filter(pk=id, customer=request.user).update(default=True)
+    
+    previous_url = request.META.get('HTTP_REFERER')
+    
+    if 'delivery_address' in previous_url:
+        return redirect('checkout:delivery_address')
+    
     return redirect("account:addresses")

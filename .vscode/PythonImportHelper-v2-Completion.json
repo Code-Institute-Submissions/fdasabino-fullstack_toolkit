@@ -226,6 +226,14 @@
         "documentation": {}
     },
     {
+        "label": "messages",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -546,6 +554,14 @@
         "documentation": {}
     },
     {
+        "label": "delivery_address",
+        "importPath": "checkout.views",
+        "description": "checkout.views",
+        "isExtraImport": true,
+        "detail": "checkout.views",
+        "documentation": {}
+    },
+    {
         "label": "login_required",
         "importPath": "django.contrib.auth.decorators",
         "description": "django.contrib.auth.decorators",
@@ -770,11 +786,27 @@
         "documentation": {}
     },
     {
+        "label": "DeliveryOptions",
+        "importPath": "checkout.models",
+        "description": "checkout.models",
+        "isExtraImport": true,
+        "detail": "checkout.models",
+        "documentation": {}
+    },
+    {
         "label": "Product",
         "importPath": "store.views",
         "description": "store.views",
         "isExtraImport": true,
         "detail": "store.views",
+        "documentation": {}
+    },
+    {
+        "label": "Address",
+        "importPath": "account.models",
+        "description": "account.models",
+        "isExtraImport": true,
+        "detail": "account.models",
         "documentation": {}
     },
     {
@@ -1149,7 +1181,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def delete_address(request, id):\n    address = Address.objects.filter(pk=id, customer=request.user).delete()\n    return redirect(\"account:addresses\")\n@login_required\ndef set_default(request, id):\n    Address.objects.filter(customer=request.user, default=True).update(default=False)\n    Address.objects.filter(pk=id, customer=request.user).update(default=True)\n    return redirect(\"account:addresses\")",
+        "peekOfCode": "def delete_address(request, id):\n    address = Address.objects.filter(pk=id, customer=request.user).delete()\n    return redirect(\"account:addresses\")\n@login_required\ndef set_default(request, id):\n    Address.objects.filter(customer=request.user, default=True).update(default=False)\n    Address.objects.filter(pk=id, customer=request.user).update(default=True)\n    previous_url = request.META.get('HTTP_REFERER')\n    if 'delivery_address' in previous_url:\n        return redirect('checkout:delivery_address')",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1158,7 +1190,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def set_default(request, id):\n    Address.objects.filter(customer=request.user, default=True).update(default=False)\n    Address.objects.filter(pk=id, customer=request.user).update(default=True)\n    return redirect(\"account:addresses\")",
+        "peekOfCode": "def set_default(request, id):\n    Address.objects.filter(customer=request.user, default=True).update(default=False)\n    Address.objects.filter(pk=id, customer=request.user).update(default=True)\n    previous_url = request.META.get('HTTP_REFERER')\n    if 'delivery_address' in previous_url:\n        return redirect('checkout:delivery_address')\n    return redirect(\"account:addresses\")",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1176,7 +1208,7 @@
         "kind": 6,
         "importPath": "basket.basket",
         "description": "basket.basket",
-        "peekOfCode": "class Basket:\n    \"\"\"\n    A base Basket class, providing some default behaviors that\n    can be inherited or override, as necessary.\n    \"\"\"\n    def __init__(self, request):\n        self.session = request.session\n        basket = self.session.get(settings.BASKET_SESSION_ID)\n        if settings.BASKET_SESSION_ID not in request.session:\n            basket = self.session[settings.BASKET_SESSION_ID] = {}",
+        "peekOfCode": "class Basket:\n    \"\"\"\n    A base Basket class, providing some default behaviors that\n    can be inherited or overrided, as necessary.\n    \"\"\"\n    def __init__(self, request):\n        self.session = request.session\n        basket = self.session.get(settings.BASKET_SESSION_ID)\n        if settings.BASKET_SESSION_ID not in request.session:\n            basket = self.session[settings.BASKET_SESSION_ID] = {}",
         "detail": "basket.basket",
         "documentation": {}
     },
@@ -1284,7 +1316,7 @@
         "kind": 5,
         "importPath": "checkout.urls",
         "description": "checkout.urls",
-        "peekOfCode": "app_name = \"checkout\"\nurlpatterns = [\n    path(\"deliverychoices\", views.deliverychoices, name=\"deliverychoices\"),\n    path(\"basket_update_delivery/\", views.basket_update_delivery, name=\"basket_update_delivery\"),\n    # path(\"delivery_address/\", views.delivery_address, name=\"delivery_address\"),\n    # path(\"payment_selection/\", views.payment_selection, name=\"payment_selection\"),\n    # path(\"payment_complete/\", views.payment_complete, name=\"payment_complete\"),\n    # path(\"payment_successful/\", views.payment_successful, name=\"payment_successful\"),\n]",
+        "peekOfCode": "app_name = \"checkout\"\nurlpatterns = [\n    path(\"deliverychoices\", views.deliverychoices, name=\"deliverychoices\"),\n    path(\"basket_update_delivery/\", views.basket_update_delivery, name=\"basket_update_delivery\"),\n    path(\"delivery_address/\", views.delivery_address, name=\"delivery_address\"),\n    # path(\"payment_selection/\", views.payment_selection, name=\"payment_selection\"),\n    # path(\"payment_complete/\", views.payment_complete, name=\"payment_complete\"),\n    # path(\"payment_successful/\", views.payment_successful, name=\"payment_successful\"),\n]",
         "detail": "checkout.urls",
         "documentation": {}
     },
@@ -1293,7 +1325,7 @@
         "kind": 5,
         "importPath": "checkout.urls",
         "description": "checkout.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"deliverychoices\", views.deliverychoices, name=\"deliverychoices\"),\n    path(\"basket_update_delivery/\", views.basket_update_delivery, name=\"basket_update_delivery\"),\n    # path(\"delivery_address/\", views.delivery_address, name=\"delivery_address\"),\n    # path(\"payment_selection/\", views.payment_selection, name=\"payment_selection\"),\n    # path(\"payment_complete/\", views.payment_complete, name=\"payment_complete\"),\n    # path(\"payment_successful/\", views.payment_successful, name=\"payment_successful\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"deliverychoices\", views.deliverychoices, name=\"deliverychoices\"),\n    path(\"basket_update_delivery/\", views.basket_update_delivery, name=\"basket_update_delivery\"),\n    path(\"delivery_address/\", views.delivery_address, name=\"delivery_address\"),\n    # path(\"payment_selection/\", views.payment_selection, name=\"payment_selection\"),\n    # path(\"payment_complete/\", views.payment_complete, name=\"payment_complete\"),\n    # path(\"payment_successful/\", views.payment_successful, name=\"payment_successful\"),\n]",
         "detail": "checkout.urls",
         "documentation": {}
     },
@@ -1312,6 +1344,15 @@
         "importPath": "checkout.views",
         "description": "checkout.views",
         "peekOfCode": "def basket_update_delivery(request):\n    basket = Basket(request)\n    if request.POST.get(\"action\") == \"post\":\n        delivery_option = int(request.POST.get(\"deliveryoption\"))\n        delivery_type = DeliveryOptions.objects.get(id=delivery_option)\n        updated_total_price = basket.basket_update_delivery(delivery_type.delivery_price)\n        session = request.session\n        if \"purchase\" not in request.session:\n            session[\"purchase\"] = {\n                \"delivery_id\": delivery_type.id,",
+        "detail": "checkout.views",
+        "documentation": {}
+    },
+    {
+        "label": "delivery_address",
+        "kind": 2,
+        "importPath": "checkout.views",
+        "description": "checkout.views",
+        "peekOfCode": "def delivery_address(request):\n    session = request.session\n    if \"purchase\" not in request.session:\n        messages.success(request, \"Please select delivery option\")\n        return HttpResponseRedirect(request.META[\"HTTP_REFERER\"])\n    addresses = Address.objects.filter(customer=request.user).order_by(\"-default\")\n    if \"address\" not in request.session:\n        session[\"address\"] = {\"address_id\": str(addresses[0].id)}\n    else:\n        session[\"address\"][\"address_id\"] = str(addresses[0].id)",
         "detail": "checkout.views",
         "documentation": {}
     },

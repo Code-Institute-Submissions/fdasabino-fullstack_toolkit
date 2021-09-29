@@ -29,10 +29,7 @@
     <div class="d-flex bd-highlight">
       <div class="p-2 flex-grow-1 bd-highlight">Delivery Cost:</div>
       <div class="p-2 bd-highlight">
-        <span class="fw-bold h5"></span
-        ><span id="delivery_price" class="fw-bold"
-          >{{basket.get_delivery_price}} <small class="text-muted"> Choose Delivery Method</small></span
-        >
+        <span class="fw-bold">SEK </span><span id="delivery_price" class="fw-bold">{{basket.get_delivery_price}}</span>
       </div>
     </div>
     <div class="d-flex bd-highlight">
@@ -41,7 +38,9 @@
         <span class="fw-bold h5">SEK </span><span id="total" class="fw-bold h5">{{basket.get_total_price}}</span>
       </div>
     </div>
-    <a role="button" href="" class="btn btn-success fw-bold w-100" type="button">Pay Securely</a>
+    <a role="button" href="{% url 'checkout:delivery_address' %}" class="btn btn-success fw-bold w-100" type="button"
+      >Pay Securely</a
+    >
   </div>
   <div class="col-md-7 col-lg-8">
     {% for option in deliveryoptions %}
@@ -68,7 +67,14 @@
           </div>
         </div>
         <div class="col-md-1 ps-md-1">
-          <input class="align-middle h-100" type="radio" name="deliveryOption" id="{{option.id}}" value="{{option.id}}" />
+          <input
+            class="align-middle h-100"
+            type="radio"
+            name="deliveryOption"
+            id="{{option.id}}"
+            value="{{option.id}}"
+            checked="checked"
+          />
         </div>
       </div>
     </div>
@@ -89,7 +95,7 @@
       },
       success: function (json) {
         document.getElementById("total").innerHTML = json.total;
-        document.getElementById("delivery_price").innerHTML = json.delivery_price + " SEK";
+        document.getElementById("delivery_price").innerHTML = json.delivery_price;
       },
       error: function (xhr, errmsg, err) {},
     });
