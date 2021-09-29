@@ -1099,7 +1099,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def wishlist(request):\n    products = Product.objects.filter(users_wishlist=request.user)\n    return render(request, \"account/dashboard/wishlist.html\", {\"wishlist\": products})\n@login_required\ndef add_to_wishlist(request, id):\n    product = get_object_or_404(Product, id=id)\n    if product.users_wishlist.filter(id=request.user.id).exists():\n        product.users_wishlist.remove(request.user)\n        messages.success(request, product.title + \" has been removed from your WishList\")\n    else:",
+        "peekOfCode": "def wishlist(request):\n    products = Product.objects.filter(users_wishlist=request.user)\n    return render(request, \"account/dashboard/wishlist.html\", {\"wishlist\": products})\n@login_required\ndef add_to_wishlist(request, id):\n    product = get_object_or_404(Product, id=id)\n    if product.users_wishlist.filter(id=request.user.id).exists():\n        product.users_wishlist.remove(request.user)\n        messages.success(request, product.title +\n                         \" has been removed from your WishList\")",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1108,7 +1108,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def add_to_wishlist(request, id):\n    product = get_object_or_404(Product, id=id)\n    if product.users_wishlist.filter(id=request.user.id).exists():\n        product.users_wishlist.remove(request.user)\n        messages.success(request, product.title + \" has been removed from your WishList\")\n    else:\n        product.users_wishlist.add(request.user)\n        messages.success(request, \"Added \" + product.title + \" to your WishList\")\n    return HttpResponseRedirect(request.META[\"HTTP_REFERER\"])\n@login_required",
+        "peekOfCode": "def add_to_wishlist(request, id):\n    product = get_object_or_404(Product, id=id)\n    if product.users_wishlist.filter(id=request.user.id).exists():\n        product.users_wishlist.remove(request.user)\n        messages.success(request, product.title +\n                         \" has been removed from your WishList\")\n    else:\n        product.users_wishlist.add(request.user)\n        messages.success(request, \"Added \" +\n                         product.title + \" to your WishList\")",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1153,7 +1153,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def account_activate(request, uidb64, token):\n    try:\n        uid = force_text(urlsafe_base64_decode(uidb64))\n        user = Customer.objects.get(pk=uid)\n    except (TypeError, ValueError, OverflowError, user.DoesNotExist):\n        user = None\n    if user is not None and account_activation_token.check_token(user, token):\n        user.is_active = True\n        user.save()\n        login(request, user)",
+        "peekOfCode": "def account_activate(request, uidb64, token):\n    try:\n        uid = force_text(urlsafe_base64_decode(uidb64))\n        user = Customer.objects.get(pk=uid)\n    except (TypeError, ValueError, OverflowError,):\n        user = None\n    if user is not None and account_activation_token.check_token(user, token):\n        user.is_active = True\n        user.save()\n        login(request, user)",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1189,7 +1189,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def delete_address(request, id):\n    address = Address.objects.filter(pk=id, customer=request.user).delete()\n    return redirect(\"account:addresses\")\n@login_required\ndef set_default(request, id):\n    Address.objects.filter(customer=request.user, default=True).update(default=False)\n    Address.objects.filter(pk=id, customer=request.user).update(default=True)\n    previous_url = request.META.get(\"HTTP_REFERER\")\n    if \"delivery_address\" in previous_url:\n        return redirect(\"checkout:delivery_address\")",
+        "peekOfCode": "def delete_address(request, id):\n    address = Address.objects.filter(pk=id, customer=request.user).delete()\n    return redirect(\"account:addresses\")\n@login_required\ndef set_default(request, id):\n    Address.objects.filter(customer=request.user,\n                           default=True).update(default=False)\n    Address.objects.filter(pk=id, customer=request.user).update(default=True)\n    previous_url = request.META.get(\"HTTP_REFERER\")\n    if \"delivery_address\" in previous_url:",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1198,7 +1198,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def set_default(request, id):\n    Address.objects.filter(customer=request.user, default=True).update(default=False)\n    Address.objects.filter(pk=id, customer=request.user).update(default=True)\n    previous_url = request.META.get(\"HTTP_REFERER\")\n    if \"delivery_address\" in previous_url:\n        return redirect(\"checkout:delivery_address\")\n    return redirect(\"account:addresses\")\n@login_required\ndef user_orders(request):\n    user_id = request.user.id",
+        "peekOfCode": "def set_default(request, id):\n    Address.objects.filter(customer=request.user,\n                           default=True).update(default=False)\n    Address.objects.filter(pk=id, customer=request.user).update(default=True)\n    previous_url = request.META.get(\"HTTP_REFERER\")\n    if \"delivery_address\" in previous_url:\n        return redirect(\"checkout:delivery_address\")\n    return redirect(\"account:addresses\")\n@login_required\ndef user_orders(request):",
         "detail": "account.views",
         "documentation": {}
     },

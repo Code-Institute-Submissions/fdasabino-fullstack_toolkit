@@ -1,8 +1,12 @@
 {% extends "../account_base.html" %} {% load static %} {% block title %}Are You Sure?{% endblock %} {% block sub-content %}
-<form class="account-form px-4 text-center" action="{% url 'account:delete_user' %}" method="post">
+<form class="account-form px-4 text-center mb-4" action="{% url 'account:delete_user' %}" method="post">
   {% csrf_token %}
   <p class="h3 pt-4 font-weight-bold">Delete Account</p>
   <p>Are you sure you want to delete your account? We're sorry to see you go!</p>
   <button type="submit" role="button" class="btn btn-danger btn-block py-2 mb-4 mt-5 fw-bold w-100">Delete</button>
 </form>
+<div class="container text-center">
+  <h3>Take me Back</h3>
+  <a href="{% url 'account:dashboard' %}" class="btn btn-dark btn-block mt-2 fw-bold">Dashboard</a>
+</div>
 {% endblock %}

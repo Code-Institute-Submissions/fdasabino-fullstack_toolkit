@@ -28,10 +28,12 @@ def add_to_wishlist(request, id):
     product = get_object_or_404(Product, id=id)
     if product.users_wishlist.filter(id=request.user.id).exists():
         product.users_wishlist.remove(request.user)
-        messages.success(request, product.title + " has been removed from your WishList")
+        messages.success(request, product.title +
+                         " has been removed from your WishList")
     else:
         product.users_wishlist.add(request.user)
-        messages.success(request, "Added " + product.title + " to your WishList")
+        messages.success(request, "Added " +
+                         product.title + " to your WishList")
     return HttpResponseRedirect(request.META["HTTP_REFERER"])
 
 
@@ -98,7 +100,7 @@ def account_activate(request, uidb64, token):
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))
         user = Customer.objects.get(pk=uid)
-    except (TypeError, ValueError, OverflowError, user.DoesNotExist):
+    except (TypeError, ValueError, OverflowError,):
         user = None
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
@@ -154,7 +156,8 @@ def delete_address(request, id):
 
 @login_required
 def set_default(request, id):
-    Address.objects.filter(customer=request.user, default=True).update(default=False)
+    Address.objects.filter(customer=request.user,
+                           default=True).update(default=False)
     Address.objects.filter(pk=id, customer=request.user).update(default=True)
 
     previous_url = request.META.get("HTTP_REFERER")
