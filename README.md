@@ -82,41 +82,7 @@
 
 ### 5.1. Validating
 
-- The W3C Markup Validator, W3C CSS Validator and Codeac Services were used to validate the project to ensure there were no syntax errors in the project.
-
-- [W3C Markup Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/fdasabino/Portfolio-Project/blob/master/assets/images/Validator/htmlvalidator.jpg)
-
-- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) - [Results](https://github.com/fdasabino/Portfolio-Project/blob/master/assets/images/Validator/CSSvalidator.jpg)
-
-- [Codeac](https://app.codeac.io/login) - [Results](https://github.com/fdasabino/Portfolio-Project/blob/master/assets/images/Validator/codeAC_Validator_js.jpg)
-
 ### 5.2. Different Browsers
-
-[Google Chrome](https://www.google.com/chrome/)
-
-[Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/)
-
-[Opera](https://www.opera.com/)
-
-[Google Chrome](https://www.google.com/chrome/)
-
-[Safari](https://www.apple.com/safari/)
-
-[Microsoft Edge](https://www.microsoft.com/en-us/edge)
-
-[Internet Explorer](https://support.microsoft.com/en-us/windows/internet-explorer-downloads-d49e1f0d-571c-9a7b-d97e-be248806ca70)
-
-Some Features presented in the tests above do not run on older browsers.
-No problems were found on newer versions of the browsers listed above.
-
-Refer to the links below for a better overview.
-
-[HTML5](https://github.com/fdasabino/Portfolio-Project/blob/master/assets/images/Validator/HTMLcompat.jpg)
-[CSS3](https://github.com/fdasabino/Portfolio-Project/blob/master/assets/images/Validator/CSScompat.jpg)
-
-As for the Javascript code used on the project, I have used es6. Refer to the compatibility page provided for more details.
-
-[JavaScript](https://caniuse.com/?search=es6)
 
 ### 5.3. Further Testing
 
