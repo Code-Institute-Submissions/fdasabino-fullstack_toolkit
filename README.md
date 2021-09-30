@@ -1,6 +1,6 @@
 # STHLM-foodies - Fresh food delivered to your door
 
-<img src="#">
+<img src="https://github.com/fdasabino/fullstack_toolkit/blob/master2/media/images/Wire.jpg">
 
 ## 1. Project Goals
 
@@ -120,33 +120,11 @@ As for the Javascript code used on the project, I have used es6. Refer to the co
 
 ### 5.3. Further Testing
 
-- The Website was tested on Google Chrome, Opera, Microsoft Edge, Mozilla Firefox and Safari browsers.
-
-- The website was viewed on a variety of devices such as Desktop, Laptop, iPhone7, iPhone 8, iPhone11 & iPad.
-
-- Friends were asked to review the site and documentation to point out any bugs and/or user experience issues.
-
-- Some features such as modals, forms, and navigation were tested, on mobile devices, tablets and larger screens and have not shown any errors.
-  The features have been tested using GitHub Pages to load the pages in different devices.
-
 ## 6. Future changes to the page
-
-- Complete the set of Milestones from Code Institute to the milestones section.
-- Add more content to all sections of the landing page.
-- Add some more interactivity to the page, incrementing my JS file allowing more user input.
 
 ## 7. Deployment
 
-### 7.1. GitHub Pages
-
-The project was deployed to GitHub Pages using the following steps...
-
-1. Log in to GitHub and locate the [GitHub](https://github.com/)
-2. At the top right locate a cascade menu (not top of page), locate the "Settings" Button on the menu.
-3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
-4. Under "Source", click the dropdown called "None" and select "Master Branch".
-5. The page will automatically refresh.
-6. Your page should now be published.
+### 7.1. Heroku
 
 ### 7.2. Forking the GitHub Repository
 
@@ -162,34 +140,8 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### 8.1. Special Thanks
 
-- The testimonials found on the page were written by Jessica Norgren and Linda Molin, for taking the time to write about me.
-
 ### 8.2. Code
-
-- Thanks to EmailJS for making possible to send messages directly from the page to Email.
-
-- Thanks to Codeac for the amazing tools that helped me to get the code error free.
 
 ### 8.3. Media
 
-- Hero and About images were created by the developer.
-
-- The PNGs were downloaded from [Freepngimg](https://freepngimg.com/).
-
 ## 9. Latest Updates
-
-- Updated CSS and JS files for smoother transition effects.
-
-- Updated milestone section.
-
-- Improved menu for mobile version, which takes the entire height of the page on mobile version only.
-
-- Removed dots from mobile version, which were appearing on top of the images, giving a not so optimal user experience.
-
-- Adjusted tags of social media icon on HTML file, which was causing the icon to take the entire width of the footer.
-
-- Added feature that prevents users from typing numbers on the name field, as a form validation.
-
-- Fixed issue with JavaScript functions, which was causing messages not to be sent.
-
-- Added trim function to validation, to avoid empty spaces being submitted.
