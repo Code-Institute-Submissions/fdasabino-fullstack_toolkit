@@ -999,7 +999,7 @@
         "kind": 6,
         "importPath": "account.forms",
         "description": "account.forms",
-        "peekOfCode": "class UserAddressForm(forms.ModelForm):\n    class Meta:\n        model = Address\n        fields = [\"full_name\", \"phone\", \"address_line\",\n                  \"address_line2\", \"town_city\", \"postcode\"]\n    def __init__(self, *args, **kwargs):\n        super().__init__(*args, **kwargs)\n        self.fields[\"full_name\"].widget.attrs.update(\n            {\"class\": \"form-control mb-2 account-form\", \"placeholder\": \"Full Name\"}\n        )",
+        "peekOfCode": "class UserAddressForm(forms.ModelForm):\n    class Meta:\n        model = Address\n        fields = [\n            \"full_name\",\n            \"phone\",\n            \"address_line\",\n            \"address_line2\",\n            \"town_city\",\n            \"postcode\",",
         "detail": "account.forms",
         "documentation": {}
     },
@@ -1008,7 +1008,7 @@
         "kind": 6,
         "importPath": "account.forms",
         "description": "account.forms",
-        "peekOfCode": "class UserLoginForm(AuthenticationForm):\n    username = forms.CharField(\n        widget=forms.TextInput(attrs={\n                               \"class\": \"form-control mb-3\", \"placeholder\": \"Username\", \"id\": \"login-username\"})\n    )\n    password = forms.CharField(\n        widget=forms.PasswordInput(\n            attrs={\n                \"class\": \"form-control\",\n                \"placeholder\": \"Password\",",
+        "peekOfCode": "class UserLoginForm(AuthenticationForm):\n    username = forms.CharField(\n        widget=forms.TextInput(\n            attrs={\n                \"class\": \"form-control mb-3\",\n                \"placeholder\": \"Username\",\n                \"id\": \"login-username\",\n            }\n        )\n    )",
         "detail": "account.forms",
         "documentation": {}
     },
@@ -1017,7 +1017,7 @@
         "kind": 6,
         "importPath": "account.forms",
         "description": "account.forms",
-        "peekOfCode": "class RegistrationForm(forms.ModelForm):\n    user_name = forms.CharField(\n        label=\"Enter Username\", min_length=4, max_length=50, help_text=\"Required\")\n    email = forms.EmailField(\n        max_length=100, help_text=\"Required\", error_messages={\"required\": \"Sorry, you will need an email\"}\n    )\n    password = forms.CharField(label=\"Password\", widget=forms.PasswordInput)\n    password2 = forms.CharField(\n        label=\"Repeat password\", widget=forms.PasswordInput)\n    class Meta:",
+        "peekOfCode": "class RegistrationForm(forms.ModelForm):\n    user_name = forms.CharField(\n        label=\"Full Name\",\n        min_length=4,\n        max_length=50,\n        widget=forms.TextInput(\n            attrs={\n                \"class\": \"form-control mb-3\",\n                \"placeholder\": \"Full Name\",\n                \"id\": \"form-lastname\",",
         "detail": "account.forms",
         "documentation": {}
     },
@@ -1026,7 +1026,7 @@
         "kind": 6,
         "importPath": "account.forms",
         "description": "account.forms",
-        "peekOfCode": "class PwdResetForm(PasswordResetForm):\n    email = forms.EmailField(\n        max_length=254,\n        widget=forms.TextInput(\n            attrs={\"class\": \"form-control mb-3\", \"placeholder\": \"Email\", \"id\": \"form-email\"}),\n    )\n    def clean_email(self):\n        email = self.cleaned_data[\"email\"]\n        u = Customer.objects.filter(email=email)\n        if not u:",
+        "peekOfCode": "class PwdResetForm(PasswordResetForm):\n    email = forms.EmailField(\n        max_length=254,\n        widget=forms.TextInput(\n            attrs={\n                \"class\": \"form-control mb-3\",\n                \"placeholder\": \"Email\",\n                \"id\": \"form-email\",\n            }\n        ),",
         "detail": "account.forms",
         "documentation": {}
     },
@@ -1035,7 +1035,7 @@
         "kind": 6,
         "importPath": "account.forms",
         "description": "account.forms",
-        "peekOfCode": "class PwdResetConfirmForm(SetPasswordForm):\n    new_password1 = forms.CharField(\n        label=\"New password\",\n        widget=forms.PasswordInput(\n            attrs={\"class\": \"form-control mb-3\",\n                   \"placeholder\": \"New Password\", \"id\": \"form-newpass\"}\n        ),\n    )\n    new_password2 = forms.CharField(\n        label=\"Repeat password\",",
+        "peekOfCode": "class PwdResetConfirmForm(SetPasswordForm):\n    new_password1 = forms.CharField(\n        label=\"New password\",\n        widget=forms.PasswordInput(\n            attrs={\n                \"class\": \"form-control mb-3\",\n                \"placeholder\": \"New Password\",\n                \"id\": \"form-newpass\",\n            }\n        ),",
         "detail": "account.forms",
         "documentation": {}
     },
@@ -1044,7 +1044,7 @@
         "kind": 6,
         "importPath": "account.forms",
         "description": "account.forms",
-        "peekOfCode": "class UserEditForm(forms.ModelForm):\n    email = forms.EmailField(\n        label=\"Account email (can not be changed)\",\n        max_length=200,\n        widget=forms.TextInput(\n            attrs={\"class\": \"form-control mb-3\", \"placeholder\": \"email\",\n                   \"id\": \"form-email\", \"readonly\": \"readonly\"}\n        ),\n    )\n    user_name = forms.CharField(",
+        "peekOfCode": "class UserEditForm(forms.ModelForm):\n    email = forms.EmailField(\n        label=\"Account email (can not be changed)\",\n        max_length=200,\n        widget=forms.TextInput(\n            attrs={\n                \"class\": \"form-control mb-3\",\n                \"placeholder\": \"email\",\n                \"id\": \"form-email\",\n                \"readonly\": \"readonly\",",
         "detail": "account.forms",
         "documentation": {}
     },
