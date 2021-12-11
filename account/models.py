@@ -11,6 +11,10 @@ from django.utils.translation import gettext_lazy as _
 
 
 class CustomAccountManager(BaseUserManager):
+    """
+    Manages user accounts
+    """
+
     def create_superuser(self, email, name, password, **other_fields):
 
         other_fields.setdefault("is_staff", True)
@@ -37,6 +41,10 @@ class CustomAccountManager(BaseUserManager):
 
 
 class Customer(AbstractBaseUser, PermissionsMixin):
+    """
+    Customer table
+    """
+
     email = models.EmailField(_("email address"), unique=True)
     name = models.CharField(max_length=150)
     mobile = models.CharField(max_length=20, blank=True)
@@ -69,11 +77,13 @@ class Customer(AbstractBaseUser, PermissionsMixin):
 
 class Address(models.Model):
     """
-    Address
+    Address table
     """
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    customer = models.ForeignKey(Customer, verbose_name=_("Customer"), on_delete=models.CASCADE)
+    customer = models.ForeignKey(
+        Customer, verbose_name=_("Customer"), on_delete=models.CASCADE
+    )
     full_name = models.CharField(_("Full Name"), max_length=150)
     phone = models.CharField(_("Phone Number"), max_length=50)
     postcode = models.CharField(_("Postcode"), max_length=50)
@@ -90,4 +100,4 @@ class Address(models.Model):
         verbose_name_plural = "Addresses"
 
     def __str__(self):
-        return "Address"
+        return self.full_name

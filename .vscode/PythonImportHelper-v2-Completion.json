@@ -386,30 +386,6 @@
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
         "label": "PasswordResetTokenGenerator",
         "importPath": "django.contrib.auth.tokens",
         "description": "django.contrib.auth.tokens",
@@ -827,6 +803,22 @@
         "documentation": {}
     },
     {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
+        "label": "TestCase",
+        "importPath": "django.test",
+        "description": "django.test",
+        "isExtraImport": true,
+        "detail": "django.test",
+        "documentation": {}
+    },
+    {
         "label": "json",
         "kind": 6,
         "isExtraImport": true,
@@ -1061,7 +1053,7 @@
         "kind": 6,
         "importPath": "account.models",
         "description": "account.models",
-        "peekOfCode": "class CustomAccountManager(BaseUserManager):\n    def create_superuser(self, email, name, password, **other_fields):\n        other_fields.setdefault(\"is_staff\", True)\n        other_fields.setdefault(\"is_superuser\", True)\n        other_fields.setdefault(\"is_active\", True)\n        if other_fields.get(\"is_staff\") is not True:\n            raise ValueError(\"Superuser must be assigned to is_staff=True.\")\n        if other_fields.get(\"is_superuser\") is not True:\n            raise ValueError(\"Superuser must be assigned to is_superuser=True.\")\n        return self.create_user(email, name, password, **other_fields)",
+        "peekOfCode": "class CustomAccountManager(BaseUserManager):\n    \"\"\"\n    Manages user accounts\n    \"\"\"\n    def create_superuser(self, email, name, password, **other_fields):\n        other_fields.setdefault(\"is_staff\", True)\n        other_fields.setdefault(\"is_superuser\", True)\n        other_fields.setdefault(\"is_active\", True)\n        if other_fields.get(\"is_staff\") is not True:\n            raise ValueError(\"Superuser must be assigned to is_staff=True.\")",
         "detail": "account.models",
         "documentation": {}
     },
@@ -1070,7 +1062,7 @@
         "kind": 6,
         "importPath": "account.models",
         "description": "account.models",
-        "peekOfCode": "class Customer(AbstractBaseUser, PermissionsMixin):\n    email = models.EmailField(_(\"email address\"), unique=True)\n    name = models.CharField(max_length=150)\n    mobile = models.CharField(max_length=20, blank=True)\n    is_active = models.BooleanField(default=False)\n    is_staff = models.BooleanField(default=False)\n    created = models.DateTimeField(auto_now_add=True)\n    updated = models.DateTimeField(auto_now=True)\n    objects = CustomAccountManager()\n    USERNAME_FIELD = \"email\"",
+        "peekOfCode": "class Customer(AbstractBaseUser, PermissionsMixin):\n    \"\"\"\n    Customer table\n    \"\"\"\n    email = models.EmailField(_(\"email address\"), unique=True)\n    name = models.CharField(max_length=150)\n    mobile = models.CharField(max_length=20, blank=True)\n    is_active = models.BooleanField(default=False)\n    is_staff = models.BooleanField(default=False)\n    created = models.DateTimeField(auto_now_add=True)",
         "detail": "account.models",
         "documentation": {}
     },
@@ -1079,7 +1071,7 @@
         "kind": 6,
         "importPath": "account.models",
         "description": "account.models",
-        "peekOfCode": "class Address(models.Model):\n    \"\"\"\n    Address\n    \"\"\"\n    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)\n    customer = models.ForeignKey(Customer, verbose_name=_(\"Customer\"), on_delete=models.CASCADE)\n    full_name = models.CharField(_(\"Full Name\"), max_length=150)\n    phone = models.CharField(_(\"Phone Number\"), max_length=50)\n    postcode = models.CharField(_(\"Postcode\"), max_length=50)\n    address_line = models.CharField(_(\"Address Line 1\"), max_length=255)",
+        "peekOfCode": "class Address(models.Model):\n    \"\"\"\n    Address table\n    \"\"\"\n    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)\n    customer = models.ForeignKey(\n        Customer, verbose_name=_(\"Customer\"), on_delete=models.CASCADE\n    )\n    full_name = models.CharField(_(\"Full Name\"), max_length=150)\n    phone = models.CharField(_(\"Phone Number\"), max_length=50)",
         "detail": "account.models",
         "documentation": {}
     },
