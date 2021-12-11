@@ -386,14 +386,6 @@
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
         "label": "PasswordResetTokenGenerator",
         "importPath": "django.contrib.auth.tokens",
         "description": "django.contrib.auth.tokens",
@@ -1788,6 +1780,15 @@
         "documentation": {}
     },
     {
+        "label": "CategoryAdmin",
+        "kind": 6,
+        "importPath": "store.admin",
+        "description": "store.admin",
+        "peekOfCode": "class CategoryAdmin(MPTTModelAdmin):\n    list_display = [\"name\", \"slug\"]\n    prepopulated_fields = {\"slug\": (\"name\",)}\nclass ProductSpecificationInline(admin.TabularInline):\n    model = ProductSpecification\n@admin.register(ProductType)\nclass ProductTypeAdmin(admin.ModelAdmin):\n    inlines = [\n        ProductSpecificationInline,\n    ]",
+        "detail": "store.admin",
+        "documentation": {}
+    },
+    {
         "label": "ProductSpecificationInline",
         "kind": 6,
         "importPath": "store.admin",
@@ -1819,7 +1820,7 @@
         "kind": 6,
         "importPath": "store.admin",
         "description": "store.admin",
-        "peekOfCode": "class ProductSpecificationValueInline(admin.TabularInline):\n    model = ProductSpecificationValue\n@admin.register(Product)\nclass ProductAdmin(admin.ModelAdmin):\n    inlines = [\n        ProductSpecificationValueInline,\n        ProductImageInline,\n    ]",
+        "peekOfCode": "class ProductSpecificationValueInline(admin.TabularInline):\n    model = ProductSpecificationValue\n@admin.register(Product)\nclass ProductAdmin(admin.ModelAdmin):\n    inlines = [\n        ProductSpecificationValueInline,\n        ProductImageInline,\n    ]\n    prepopulated_fields = {\"slug\": (\"title\",)}",
         "detail": "store.admin",
         "documentation": {}
     },
@@ -1828,7 +1829,7 @@
         "kind": 6,
         "importPath": "store.admin",
         "description": "store.admin",
-        "peekOfCode": "class ProductAdmin(admin.ModelAdmin):\n    inlines = [\n        ProductSpecificationValueInline,\n        ProductImageInline,\n    ]",
+        "peekOfCode": "class ProductAdmin(admin.ModelAdmin):\n    inlines = [\n        ProductSpecificationValueInline,\n        ProductImageInline,\n    ]\n    prepopulated_fields = {\"slug\": (\"title\",)}",
         "detail": "store.admin",
         "documentation": {}
     },
@@ -1855,7 +1856,7 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class Category(MPTTModel):\n    \"\"\"\n    Category Table implimented with MPTT.\n    \"\"\"\n    name = models.CharField(\n        verbose_name=_(\"Category Name\"),\n        help_text=_(\"Required and unique\"),\n        max_length=255,\n        unique=True,\n    )",
+        "peekOfCode": "class Category(MPTTModel):\n    \"\"\"\n    Category Table implemented with MPTT.\n    \"\"\"\n    name = models.CharField(\n        verbose_name=_(\"Category Name\"),\n        help_text=_(\"Required and unique\"),\n        max_length=255,\n        unique=True,\n    )",
         "detail": "store.models",
         "documentation": {}
     },
@@ -1864,7 +1865,7 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class ProductType(models.Model):\n    \"\"\"\n    ProductType Table will provide a list of the different types\n    of products that are for sale.\n    \"\"\"\n    name = models.CharField(verbose_name=_(\"Product Name\"), help_text=_(\"Required\"), max_length=255, unique=True)\n    is_active = models.BooleanField(default=True)\n    class Meta:\n        verbose_name = _(\"Product Type\")\n        verbose_name_plural = _(\"Product Types\")",
+        "peekOfCode": "class ProductType(models.Model):\n    \"\"\"\n    ProductType Table will provide a list of the different types\n    of products that are for sale.\n    \"\"\"\n    name = models.CharField(\n        verbose_name=_(\"Product Type\"),\n        help_text=_(\"Required\"),\n        max_length=255,\n        unique=True,",
         "detail": "store.models",
         "documentation": {}
     },
@@ -1873,7 +1874,7 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class ProductSpecification(models.Model):\n    \"\"\"\n    The Product Specification Table contains product\n    specification or features for the product types.\n    \"\"\"\n    product_type = models.ForeignKey(ProductType, on_delete=models.RESTRICT)\n    name = models.CharField(verbose_name=_(\"Name\"), help_text=_(\"Required\"), max_length=255)\n    class Meta:\n        verbose_name = _(\"Product Specification\")\n        verbose_name_plural = _(\"Product Specifications\")",
+        "peekOfCode": "class ProductSpecification(models.Model):\n    \"\"\"\n    The Product Specification Table contains product\n    specification or features for the product types.\n    \"\"\"\n    product_type = models.ForeignKey(ProductType, on_delete=models.RESTRICT)\n    name = models.CharField(\n        verbose_name=_(\"Name\"), help_text=_(\"Required\"), max_length=255\n    )\n    class Meta:",
         "detail": "store.models",
         "documentation": {}
     },
@@ -1900,7 +1901,7 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class ProductImage(models.Model):\n    \"\"\"\n    The Product Image table.\n    \"\"\"\n    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name=\"product_image\")\n    image = models.ImageField(\n        verbose_name=_(\"image\"),\n        help_text=_(\"Upload a product image\"),\n        upload_to=\"images/\",\n        default=\"images/default.png\",",
+        "peekOfCode": "class ProductImage(models.Model):\n    \"\"\"\n    The Product Image table.\n    \"\"\"\n    product = models.ForeignKey(\n        Product, on_delete=models.CASCADE, related_name=\"product_image\"\n    )\n    image = models.ImageField(\n        verbose_name=_(\"image\"),\n        help_text=_(\"Upload a product image\"),",
         "detail": "store.models",
         "documentation": {}
     },
@@ -1927,7 +1928,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def home(request):\n    return render(request, \"home.html\")\ndef about(request):\n    return render(request, \"store/about.html\")\ndef product_all(request):\n    products = Product.objects.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)",
+        "peekOfCode": "def home(request):\n    products = Product.objects.prefetch_related(\"product_image\").filter(is_active=True)\n    return render(request, \"home.html\", {\"products\": products})\ndef about(request):\n    return render(request, \"store/about.html\")\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(\n        category__in=Category.objects.get(name=category_slug).get_descendants(\n            include_self=True",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1936,16 +1937,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def about(request):\n    return render(request, \"store/about.html\")\ndef product_all(request):\n    products = Product.objects.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(\n        request, \"store/category.html\", {\"category\": category, \"products\": products}",
-        "detail": "store.views",
-        "documentation": {}
-    },
-    {
-        "label": "product_all",
-        "kind": 2,
-        "importPath": "store.views",
-        "description": "store.views",
-        "peekOfCode": "def product_all(request):\n    products = Product.objects.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(\n        request, \"store/category.html\", {\"category\": category, \"products\": products}\n    )\ndef product_detail(request, slug):",
+        "peekOfCode": "def about(request):\n    return render(request, \"store/about.html\")\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(\n        category__in=Category.objects.get(name=category_slug).get_descendants(\n            include_self=True\n        )\n    )\n    return render(",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1954,7 +1946,16 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(\n        request, \"store/category.html\", {\"category\": category, \"products\": products}\n    )\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, is_active=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
+        "peekOfCode": "def category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(\n        category__in=Category.objects.get(name=category_slug).get_descendants(\n            include_self=True\n        )\n    )\n    return render(\n        request,\n        \"store/category.html\",",
+        "detail": "store.views",
+        "documentation": {}
+    },
+    {
+        "label": "product_all",
+        "kind": 2,
+        "importPath": "store.views",
+        "description": "store.views",
+        "peekOfCode": "def product_all(request):\n    products = Product.objects.all()\n    return render(request, \"store/all_products.html\", {\"products\": products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, is_active=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
         "detail": "store.views",
         "documentation": {}
     },
