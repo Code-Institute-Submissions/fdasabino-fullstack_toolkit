@@ -4,7 +4,7 @@ from .models import *
 
 
 def home(request):
-    return render(request, "store/home.html")
+    return render(request, "home.html")
 
 
 def about(request):
@@ -19,7 +19,9 @@ def product_all(request):
 def category_list(request, category_slug=None):
     category = get_object_or_404(Category, slug=category_slug)
     products = Product.objects.filter(category=category)
-    return render(request, "store/category.html", {"category": category, "products": products})
+    return render(
+        request, "store/category.html", {"category": category, "products": products}
+    )
 
 
 def product_detail(request, slug):

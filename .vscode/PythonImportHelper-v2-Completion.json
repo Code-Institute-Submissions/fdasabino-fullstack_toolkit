@@ -1432,7 +1432,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nTEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nTEMPLATES_DIR = os.path.join(BASE_DIR, \"templates\")\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1441,7 +1441,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "TEMPLATES_DIR = os.path.join(BASE_DIR, \"templates\")\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1450,7 +1450,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "SECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
+        "peekOfCode": "SECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1459,7 +1459,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    'cloudinary_storage',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"cloudinary_storage\",",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1468,7 +1468,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "ALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    'cloudinary_storage',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "ALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"cloudinary_storage\",\n    \"django.contrib.staticfiles\",",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1477,7 +1477,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    'cloudinary_storage',\n    'django.contrib.staticfiles',\n    'cloudinary',\n    \"store\",",
+        "peekOfCode": "INSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"cloudinary_storage\",\n    \"django.contrib.staticfiles\",\n    \"cloudinary\",\n    \"store\",",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1495,7 +1495,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "ROOT_URLCONF = \"core.urls\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [TEMPLATES_DIR],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"context_processors\": [\n                \"django.template.context_processors.debug\",\n                \"django.template.context_processors.request\",",
+        "peekOfCode": "ROOT_URLCONF = \"core.urls\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [BASE_DIR, \"templates\"],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"context_processors\": [\n                \"django.template.context_processors.debug\",\n                \"django.template.context_processors.request\",",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1504,7 +1504,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "TEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [TEMPLATES_DIR],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"context_processors\": [\n                \"django.template.context_processors.debug\",\n                \"django.template.context_processors.request\",\n                \"django.contrib.auth.context_processors.auth\",",
+        "peekOfCode": "TEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [BASE_DIR, \"templates\"],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"context_processors\": [\n                \"django.template.context_processors.debug\",\n                \"django.template.context_processors.request\",\n                \"django.contrib.auth.context_processors.auth\",",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1513,7 +1513,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "WSGI_APPLICATION = \"core.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\n# DATABASES = {\n# \"default\": {\n# \"ENGINE\": \"django.db.backends.sqlite3\",\n# \"NAME\": BASE_DIR / \"db.sqlite3\",\n# }\n# }\nDATABASES = {",
+        "peekOfCode": "WSGI_APPLICATION = \"core.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}\n# DATABASES = {",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1522,7 +1522,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "DATABASES = {\n    'default':\n    dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))\n}\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        \"NAME\": \"django.contrib.auth.password_validation.UserAttributeSimilarityValidator\",\n    },",
+        "peekOfCode": "DATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}\n# DATABASES = {\n# 'default':\n# dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))\n# }",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1540,7 +1540,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "LANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')",
+        "peekOfCode": "LANGUAGE_CODE = \"en-us\"\nTIME_ZONE = \"Europe/Stockholm\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1549,7 +1549,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "TIME_ZONE = \"UTC\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'",
+        "peekOfCode": "TIME_ZONE = \"Europe/Stockholm\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\n# STATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1558,7 +1558,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'\nMEDIA_URL = \"/media/\"",
+        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\n# STATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1567,7 +1567,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")",
+        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\n# STATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1576,7 +1576,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\nDEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\n# STATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\n# DEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1585,7 +1585,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\nDEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"",
+        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\n# STATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\n# DEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1594,7 +1594,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "STATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\nDEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"",
+        "peekOfCode": "STATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\n# STATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\n# DEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1603,16 +1603,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\nDEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID",
-        "detail": "core.settings",
-        "documentation": {}
-    },
-    {
-        "label": "STATICFILES_STORAGE",
-        "kind": 5,
-        "importPath": "core.settings",
-        "description": "core.settings",
-        "peekOfCode": "STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\nDEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID\nBASKET_SESSION_ID = \"basket\"",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\n# STATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\n# DEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1621,7 +1612,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\nDEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID\nBASKET_SESSION_ID = \"basket\"\n# Default primary key field type",
+        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\n# DEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID\nBASKET_SESSION_ID = \"basket\"\n# Default primary key field type",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1630,16 +1621,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\nDEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID\nBASKET_SESSION_ID = \"basket\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field",
-        "detail": "core.settings",
-        "documentation": {}
-    },
-    {
-        "label": "DEFAULT_FILE_STORAGE",
-        "kind": 5,
-        "importPath": "core.settings",
-        "description": "core.settings",
-        "peekOfCode": "DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID\nBASKET_SESSION_ID = \"basket\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\n# DEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID\nBASKET_SESSION_ID = \"basket\"\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1945,7 +1927,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def home(request):\n    return render(request, \"store/home.html\")\ndef about(request):\n    return render(request, \"store/about.html\")\ndef product_all(request):\n    products = Product.objects.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)",
+        "peekOfCode": "def home(request):\n    return render(request, \"home.html\")\ndef about(request):\n    return render(request, \"store/about.html\")\ndef product_all(request):\n    products = Product.objects.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1954,7 +1936,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def about(request):\n    return render(request, \"store/about.html\")\ndef product_all(request):\n    products = Product.objects.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(request, \"store/category.html\", {\"category\": category, \"products\": products})\ndef product_detail(request, slug):",
+        "peekOfCode": "def about(request):\n    return render(request, \"store/about.html\")\ndef product_all(request):\n    products = Product.objects.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(\n        request, \"store/category.html\", {\"category\": category, \"products\": products}",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1963,7 +1945,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def product_all(request):\n    products = Product.objects.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(request, \"store/category.html\", {\"category\": category, \"products\": products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, is_active=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
+        "peekOfCode": "def product_all(request):\n    products = Product.objects.all()\n    return render(request, \"store/order.html\", {\"products\": products})\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(\n        request, \"store/category.html\", {\"category\": category, \"products\": products}\n    )\ndef product_detail(request, slug):",
         "detail": "store.views",
         "documentation": {}
     },
@@ -1972,7 +1954,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(request, \"store/category.html\", {\"category\": category, \"products\": products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, is_active=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
+        "peekOfCode": "def category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(category=category)\n    return render(\n        request, \"store/category.html\", {\"category\": category, \"products\": products}\n    )\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, is_active=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
         "detail": "store.views",
         "documentation": {}
     },
@@ -2001,6 +1983,60 @@
         "description": "venv.Scripts.autopep8-script",
         "peekOfCode": "__requires__ = 'autopep8==1.5.4'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
         "detail": "venv.Scripts.autopep8-script",
+        "documentation": {}
+    },
+    {
+        "label": "importlib_load_entry_point",
+        "kind": 2,
+        "importPath": "venv.Scripts.coverage-3.10-script",
+        "description": "venv.Scripts.coverage-3.10-script",
+        "peekOfCode": "def importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')\n    matches = (\n        entry_point\n        for entry_point in distribution(dist_name).entry_points\n        if entry_point.group == group and entry_point.name == name\n    )\n    return next(matches).load()\nglobals().setdefault('load_entry_point', importlib_load_entry_point)\nif __name__ == '__main__':",
+        "detail": "venv.Scripts.coverage-3.10-script",
+        "documentation": {}
+    },
+    {
+        "label": "__requires__",
+        "kind": 5,
+        "importPath": "venv.Scripts.coverage-3.10-script",
+        "description": "venv.Scripts.coverage-3.10-script",
+        "peekOfCode": "__requires__ = 'coverage==5.3.1'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
+        "detail": "venv.Scripts.coverage-3.10-script",
+        "documentation": {}
+    },
+    {
+        "label": "importlib_load_entry_point",
+        "kind": 2,
+        "importPath": "venv.Scripts.coverage-script",
+        "description": "venv.Scripts.coverage-script",
+        "peekOfCode": "def importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')\n    matches = (\n        entry_point\n        for entry_point in distribution(dist_name).entry_points\n        if entry_point.group == group and entry_point.name == name\n    )\n    return next(matches).load()\nglobals().setdefault('load_entry_point', importlib_load_entry_point)\nif __name__ == '__main__':",
+        "detail": "venv.Scripts.coverage-script",
+        "documentation": {}
+    },
+    {
+        "label": "__requires__",
+        "kind": 5,
+        "importPath": "venv.Scripts.coverage-script",
+        "description": "venv.Scripts.coverage-script",
+        "peekOfCode": "__requires__ = 'coverage==5.3.1'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
+        "detail": "venv.Scripts.coverage-script",
+        "documentation": {}
+    },
+    {
+        "label": "importlib_load_entry_point",
+        "kind": 2,
+        "importPath": "venv.Scripts.coverage3-script",
+        "description": "venv.Scripts.coverage3-script",
+        "peekOfCode": "def importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')\n    matches = (\n        entry_point\n        for entry_point in distribution(dist_name).entry_points\n        if entry_point.group == group and entry_point.name == name\n    )\n    return next(matches).load()\nglobals().setdefault('load_entry_point', importlib_load_entry_point)\nif __name__ == '__main__':",
+        "detail": "venv.Scripts.coverage3-script",
+        "documentation": {}
+    },
+    {
+        "label": "__requires__",
+        "kind": 5,
+        "importPath": "venv.Scripts.coverage3-script",
+        "description": "venv.Scripts.coverage3-script",
+        "peekOfCode": "__requires__ = 'coverage==5.3.1'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
+        "detail": "venv.Scripts.coverage3-script",
         "documentation": {}
     },
     {
