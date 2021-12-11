@@ -1,49 +1,71 @@
-{% extends "base.html" %} {% load static %} {% block title %}Basket Summary{%endblock %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Basket{% endblock %}
+{% block content %}
 
-<main class="pt-5">
+<section>
   <div class="container">
-    <div class="col-12">
-      <h1 class="h2">Your Basket</h1>
+    <div class="row">
+      <div class="col-12">
+        <h3>Your Basket</h3>
+        {% if not basket %}
+        <div class="col-12 p-0">Wow so empty here!<a href="{% url 'store:product_all' %}"> Back to products page</a>
+        </div>
+        <hr>
+        {% else %}
+      </div>
     </div>
-    <div class="col-12">
-      <p>Manage your <b>items</b> in your basket</p>
-    </div>
-    <hr />
+    <hr>
   </div>
   <div class="container">
     <div class="row g-3">
       {% if basket|length == 0 %}
-      <div class="col-12 text-center">
-        Your basket is empty <a href="{% url 'store:product_all'%}" class="text-decoration-none">To Order Page</a>
-      </div>
+      <div class="col-12">Your basket is empty <a href="{% url 'store:store_home' %}">Shop</a></div>
       {% else %}
-      <h4 class="pe-3 text-center">Order</h4>
-      <div class="col-12 bg-light p-3 d-flex justify-content-between">
-        <div class="d-flex d-flex-inline"></div>
-        <div class="text-end">
-          <div class="mb-2">
-            Sub Total:
-            <div id="subtotal" class="d-inline-flex fw-bold">{{basket.get_subtotal_price}} SEK</div>
+      <div class="col-12 p-3 d-flex justify-content-between">
+        <div class="d-flex d-flex-inline">
+          <div class="pe-3">Order</div>
+          <div class="dropdown">
+            <a class="text-reset text-decoration-none dropdown-toggle" href="#" role="link" id="dropdownLink"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Shipping options
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor"
+                class="bi bi-chevron-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+              </svg>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownLink">
+              <li class="item small">Next day delivery</li>
+              <li class="item small">Premimum delivery</li>
+            </ul>
           </div>
-          <small>You may be subject to delivery charges</small>
-          <div class="pt-2">Total to pay: <span id="total" class="fw-bold h5">{{basket.get_total_price}} SEK</span></div>
+        </div>
+        <div class="text-end">
+          <div class="">Sub Total: <div id="subtotal" class="d-inline-flex fw-bold">£{{basket.get_subtotal_price}}</div>
+          </div>
         </div>
       </div>
       <div class="col-md-5 col-lg-4 order-md-last p-0 order-3">
-        <div class="d-grid gap-2">
-          <a role="button" href="{% url 'checkout:deliverychoices' %}" class="btn btn-success fw-bold" type="button"
-            >Checkout Securely</a
-          >
+        <div class="d-grid gap-2 ">
+          <a role="button" href="{% url 'checkout:deliverychoices' %}" class="btn btn-success fw-bold"
+            type="button">Checkout Securely</a>
+          <a role="button" href="{% url "store:product_all" %}" class="btn btn-outline-dark fw-bold" type="button">Back
+            to Products</a>
         </div>
       </div>
       <div class="col-md-7 col-lg-8 p-0">
-        {% for item in basket %} {% with product=item.product %}
+        {% for item in basket %}
+        {% with product=item.product %}
         <div class="card mb-3 border-0 product-item" data-index="{{product.id}}">
           <div class="row g-0">
             <div class="col-md-2 d-none d-md-block">
-              {% for image in product.product_image.all %} {% if image.is_feature%}
-              <img class="img-fluid" alt="Responsive image" src="{{ image.image.url }}" alt="{{ image.image.alt_text }}" />
-              {% endif %} {% endfor %}
+              {% for image in product.product_image.all %}
+              {% if image.is_feature%}
+              <img class="img-fluid" alt="Responsive image" src="{{ image.image.url }}"
+                alt="{{ image.image.alt_text }}">
+              {% endif %}
+              {% endfor %}
             </div>
             <div class="col-md-10 ps-md-3">
               <div class="card-body p-1">
@@ -51,35 +73,30 @@
                   <p class="card-text pb-3">{{product.title}}</p>
                 </a>
                 <label for="select">Qty</label>
-                <select class="1-100" id="select{{product.id}}">
-                  <option selected>{{item.qty}}</option>
+                <select id="select{{product.id}}" style="width:50px;height:31px;">
+                  <option value="" selected disabled hidden>{{item.qty}}</option>
+                  <option value="">1</option>
+                  <option value="">2</option>
+                  <option value="">3</option>
+                  <option value="">4</option>
                 </select>
-                <a type="button" id="update-button" data-index="{{product.id}}" class="btn btn-primary btn-sm update-button"
-                  >Update</a
-                >
-                <a type="button" id="delete-button" data-index="{{product.id}}" class="btn btn-danger btn-sm delete-button"
-                  >Delete</a
-                >
+                <a type="button" id="update-button" data-index="{{product.id}}"
+                  class="btn btn-primary btn-sm update-button text-decoration-none small">Update</a>
+                <a type="button" id="delete-button" data-index="{{product.id}}"
+                  class="btn btn-danger btn-sm delete-button text-decoration-none small">Delete</a>
               </div>
-              <small>Feel free to update your item quantity.</small>
             </div>
           </div>
         </div>
-        {% endwith %} {% endfor %}
+        {% endwith %}
+        {% endfor %}
       </div>
       {% endif %}
     </div>
+    {% endif %}
   </div>
-</main>
-
+</section>
 <script>
-  $(function () {
-    var $select = $(".1-100");
-    for (i = 1; i <= 20; i++) {
-      $select.append($("<option></option>").val(i).html(i));
-    }
-  });
-
   // Delete Item
   $(document).on("click", ".delete-button", function (e) {
     e.preventDefault();
@@ -94,8 +111,19 @@
       },
       success: function (json) {
         $('.product-item[data-index="' + prodid + '"]').remove();
-        document.getElementById("subtotal").innerHTML = json.subtotal;
+
+        if (json.qty == 0) {
+          total = 0
+          subtotal = 0
+        } else {
+          total = (parseFloat(json.subtotal) + 11.50).toFixed(2);
+          subtotal = json.subtotal
+        }
+
+        document.getElementById("subtotal").innerHTML = subtotal;
         document.getElementById("basket-qty").innerHTML = json.qty;
+        location.reload();
+
       },
       error: function (xhr, errmsg, err) {},
     });
@@ -115,8 +143,11 @@
         action: "post",
       },
       success: function (json) {
+
+        total = (parseFloat(json.subtotal) + 11.50).toFixed(2);
         document.getElementById("basket-qty").innerHTML = json.qty;
         document.getElementById("subtotal").innerHTML = json.subtotal;
+        location.reload();
       },
       error: function (xhr, errmsg, err) {},
     });

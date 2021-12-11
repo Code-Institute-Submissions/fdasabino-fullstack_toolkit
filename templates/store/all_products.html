@@ -1,4 +1,7 @@
-{% extends "base.html" %} {% load static %} {% block title %}Order{% endblock %} {% block content %}
+{% extends "base.html" %}
+{% load static %} 
+{% block title %}All Products{% endblock %}
+{% block content %}
 
 <div class="container">
   <div class="row">
@@ -16,10 +19,11 @@
             <div class="card-body px-0 text-center">
               <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">
                 {% for image in product.product_image.all %} {% if image.is_feature%}
-                <img class="img-fluid" alt="Responsive image" src="{{ image.image.url }}" alt="{{ image.image.alt_text }}" />
-                <p class="card-text">{{ product.title }}</p></a
-              >
-              <div class="fw-bold mt-1">SEK {{product.regular_price}}</div>
+                <img class="img-fluid" alt="Responsive image" src="{{ image.image.url }}"
+                  alt="{{ image.image.alt_text }}" />
+                <p class="card-text">{{ product.title }}</p>
+              </a>
+              <div class="fw-bold mt-1">£{{product.regular_price}}</div>
             </div>
             {% endif %} {% endfor %}
           </div>
