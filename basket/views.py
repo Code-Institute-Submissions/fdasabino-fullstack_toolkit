@@ -7,7 +7,7 @@ from .basket import Basket
 
 def basket_summary(request):
     basket = Basket(request)
-    return render(request, "basket/summary.html", {"basket": basket})
+    return render(request, "basket/basket_summary.html", {"basket": basket})
 
 
 def basket_add(request):
@@ -19,8 +19,7 @@ def basket_add(request):
         basket.add(product=product, qty=product_qty)
 
         basketqty = basket.__len__()
-        response = JsonResponse({"qty": basketqty})
-        return response
+        return JsonResponse({"qty": basketqty})
 
 
 def basket_delete(request):
@@ -31,8 +30,8 @@ def basket_delete(request):
 
         basketqty = basket.__len__()
         baskettotal = basket.get_total_price()
-        response = JsonResponse({"qty": basketqty, "subtotal": baskettotal})
-        return response
+        product = get_object_or_404(Product, id=product_id)
+        return JsonResponse({"qty": basketqty, "subtotal": baskettotal})
 
 
 def basket_update(request):
@@ -43,6 +42,6 @@ def basket_update(request):
         basket.update(product=product_id, qty=product_qty)
 
         basketqty = basket.__len__()
-        basketsubtotal = basket.get_subtotal_price()
-        response = JsonResponse({"qty": basketqty, "subtotal": basketsubtotal})
-        return response
+        baskettotal = basket.get_total_price()
+        product = get_object_or_404(Product, id=product_id)
+        return JsonResponse({"qty": basketqty, "subtotal": baskettotal})
