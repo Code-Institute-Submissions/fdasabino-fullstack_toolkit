@@ -562,14 +562,6 @@
         "documentation": {}
     },
     {
-        "label": "HttpResponse",
-        "importPath": "django.http",
-        "description": "django.http",
-        "isExtraImport": true,
-        "detail": "django.http",
-        "documentation": {}
-    },
-    {
         "label": "HttpResponseRedirect",
         "importPath": "django.http",
         "description": "django.http",
@@ -735,6 +727,14 @@
         "description": "order.models",
         "isExtraImport": true,
         "detail": "order.models",
+        "documentation": {}
+    },
+    {
+        "label": "add",
+        "importPath": "order.views",
+        "description": "order.views",
+        "isExtraImport": true,
+        "detail": "order.views",
         "documentation": {}
     },
     {
@@ -1124,7 +1124,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def wishlist(request):\n    products = Product.objects.filter(users_wishlist=request.user)\n    return render(request, \"account/dashboard/wishlist.html\", {\"wishlist\": products})\n@login_required\ndef add_to_wishlist(request, id):\n    product = get_object_or_404(Product, id=id)\n    if product.users_wishlist.filter(id=request.user.id).exists():\n        product.users_wishlist.remove(request.user)\n        messages.success(request, product.title +\n                         \" has been removed from your WishList\")",
+        "peekOfCode": "def wishlist(request):\n    products = Product.objects.filter(users_wishlist=request.user)\n    return render(request, \"account/user/user_wishlist.html\", {\"wishlist\": products})\n@login_required\ndef add_to_wishlist(request, id):\n    product = get_object_or_404(Product, id=id)\n    if product.users_wishlist.filter(id=request.user.id).exists():\n        product.users_wishlist.remove(request.user)\n    else:\n        product.users_wishlist.add(request.user)",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1133,7 +1133,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def add_to_wishlist(request, id):\n    product = get_object_or_404(Product, id=id)\n    if product.users_wishlist.filter(id=request.user.id).exists():\n        product.users_wishlist.remove(request.user)\n        messages.success(request, product.title +\n                         \" has been removed from your WishList\")\n    else:\n        product.users_wishlist.add(request.user)\n        messages.success(request, \"Added \" +\n                         product.title + \" to your WishList\")",
+        "peekOfCode": "def add_to_wishlist(request, id):\n    product = get_object_or_404(Product, id=id)\n    if product.users_wishlist.filter(id=request.user.id).exists():\n        product.users_wishlist.remove(request.user)\n    else:\n        product.users_wishlist.add(request.user)\n    return HttpResponseRedirect(request.META[\"HTTP_REFERER\"])\n@login_required\ndef dashboard(request):\n    orders = user_orders(request)",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1142,7 +1142,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def dashboard(request):\n    orders = user_orders(request)\n    return render(request, \"account/dashboard/dashboard.html\", {\"section\": \"profile\", \"orders\": orders})\n@login_required\ndef edit_details(request):\n    if request.method == \"POST\":\n        user_form = UserEditForm(instance=request.user, data=request.POST)\n        if user_form.is_valid():\n            user_form.save()\n    else:",
+        "peekOfCode": "def dashboard(request):\n    orders = user_orders(request)\n    return render(\n        request, \"account/user/dashboard.html\", {\"section\": \"profile\", \"orders\": orders}\n    )\n@login_required\ndef edit_details(request):\n    if request.method == \"POST\":\n        user_form = UserEditForm(instance=request.user, data=request.POST)\n        if user_form.is_valid():",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1151,7 +1151,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def edit_details(request):\n    if request.method == \"POST\":\n        user_form = UserEditForm(instance=request.user, data=request.POST)\n        if user_form.is_valid():\n            user_form.save()\n    else:\n        user_form = UserEditForm(instance=request.user)\n    return render(request, \"account/dashboard/edit_details.html\", {\"user_form\": user_form})\n@login_required\ndef delete_user(request):",
+        "peekOfCode": "def edit_details(request):\n    if request.method == \"POST\":\n        user_form = UserEditForm(instance=request.user, data=request.POST)\n        if user_form.is_valid():\n            user_form.save()\n    else:\n        user_form = UserEditForm(instance=request.user)\n    return render(request, \"account/user/edit_details.html\", {\"user_form\": user_form})\n@login_required\ndef delete_user(request):",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1160,7 +1160,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def delete_user(request):\n    user = Customer.objects.get(name=request.user)\n    user.is_active = False\n    user.save()\n    logout(request)\n    return redirect(\"account:delete_confirmation\")\ndef account_register(request):\n    if request.user.is_authenticated:\n        return redirect(\"account:dashboard\")\n    if request.method == \"POST\":",
+        "peekOfCode": "def delete_user(request):\n    user = Customer.objects.get(user_name=request.user)\n    user.is_active = False\n    user.save()\n    logout(request)\n    return redirect(\"account:delete_confirmation\")\ndef account_register(request):\n    if request.user.is_authenticated:\n        return redirect(\"account:dashboard\")\n    if request.method == \"POST\":",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1169,7 +1169,16 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def account_register(request):\n    if request.user.is_authenticated:\n        return redirect(\"account:dashboard\")\n    if request.method == \"POST\":\n        registerForm = RegistrationForm(request.POST)\n        if registerForm.is_valid():\n            user = registerForm.save(commit=False)\n            user.email = registerForm.cleaned_data[\"email\"]\n            user.set_password(registerForm.cleaned_data[\"password\"])\n            user.is_active = False",
+        "peekOfCode": "def account_register(request):\n    if request.user.is_authenticated:\n        return redirect(\"account:dashboard\")\n    if request.method == \"POST\":\n        registerForm = RegistrationForm(request.POST)\n        if registerForm.is_valid():\n            return account_register_email(registerForm, request)\n    else:\n        registerForm = RegistrationForm()\n    return render(request, \"account/registration/register.html\", {\"form\": registerForm})",
+        "detail": "account.views",
+        "documentation": {}
+    },
+    {
+        "label": "account_register_email",
+        "kind": 2,
+        "importPath": "account.views",
+        "description": "account.views",
+        "peekOfCode": "def account_register_email(registerForm, request):\n    user = registerForm.save(commit=False)\n    user.email = registerForm.cleaned_data[\"email\"]\n    user.set_password(registerForm.cleaned_data[\"password\"])\n    user.is_active = False\n    user.save()\n    current_site = get_current_site(request)\n    subject = \"Activate your Account\"\n    message = render_to_string(\n        \"account/registration/account_activation_email.html\",",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1178,7 +1187,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def account_activate(request, uidb64, token):\n    try:\n        uid = force_text(urlsafe_base64_decode(uidb64))\n        user = Customer.objects.get(pk=uid)\n    except (TypeError, ValueError, OverflowError,):\n        user = None\n    if user is not None and account_activation_token.check_token(user, token):\n        user.is_active = True\n        user.save()\n        login(request, user)",
+        "peekOfCode": "def account_activate(request, uidb64, token):\n    try:\n        uid = force_text(urlsafe_base64_decode(uidb64))\n        user = Customer.objects.get(pk=uid)\n    except (TypeError, ValueError, OverflowError):\n        user = None\n    if user is None or not account_activation_token.check_token(user, token):\n        return render(request, \"account/registration/activation_invalid.html\")\n    user.is_active = True\n    user.save()",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1187,7 +1196,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def view_address(request):\n    addresses = Address.objects.filter(customer=request.user)\n    return render(request, \"account/dashboard/addresses.html\", {\"addresses\": addresses})\n@login_required\ndef add_address(request):\n    if request.method == \"POST\":\n        address_form = UserAddressForm(data=request.POST)\n        if address_form.is_valid():\n            address_form = address_form.save(commit=False)\n            address_form.customer = request.user",
+        "peekOfCode": "def view_address(request):\n    addresses = Address.objects.filter(customer=request.user)\n    return render(request, \"account/user/addresses.html\", {\"addresses\": addresses})\n@login_required\ndef add_address(request):\n    if request.method == \"POST\":\n        address_form = UserAddressForm(data=request.POST)\n        if address_form.is_valid():\n            address_form = address_form.save(commit=False)\n            address_form.customer = request.user",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1214,7 +1223,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def delete_address(request, id):\n    address = Address.objects.filter(pk=id, customer=request.user).delete()\n    return redirect(\"account:addresses\")\n@login_required\ndef set_default(request, id):\n    Address.objects.filter(customer=request.user,\n                           default=True).update(default=False)\n    Address.objects.filter(pk=id, customer=request.user).update(default=True)\n    previous_url = request.META.get(\"HTTP_REFERER\")\n    if \"delivery_address\" in previous_url:",
+        "peekOfCode": "def delete_address(request, id):\n    address = Address.objects.filter(pk=id, customer=request.user).delete()\n    return redirect(\"account:addresses\")\n@login_required\ndef set_default(request, id):\n    Address.objects.filter(customer=request.user, default=True).update(default=False)\n    Address.objects.filter(pk=id, customer=request.user).update(default=True)\n    return redirect(\"account:addresses\")\n@login_required\ndef user_orders(request):",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1223,7 +1232,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def set_default(request, id):\n    Address.objects.filter(customer=request.user,\n                           default=True).update(default=False)\n    Address.objects.filter(pk=id, customer=request.user).update(default=True)\n    previous_url = request.META.get(\"HTTP_REFERER\")\n    if \"delivery_address\" in previous_url:\n        return redirect(\"checkout:delivery_address\")\n    return redirect(\"account:addresses\")\n@login_required\ndef user_orders(request):",
+        "peekOfCode": "def set_default(request, id):\n    Address.objects.filter(customer=request.user, default=True).update(default=False)\n    Address.objects.filter(pk=id, customer=request.user).update(default=True)\n    return redirect(\"account:addresses\")\n@login_required\ndef user_orders(request):\n    user_id = request.user.id\n    orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)\n    return render(request, \"account/user/user_orders.html\", {\"orders\": orders})",
         "detail": "account.views",
         "documentation": {}
     },
@@ -1232,7 +1241,7 @@
         "kind": 2,
         "importPath": "account.views",
         "description": "account.views",
-        "peekOfCode": "def user_orders(request):\n    user_id = request.user.id\n    orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)\n    return render(request, \"account/dashboard/user_orders.html\", {\"orders\": orders})",
+        "peekOfCode": "def user_orders(request):\n    user_id = request.user.id\n    orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)\n    return render(request, \"account/user/user_orders.html\", {\"orders\": orders})",
         "detail": "account.views",
         "documentation": {}
     },
