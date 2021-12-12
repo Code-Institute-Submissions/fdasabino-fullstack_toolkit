@@ -135,7 +135,11 @@
           <div>
             <i class="bi bi-basket"></i>
           </div>
-          <span class="">Basket</span>
+          {% if basket %}
+          <span class="fs15 fw500">£{{basket.get_total_price}}</span>
+          {% else %}
+          <span class="fs15 fw500">Basket</span>
+          {% endif %}
         </a>
       </div>
       <div class="d-md-none d-lg-none d-xl-none">
