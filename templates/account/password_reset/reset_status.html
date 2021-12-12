@@ -1,9 +1,0 @@
-{% extends "../account_base.html" %} {% load static %} {% block title %}Password Reset{% endblock %}
-<!-- ------------------------------------------------------------------------------------------------------------- -->
-{% block sub-content %} {% if 'email' in request.get_full_path %}
-<h3 class="mb-4">Password Reset Request Sent to {{user.email}}</h3>
-<p>Check your email for instructions</p>
-{% endif %} {% if 'complete' in request.get_full_path %}
-<h3 class="mb-4">Password Reset Success</h3>
-<a href="{% url 'account:login' %}">Login</a>
-{% endif%} {% endblock %}

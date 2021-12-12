@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Password Reset Status{% endblock %}
+{% block content %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/account/account.css' %}">
+{% endblock extra_css%}
+
+<section>
+  <div class="container">
+    {% if 'email' in request.get_full_path %}
+    <h3 class="mb-4">Password Reset Link Sent</h3>
+    <hr>
+    <p>Check your email for instructions</p>
+    {% endif%}
+    {% if 'complete' in request.get_full_path %}
+    <h3 class="mb-4">Password Reset Success</h3>
+    <hr>
+    <a href="{% url "account:dashboard" %}">Go to dashboard</a>
+    {% endif%}
+  </div>
+</section>
+{% endblock %}

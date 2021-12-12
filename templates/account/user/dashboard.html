@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Dashboard{%endblock %}
+
+{% block content %}
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 py-3">
+        <h3>Your Account</h3>
+        <small>Logged in as: <b>{{user.name|upper}}</b></small>
+        <br>
+        <small>Last login: <b>{{user.last_login}}</b></small>
+      </div>
+      <div class="col-12 d-flex justify-content-between">
+        <div>Manage your details</div>
+        <a href="{% url 'account:logout' %}" class="btn btn-outline-danger">Logout</a>
+      </div>
+    </div>
+    <hr />
+
+    <div class="justify-content-center row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <a href="{% url 'account:user_orders' %}" class="text-reset text-decoration-none" role="button"
+          style="max-width: 540px;">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-12">
+                <div class="card-body text-center">
+                  <h1 class="h5">Orders <i class="bi bi-gift"></i></h1>
+                  <p class="card-text small text-muted">View, Track, Change or buy again</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col">
+        <a href="{% url 'account:edit_details' %}" class="text-reset text-decoration-none" role="button"
+          style="max-width: 540px;">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-12">
+                <div class="card-body text-center">
+                  <h1 class="h5">Login & Security <i class="bi bi-lock"></i></h1>
+                  <p class="card-text small text-muted">Edit login, email and phone number</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col">
+        <a href="{% url 'account:addresses' %}" class="text-reset text-decoration-none" role="button"
+          style="max-width: 540px;">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-12">
+                <div class="card-body text-center">
+                  <h1 class="h5">Your Addresses <i class="bi bi-pin-map"></i>
+                  </h1>
+                  <p class="card-text small text-muted">Edit your shipping addresses</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col">
+        <a href="{% url 'account:wishlist' %}" class="text-reset text-decoration-none" role="button"
+          style="max-width: 540px;">
+          <div class="card mb-3">
+            <div class="row g-0">
+              <div class="col-12">
+                <div class="card-body text-center">
+                  <h1 class="h5">Your Wishlist <i class="bi bi-stars"></i>
+                  </h1>
+                  <p class="card-text small text-muted">View items you added to your wishlist</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
