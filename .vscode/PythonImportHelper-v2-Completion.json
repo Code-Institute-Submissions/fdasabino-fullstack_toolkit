@@ -762,6 +762,15 @@
         "documentation": {}
     },
     {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -825,15 +834,6 @@
         "description": "paypalcheckoutsdk.orders",
         "isExtraImport": true,
         "detail": "paypalcheckoutsdk.orders",
-        "documentation": {}
-    },
-    {
-        "label": "os",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "os",
-        "description": "os",
-        "detail": "os",
         "documentation": {}
     },
     {
@@ -1335,7 +1335,7 @@
         "kind": 6,
         "importPath": "checkout.paypal",
         "description": "checkout.paypal",
-        "peekOfCode": "class PayPalClient:\n    def __init__(self):\n        self.client_id = \"AQsZaJWuemHUcpVRv_WE4XlWhgcal6mde-ZhtZHBS2xEd1lSYy59BxgpBNMZ6zKIzg8AsX5NW1PWhsoF\"\n        self.client_secret = \"EOEU4wk1Ng3npNRD_ejKVyIgpNLtm0VnUSUNdUCLwxQ6BZ-QtRbtLetbq6AVI0YYlubqE-Ipy9izMY2P\"\n        self.environment = SandboxEnvironment(client_id=self.client_id, client_secret=self.client_secret)\n        self.client = PayPalHttpClient(self.environment)",
+        "peekOfCode": "class PayPalClient:\n    def __init__(self):\n        self.client_id = os.environ.get(\"CLIENT_ID\")\n        self.client_secret = os.environ.get(\"CLIENT_SECRET\")\n        self.environment = SandboxEnvironment(\n            client_id=self.client_id, client_secret=self.client_secret\n        )\n        self.client = PayPalHttpClient(self.environment)",
         "detail": "checkout.paypal",
         "documentation": {}
     },
@@ -1344,7 +1344,7 @@
         "kind": 5,
         "importPath": "checkout.urls",
         "description": "checkout.urls",
-        "peekOfCode": "app_name = \"checkout\"\nurlpatterns = [\n    path(\"deliverychoices\", views.deliverychoices, name=\"deliverychoices\"),\n    path(\"basket_update_delivery/\", views.basket_update_delivery, name=\"basket_update_delivery\"),\n    path(\"delivery_address/\", views.delivery_address, name=\"delivery_address\"),\n    path(\"payment_selection/\", views.payment_selection, name=\"payment_selection\"),\n    path(\"payment_complete/\", views.payment_complete, name=\"payment_complete\"),\n    path(\"payment_successful/\", views.payment_successful, name=\"payment_successful\"),\n]",
+        "peekOfCode": "app_name = \"checkout\"\nurlpatterns = [\n    path(\"deliverychoices\", views.deliverychoices, name=\"deliverychoices\"),\n    path(\n        \"basket_update_delivery/\",\n        views.basket_update_delivery,\n        name=\"basket_update_delivery\",\n    ),\n    path(\"delivery_address/\", views.delivery_address, name=\"delivery_address\"),\n    path(\"payment_selection/\", views.payment_selection, name=\"payment_selection\"),",
         "detail": "checkout.urls",
         "documentation": {}
     },
@@ -1353,7 +1353,7 @@
         "kind": 5,
         "importPath": "checkout.urls",
         "description": "checkout.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\"deliverychoices\", views.deliverychoices, name=\"deliverychoices\"),\n    path(\"basket_update_delivery/\", views.basket_update_delivery, name=\"basket_update_delivery\"),\n    path(\"delivery_address/\", views.delivery_address, name=\"delivery_address\"),\n    path(\"payment_selection/\", views.payment_selection, name=\"payment_selection\"),\n    path(\"payment_complete/\", views.payment_complete, name=\"payment_complete\"),\n    path(\"payment_successful/\", views.payment_successful, name=\"payment_successful\"),\n]",
+        "peekOfCode": "urlpatterns = [\n    path(\"deliverychoices\", views.deliverychoices, name=\"deliverychoices\"),\n    path(\n        \"basket_update_delivery/\",\n        views.basket_update_delivery,\n        name=\"basket_update_delivery\",\n    ),\n    path(\"delivery_address/\", views.delivery_address, name=\"delivery_address\"),\n    path(\"payment_selection/\", views.payment_selection, name=\"payment_selection\"),\n    path(\"payment_complete/\", views.payment_complete, name=\"payment_complete\"),",
         "detail": "checkout.urls",
         "documentation": {}
     },
@@ -2055,25 +2055,43 @@
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "os.environ[\"SECRET_KEY\"] = \"mysecretkey2021!!!\"\nos.environ[\"DATABASE_URL\"] = \"postgres://kemnbgtsxhrjya:0611f58d06ff77d5188c70ee3b27e9ccd4632c395f039acbd9111b973728f913@ec2-54-228-99-58.eu-west-1.compute.amazonaws.com:5432/delhk3fau4nbcm\"\nos.environ[\"CLOUDINARY_URL\"] = \"cloudinary://458241221221697:9gnhcXbuQayWFOJduQi3aGXWivg@frank2021\"",
+        "peekOfCode": "os.environ[\"SECRET_KEY\"] = \"mysecretkey2021!!!\"\nos.environ[\n    \"DATABASE_URL\"\n] = \"postgres://kemnbgtsxhrjya:0611f58d06ff77d5188c70ee3b27e9ccd4632c395f039acbd9111b973728f913@ec2-54-228-99-58.eu-west-1.compute.amazonaws.com:5432/delhk3fau4nbcm\"\nos.environ[\n    \"CLOUDINARY_URL\"\n] = \"cloudinary://458241221221697:9gnhcXbuQayWFOJduQi3aGXWivg@frank2021\"\n# paypal\nos.environ[\n    \"CLIENT_SECRET\"",
         "detail": "env",
         "documentation": {}
     },
     {
-        "label": "os.environ[\"DATABASE_URL\"]",
+        "label": "]",
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "os.environ[\"DATABASE_URL\"] = \"postgres://kemnbgtsxhrjya:0611f58d06ff77d5188c70ee3b27e9ccd4632c395f039acbd9111b973728f913@ec2-54-228-99-58.eu-west-1.compute.amazonaws.com:5432/delhk3fau4nbcm\"\nos.environ[\"CLOUDINARY_URL\"] = \"cloudinary://458241221221697:9gnhcXbuQayWFOJduQi3aGXWivg@frank2021\"",
+        "peekOfCode": "] = \"postgres://kemnbgtsxhrjya:0611f58d06ff77d5188c70ee3b27e9ccd4632c395f039acbd9111b973728f913@ec2-54-228-99-58.eu-west-1.compute.amazonaws.com:5432/delhk3fau4nbcm\"\nos.environ[\n    \"CLOUDINARY_URL\"\n] = \"cloudinary://458241221221697:9gnhcXbuQayWFOJduQi3aGXWivg@frank2021\"\n# paypal\nos.environ[\n    \"CLIENT_SECRET\"\n] = \"EIbeu_NbDi6MTgFCZOy8BTJISfvEgxGqsLn9sO3acG9ZsBL5eptHI_KoyGC2gzx609KNE6J64wyKP0tz\"\nos.environ[\n    \"CLIENT_ID\"",
         "detail": "env",
         "documentation": {}
     },
     {
-        "label": "os.environ[\"CLOUDINARY_URL\"]",
+        "label": "]",
         "kind": 5,
         "importPath": "env",
         "description": "env",
-        "peekOfCode": "os.environ[\"CLOUDINARY_URL\"] = \"cloudinary://458241221221697:9gnhcXbuQayWFOJduQi3aGXWivg@frank2021\"",
+        "peekOfCode": "] = \"cloudinary://458241221221697:9gnhcXbuQayWFOJduQi3aGXWivg@frank2021\"\n# paypal\nos.environ[\n    \"CLIENT_SECRET\"\n] = \"EIbeu_NbDi6MTgFCZOy8BTJISfvEgxGqsLn9sO3acG9ZsBL5eptHI_KoyGC2gzx609KNE6J64wyKP0tz\"\nos.environ[\n    \"CLIENT_ID\"\n] = \"ARvxiPSbJ1c43vOjO3zGx_-uHeVFlLUCdgEanFaMyTOs3nEzBqii8tNU7Rc-9zJiRuKaZtD7tZiZKgmE\"",
+        "detail": "env",
+        "documentation": {}
+    },
+    {
+        "label": "]",
+        "kind": 5,
+        "importPath": "env",
+        "description": "env",
+        "peekOfCode": "] = \"EIbeu_NbDi6MTgFCZOy8BTJISfvEgxGqsLn9sO3acG9ZsBL5eptHI_KoyGC2gzx609KNE6J64wyKP0tz\"\nos.environ[\n    \"CLIENT_ID\"\n] = \"ARvxiPSbJ1c43vOjO3zGx_-uHeVFlLUCdgEanFaMyTOs3nEzBqii8tNU7Rc-9zJiRuKaZtD7tZiZKgmE\"",
+        "detail": "env",
+        "documentation": {}
+    },
+    {
+        "label": "]",
+        "kind": 5,
+        "importPath": "env",
+        "description": "env",
+        "peekOfCode": "] = \"ARvxiPSbJ1c43vOjO3zGx_-uHeVFlLUCdgEanFaMyTOs3nEzBqii8tNU7Rc-9zJiRuKaZtD7tZiZKgmE\"",
         "detail": "env",
         "documentation": {}
     },
