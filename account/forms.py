@@ -65,7 +65,15 @@ class UserLoginForm(AuthenticationForm):
 
 
 class RegistrationForm(forms.ModelForm):
-    user_name = forms.CharField(
+    class Meta:
+        model = Address
+
+    email = forms.EmailField(
+        max_length=100,
+        help_text="Required",
+        error_messages={"required": "Sorry, you will need an email"},
+    )
+    name = forms.CharField(
         label="Full Name",
         min_length=4,
         max_length=50,
@@ -77,23 +85,18 @@ class RegistrationForm(forms.ModelForm):
             }
         ),
     )
-    email = forms.EmailField(
-        max_length=100,
-        help_text="Required",
-        error_messages={"required": "Sorry, you will need an email"},
-    )
     password = forms.CharField(label="Password", widget=forms.PasswordInput)
     password2 = forms.CharField(label="Repeat password", widget=forms.PasswordInput)
 
     class Meta:
         model = Customer
         fields = (
-            "user_name",
+            "name",
             "email",
         )
 
-    def clean_user_name(self):
-        return self.cleaned_data["user_name"]
+    def clean_name(self):
+        return self.cleaned_data["name"]
 
     def clean_password2(self):
         cd = self.cleaned_data
@@ -105,13 +108,13 @@ class RegistrationForm(forms.ModelForm):
         email = self.cleaned_data["email"]
         if Customer.objects.filter(email=email).exists():
             raise forms.ValidationError(
-                "Please use another Email, that is already taken"
+                "The email address provided is already registered in our database. Please use a different email."
             )
         return email
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["user_name"].widget.attrs.update(
+        self.fields["name"].widget.attrs.update(
             {"class": "form-control mb-3", "placeholder": "Full Name"}
         )
         self.fields["email"].widget.attrs.update(
@@ -191,7 +194,7 @@ class UserEditForm(forms.ModelForm):
         ),
     )
 
-    user_name = forms.CharField(
+    name = forms.CharField(
         label="Firstname",
         min_length=4,
         max_length=50,
@@ -208,5 +211,5 @@ class UserEditForm(forms.ModelForm):
         model = Customer
         fields = (
             "email",
-            "user_name",
+            "name",
         )
