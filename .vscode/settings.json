@@ -1,6 +1,7 @@
 {
   "python.pythonPath": "c:\\venv\\Scripts\\python.exe",
   "cSpell.words": [
+    "cloudinary",
     "mptt"
   ]
 }

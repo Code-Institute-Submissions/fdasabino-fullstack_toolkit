@@ -159,6 +159,10 @@ LOGIN_URL = "/account/login/"
 # Basket session ID
 BASKET_SESSION_ID = "basket"
 
+# paypal
+CLIENT_SECRET = os.environ.get("CLIENT_SECRET")
+CLIENT_ID = os.environ.get("CLIENT_ID")
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
