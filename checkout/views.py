@@ -1,5 +1,5 @@
 import json
-
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
@@ -57,9 +57,11 @@ def delivery_address(request):
 
     try:
         if "address" not in request.session:
-            session["address"] = {"address_id": str(addresses[0].id)}
+
+            session["address"] = {"address_id": str(addresses)}
+
     except:
-        session["address"]["address_id"] = str(addresses[0].id)
+        session["address"]["address_id"] = str(addresses)
         session.modified = True
 
     return render(request, "checkout/delivery_address.html", {"addresses": addresses})

@@ -210,6 +210,14 @@
         "documentation": {}
     },
     {
+        "label": "messages",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -1372,7 +1380,7 @@
         "kind": 2,
         "importPath": "checkout.views",
         "description": "checkout.views",
-        "peekOfCode": "def delivery_address(request):\n    session = request.session\n    if \"purchase\" not in request.session:\n        return HttpResponseRedirect(request.META[\"HTTP_REFERER\"])\n    addresses = Address.objects.filter(customer=request.user).order_by(\"-default\")\n    try:\n        if \"address\" not in request.session:\n            session[\"address\"] = {\"address_id\": str(addresses[0].id)}\n    except:\n        session[\"address\"][\"address_id\"] = str(addresses[0].id)",
+        "peekOfCode": "def delivery_address(request):\n    session = request.session\n    if \"purchase\" not in request.session:\n        return HttpResponseRedirect(request.META[\"HTTP_REFERER\"])\n    addresses = Address.objects.filter(customer=request.user).order_by(\"-default\")\n    try:\n        if \"address\" not in request.session:\n            session[\"address\"] = {\"address_id\": str(addresses)}\n    except:\n        session[\"address\"][\"address_id\"] = str(addresses)",
         "detail": "checkout.views",
         "documentation": {}
     },
