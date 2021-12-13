@@ -210,6 +210,14 @@
         "documentation": {}
     },
     {
+        "label": "messages",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
+        "documentation": {}
+    },
+    {
         "label": "admin",
         "importPath": "django.contrib",
         "description": "django.contrib",
@@ -1280,7 +1288,7 @@
         "kind": 2,
         "importPath": "basket.views",
         "description": "basket.views",
-        "peekOfCode": "def basket_add(request):\n    basket = Basket(request)\n    if request.POST.get(\"action\") == \"post\":\n        product_id = int(request.POST.get(\"productid\"))\n        product_qty = int(request.POST.get(\"productqty\"))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product, qty=product_qty)\n        basketqty = basket.__len__()\n        return JsonResponse({\"qty\": basketqty})\ndef basket_delete(request):",
+        "peekOfCode": "def basket_add(request):\n    basket = Basket(request)\n    if request.POST.get(\"action\") == \"post\":\n        product_id = int(request.POST.get(\"productid\"))\n        product_qty = int(request.POST.get(\"productqty\"))\n        product = get_object_or_404(Product, id=product_id)\n        basket.add(product=product, qty=product_qty)\n        messages.info(request, f\"Added {product} to your cart\")\n        basketqty = basket.__len__()\n        return JsonResponse({\"qty\": basketqty})",
         "detail": "basket.views",
         "documentation": {}
     },
@@ -1289,7 +1297,7 @@
         "kind": 2,
         "importPath": "basket.views",
         "description": "basket.views",
-        "peekOfCode": "def basket_delete(request):\n    basket = Basket(request)\n    if request.POST.get(\"action\") == \"post\":\n        product_id = int(request.POST.get(\"productid\"))\n        basket.delete(product=product_id)\n        basketqty = basket.__len__()\n        baskettotal = basket.get_total_price()\n        product = get_object_or_404(Product, id=product_id)\n        return JsonResponse({\"qty\": basketqty, \"subtotal\": baskettotal})\ndef basket_update(request):",
+        "peekOfCode": "def basket_delete(request):\n    basket = Basket(request)\n    if request.POST.get(\"action\") == \"post\":\n        product_id = int(request.POST.get(\"productid\"))\n        basket.delete(product=product_id)\n        basketqty = basket.__len__()\n        baskettotal = basket.get_total_price()\n        product = get_object_or_404(Product, id=product_id)\n        messages.info(request, f\"Removed {product} from your cart\")\n        return JsonResponse({\"qty\": basketqty, \"subtotal\": baskettotal})",
         "detail": "basket.views",
         "documentation": {}
     },
@@ -1298,7 +1306,7 @@
         "kind": 2,
         "importPath": "basket.views",
         "description": "basket.views",
-        "peekOfCode": "def basket_update(request):\n    basket = Basket(request)\n    if request.POST.get(\"action\") == \"post\":\n        product_id = int(request.POST.get(\"productid\"))\n        product_qty = int(request.POST.get(\"productqty\"))\n        basket.update(product=product_id, qty=product_qty)\n        basketqty = basket.__len__()\n        baskettotal = basket.get_total_price()\n        product = get_object_or_404(Product, id=product_id)\n        return JsonResponse({\"qty\": basketqty, \"subtotal\": baskettotal})",
+        "peekOfCode": "def basket_update(request):\n    basket = Basket(request)\n    if request.POST.get(\"action\") == \"post\":\n        product_id = int(request.POST.get(\"productid\"))\n        product_qty = int(request.POST.get(\"productqty\"))\n        basket.update(product=product_id, qty=product_qty)\n        basketqty = basket.__len__()\n        baskettotal = basket.get_total_price()\n        product = get_object_or_404(Product, id=product_id)\n        messages.info(request, f\"Updated {product} quantity in your cart\")",
         "detail": "basket.views",
         "documentation": {}
     },
