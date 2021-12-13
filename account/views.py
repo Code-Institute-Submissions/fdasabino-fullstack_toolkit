@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.sites.shortcuts import get_current_site
@@ -156,6 +157,7 @@ def delete_address(request, id):
 def set_default(request, id):
     Address.objects.filter(customer=request.user, default=True).update(default=False)
     Address.objects.filter(pk=id, customer=request.user).update(default=True)
+    messages.info(request, "Default delivery address updated")
     return redirect("account:addresses")
 
 
