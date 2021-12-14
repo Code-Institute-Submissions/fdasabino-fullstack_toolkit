@@ -1,6 +1,25 @@
 .toast {
+  width: 470px;
+  border: 0;
+  background-color: #CCC;
   position: absolute;
-  top: 0;
+  top: 9%;
   right: 0;
-  z-index: 999999;
+  z-index: 99999999999;
+}
+
+
+@media screen and (max-width: 768px) {
+  .toast {
+    width: 100%;
+    top: 0;
+  }
+
+  .toast-header {
+    font-size: 1.2rem;
+    color: #000;
+  }
+
+  .toast-body {}
+
 }

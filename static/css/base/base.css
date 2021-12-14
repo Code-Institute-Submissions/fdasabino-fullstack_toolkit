@@ -97,7 +97,7 @@ div {
   font-weight: 600;
 }
 
-@media (max-width: 568px) {
+@media screen and (max-width: 568px) {
 
   html,
   body,

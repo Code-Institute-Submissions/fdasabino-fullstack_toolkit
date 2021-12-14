@@ -1378,7 +1378,7 @@
         "kind": 2,
         "importPath": "checkout.views",
         "description": "checkout.views",
-        "peekOfCode": "def deliverychoices(request):\n    deliveryoptions = DeliveryOptions.objects.filter(is_active=True)\n    return render(\n        request, \"checkout/delivery_choices.html\", {\"deliveryoptions\": deliveryoptions}\n    )\n@login_required\ndef basket_update_delivery(request):\n    basket = Basket(request)\n    if request.POST.get(\"action\") == \"post\":\n        delivery_option = int(request.POST.get(\"deliveryoption\"))",
+        "peekOfCode": "def deliverychoices(request):\n    deliveryoptions = DeliveryOptions.objects.filter(is_active=True)\n    messages.info(request, \"Please choose a delivery option\")\n    return render(\n        request, \"checkout/delivery_choices.html\", {\"deliveryoptions\": deliveryoptions}\n    )\n@login_required\ndef basket_update_delivery(request):\n    basket = Basket(request)\n    if request.POST.get(\"action\") == \"post\":",
         "detail": "checkout.views",
         "documentation": {}
     },
@@ -1396,7 +1396,7 @@
         "kind": 2,
         "importPath": "checkout.views",
         "description": "checkout.views",
-        "peekOfCode": "def delivery_address(request):\n    session = request.session\n    if \"purchase\" not in request.session:\n        return HttpResponseRedirect(request.META[\"HTTP_REFERER\"])\n    addresses = Address.objects.filter(customer=request.user).order_by(\"-default\")\n    try:\n        if \"address\" not in request.session:\n            session[\"address\"] = {\"address_id\": str(addresses)}\n    except:\n        session[\"address\"][\"address_id\"] = str(addresses)",
+        "peekOfCode": "def delivery_address(request):\n    session = request.session\n    if \"purchase\" not in request.session:\n        return HttpResponseRedirect(request.META[\"HTTP_REFERER\"])\n    addresses = Address.objects.filter(customer=request.user).order_by(\"-default\")\n    messages.info(request, \"Please add or select an address to continue\")\n    try:\n        if \"address\" not in request.session:\n            session[\"address\"] = {\"address_id\": str(addresses)}\n    except:",
         "detail": "checkout.views",
         "documentation": {}
     },
@@ -1423,7 +1423,7 @@
         "kind": 2,
         "importPath": "checkout.views",
         "description": "checkout.views",
-        "peekOfCode": "def payment_successful(request):\n    basket = Basket(request)\n    basket.clear()\n    return render(request, \"checkout/payment_successful.html\", {})",
+        "peekOfCode": "def payment_successful(request):\n    basket = Basket(request)\n    basket.clear()\n    messages.info(request, \"Congratulations, your order has been created successfully.\")\n    return render(request, \"checkout/payment_successful.html\", {})",
         "detail": "checkout.views",
         "documentation": {}
     },

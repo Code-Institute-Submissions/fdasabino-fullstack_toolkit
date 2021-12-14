@@ -13,6 +13,7 @@ from .models import DeliveryOptions
 @login_required
 def deliverychoices(request):
     deliveryoptions = DeliveryOptions.objects.filter(is_active=True)
+    messages.info(request, "Please choose a delivery option")
     return render(
         request, "checkout/delivery_choices.html", {"deliveryoptions": deliveryoptions}
     )
@@ -37,13 +38,12 @@ def basket_update_delivery(request):
             session["purchase"]["delivery_id"] = delivery_type.id
             session.modified = True
 
-        response = JsonResponse(
+        return JsonResponse(
             {
                 "total": updated_total_price,
                 "delivery_price": delivery_type.delivery_price,
             }
         )
-        return response
 
 
 @login_required
@@ -54,10 +54,10 @@ def delivery_address(request):
         return HttpResponseRedirect(request.META["HTTP_REFERER"])
 
     addresses = Address.objects.filter(customer=request.user).order_by("-default")
+    messages.info(request, "Please add or select an address to continue")
 
     try:
         if "address" not in request.session:
-
             session["address"] = {"address_id": str(addresses)}
 
     except:
@@ -121,7 +121,6 @@ def payment_complete(request):
             price=item["price"],
             quantity=item["qty"],
         )
-
     return JsonResponse("Payment completed!", safe=False)
 
 
@@ -129,4 +128,5 @@ def payment_complete(request):
 def payment_successful(request):
     basket = Basket(request)
     basket.clear()
+    messages.info(request, "Congratulations, your order has been created successfully.")
     return render(request, "checkout/payment_successful.html", {})
