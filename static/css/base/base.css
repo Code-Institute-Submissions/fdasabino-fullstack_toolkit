@@ -27,7 +27,6 @@ a {
 @media (max-width: 1200px) {
   .container {
     max-width: 100%;
-    padding: 0 24px;
   }
 }
 
@@ -62,10 +61,6 @@ a {
 
 .card-title {
   font-weight: bold;
-}
-
-.alert {
-  z-index: 0;
 }
 
 /* Fonts */

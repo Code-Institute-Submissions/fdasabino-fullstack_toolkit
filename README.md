@@ -1,16 +1,22 @@
 # STHLM-foodies - Fresh food delivered to your door
 
-<img src="https://github.com/fdasabino/fullstack_toolkit/blob/master2/media/images/Wire.jpg">
+<img src="">
 
 ## 1. Project Goals
 
-- This page was designed with the intent to create a e-commerce website that allows B2C interactivity.
+- This page was designed with the intent to create a e-commerce website that allows B2C interactivity. Showing the skills required in order to fullfil
+  the requirements of the project milestone number 4 of the Code Institute.
 
 [View the live project here](https://sthlm-foodies.herokuapp.com/)
 
 ## 2. User Experience (UX)
 
+- In the section below you will find our user stories and some more information about the user experience and how users can interact with this website.
+
 ### 2.1. User Stories
+
+- As an user that wish to purchase a product, my experience has to be seamless and straight forward, so I can easily find what I'm looking for.
+- As a customer I wish to
 
 ### 2.2. Visitors can
 
@@ -111,3 +117,31 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 ### 8.3. Media
 
 ## 9. Latest Updates
+
+PAYPAL
+
+## Mock cards for testing purposes:
+
+Card Type: Visa
+
+Card Number: 4032030406952409
+
+Expiration Date: 04/2025
+
+## CVV: 448
+
+Card Type: MasterCard
+
+Card Number: 5110926310812211
+
+Expiration Date: 12/2025
+
+## CVV: 970
+
+Card Type: Amex
+
+Card Number: 340117922777181
+
+Expiration Date: 04/2023
+
+CVV: 9277
