@@ -42,7 +42,7 @@
         <div class="row g-0">
           <div class="col-md-12">
             <div class="p-1 text-center">
-              <h1 class="mb-0 h2 pe-4 pb-4">{{ product.title }}</h1>
+              <h1 class="mb-0 h2 pe-4 pb-4 ">{{ product.title }}</h1>
               <div class="border">
                 {% for image in product.product_image.all %} {% if image.is_feature %}
                 <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="{{ image.image.url }}"
@@ -51,6 +51,7 @@
                 <img class="img-fluid d-block-inline pt-3" width="100px" alt="Responsive image"
                   src="{{ image.image.url }}" alt="{{ image.image.alt_text }}" />
                 {% endif %} {% endfor %}
+                <p class="text-center">{{product.description}}</>
               </div>
             </div>
           </div>

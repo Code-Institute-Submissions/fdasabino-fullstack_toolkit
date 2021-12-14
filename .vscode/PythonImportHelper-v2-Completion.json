@@ -80,6 +80,38 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -978,6 +1010,15 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "account.migrations.0002_auto_20211214_1124",
+        "description": "account.migrations.0002_auto_20211214_1124",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('account', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='address',\n            name='town_city',\n            field=models.CharField(max_length=150, verbose_name='Town/City'),\n        ),",
+        "detail": "account.migrations.0002_auto_20211214_1124",
+        "documentation": {}
+    },
+    {
         "label": "AccountConfig",
         "kind": 6,
         "importPath": "account.apps",
@@ -1317,6 +1358,15 @@
         "description": "checkout.migrations.0001_initial",
         "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='DeliveryOptions',\n            fields=[\n                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('delivery_name', models.CharField(help_text='Required', max_length=255, verbose_name='delivery_name')),",
         "detail": "checkout.migrations.0001_initial",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "checkout.migrations.0002_auto_20211214_1124",
+        "description": "checkout.migrations.0002_auto_20211214_1124",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('checkout', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterField(\n            model_name='deliveryoptions',\n            name='order',\n            field=models.PositiveIntegerField(default=0, help_text='Required', verbose_name='list order'),\n        ),",
+        "detail": "checkout.migrations.0002_auto_20211214_1124",
         "documentation": {}
     },
     {
@@ -2028,60 +2078,6 @@
         "description": "venv.Scripts.autopep8-script",
         "peekOfCode": "__requires__ = 'autopep8==1.5.4'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
         "detail": "venv.Scripts.autopep8-script",
-        "documentation": {}
-    },
-    {
-        "label": "importlib_load_entry_point",
-        "kind": 2,
-        "importPath": "venv.Scripts.coverage-3.10-script",
-        "description": "venv.Scripts.coverage-3.10-script",
-        "peekOfCode": "def importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')\n    matches = (\n        entry_point\n        for entry_point in distribution(dist_name).entry_points\n        if entry_point.group == group and entry_point.name == name\n    )\n    return next(matches).load()\nglobals().setdefault('load_entry_point', importlib_load_entry_point)\nif __name__ == '__main__':",
-        "detail": "venv.Scripts.coverage-3.10-script",
-        "documentation": {}
-    },
-    {
-        "label": "__requires__",
-        "kind": 5,
-        "importPath": "venv.Scripts.coverage-3.10-script",
-        "description": "venv.Scripts.coverage-3.10-script",
-        "peekOfCode": "__requires__ = 'coverage==5.3.1'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
-        "detail": "venv.Scripts.coverage-3.10-script",
-        "documentation": {}
-    },
-    {
-        "label": "importlib_load_entry_point",
-        "kind": 2,
-        "importPath": "venv.Scripts.coverage-script",
-        "description": "venv.Scripts.coverage-script",
-        "peekOfCode": "def importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')\n    matches = (\n        entry_point\n        for entry_point in distribution(dist_name).entry_points\n        if entry_point.group == group and entry_point.name == name\n    )\n    return next(matches).load()\nglobals().setdefault('load_entry_point', importlib_load_entry_point)\nif __name__ == '__main__':",
-        "detail": "venv.Scripts.coverage-script",
-        "documentation": {}
-    },
-    {
-        "label": "__requires__",
-        "kind": 5,
-        "importPath": "venv.Scripts.coverage-script",
-        "description": "venv.Scripts.coverage-script",
-        "peekOfCode": "__requires__ = 'coverage==5.3.1'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
-        "detail": "venv.Scripts.coverage-script",
-        "documentation": {}
-    },
-    {
-        "label": "importlib_load_entry_point",
-        "kind": 2,
-        "importPath": "venv.Scripts.coverage3-script",
-        "description": "venv.Scripts.coverage3-script",
-        "peekOfCode": "def importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')\n    matches = (\n        entry_point\n        for entry_point in distribution(dist_name).entry_points\n        if entry_point.group == group and entry_point.name == name\n    )\n    return next(matches).load()\nglobals().setdefault('load_entry_point', importlib_load_entry_point)\nif __name__ == '__main__':",
-        "detail": "venv.Scripts.coverage3-script",
-        "documentation": {}
-    },
-    {
-        "label": "__requires__",
-        "kind": 5,
-        "importPath": "venv.Scripts.coverage3-script",
-        "description": "venv.Scripts.coverage3-script",
-        "peekOfCode": "__requires__ = 'coverage==5.3.1'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
-        "detail": "venv.Scripts.coverage3-script",
         "documentation": {}
     },
     {

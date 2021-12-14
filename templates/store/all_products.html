@@ -19,7 +19,7 @@
             <div class="card-body px-0 text-center">
               <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">
                 {% for image in product.product_image.all %} {% if image.is_feature%}
-                <img class="img-fluid" alt="Responsive image" src="{{ image.image.url }}"
+                <img class="img-fluid" src="{{ image.image.url }}"
                   alt="{{ image.image.alt_text }}" />
                 <p class="card-text">{{ product.title }}</p>
               </a>
