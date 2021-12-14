@@ -51,6 +51,11 @@ a {
   text-transform: uppercase;
 }
 
+.bi {
+  color: #000;
+  font-size: larger;
+}
+
 .bg-light {
   background-color: #C2E5D3 !important;
 }

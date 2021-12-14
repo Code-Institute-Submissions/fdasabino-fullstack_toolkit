@@ -28,8 +28,10 @@ def add_to_wishlist(request, id):
     product = get_object_or_404(Product, id=id)
     if product.users_wishlist.filter(id=request.user.id).exists():
         product.users_wishlist.remove(request.user)
+        messages.info(request, f"{product.title} removed from favorites.")
     else:
         product.users_wishlist.add(request.user)
+        messages.info(request, f"{product.title} added to favorites.")
     return HttpResponseRedirect(request.META["HTTP_REFERER"])
 
 
@@ -43,15 +45,7 @@ def dashboard(request):
 
 @login_required
 def edit_details(request):
-    if request.method == "POST":
-        user_form = UserEditForm(instance=request.user, data=request.POST)
-
-        if user_form.is_valid():
-            user_form.save()
-    else:
-        user_form = UserEditForm(instance=request.user)
-
-    return render(request, "account/user/edit_details.html", {"user_form": user_form})
+    return render(request, "account/user/edit_details.html")
 
 
 @login_required
@@ -60,6 +54,7 @@ def delete_user(request):
     user.is_active = False
     user.save()
     logout(request)
+    messages.info(request, "Account deleted successfully.")
     return redirect("account:delete_confirmation")
 
 
@@ -109,6 +104,10 @@ def account_activate(request, uidb64, token):
 
     user.is_active = True
     user.save()
+    messages.info(
+        request,
+        "Account activated successfully. Please log in using your new credentials.",
+    )
     return redirect("account:login")
 
 
@@ -157,7 +156,7 @@ def delete_address(request, id):
 def set_default(request, id):
     Address.objects.filter(customer=request.user, default=True).update(default=False)
     Address.objects.filter(pk=id, customer=request.user).update(default=True)
-    messages.info(request, "Default delivery address updated")
+    messages.info(request, "Default delivery address updated.")
     return redirect("account:addresses")
 
 

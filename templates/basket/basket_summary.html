@@ -8,10 +8,11 @@
     <div class="row">
       <div class="col-12">
         <h3>Your Basket</h3>
+        <div class="col-12 p-0">Update or remove items from your basket</div>
         {% if not basket %}
+        <hr>
         <div class="col-12 p-0">Wow so empty here!<a href="{% url 'store:product_all' %}"> Back to products page</a>
         </div>
-        <hr>
         {% else %}
       </div>
     </div>
@@ -19,9 +20,6 @@
   </div>
   <div class="container">
     <div class="row g-3">
-      {% if basket|length == 0 %}
-      <div class="col-12">Your basket is empty <a href="{% url 'store:store_home' %}">Shop</a></div>
-      {% else %}
       <div class="col-12 p-3">
         <div class="d-flex d-flex-inline">
           <div class="pe-3">Order</div>
@@ -76,7 +74,6 @@
         {% endwith %}
         {% endfor %}
       </div>
-      {% endif %}
     </div>
     {% endif %}
   </div>
