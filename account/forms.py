@@ -121,7 +121,6 @@ class RegistrationForm(forms.ModelForm):
             {
                 "class": "form-control mb-3",
                 "placeholder": "E-mail",
-                "name": "email",
                 "id": "id_email",
             }
         )
