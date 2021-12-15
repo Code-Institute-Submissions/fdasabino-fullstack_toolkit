@@ -1,6 +1,7 @@
 {
   "python.pythonPath": "c:\\Users\\fdasa\\Desktop\\Ongoing\\fullstack_toolkit\\venv\\Scripts\\python.exe",
   "cSpell.words": [
+    "allauth",
     "cloudinary",
     "mptt",
     "paypalcheckoutsdk"
