@@ -48,7 +48,11 @@
   features on the application. These applications are connected with the django messaging framework and produce feedback
   to the user.
 
-- Apps are listed below:
+- Applications are listed below:
+
+#### Core
+
+- Core is the main component, it holds all main functionality involving the application in settings.py.
 
 #### Account
 
@@ -101,11 +105,11 @@
 
 - Django was used as the main framework for this project
 
-[Bootstrap 5 :](https://getbootstrap.com/)
+[Bootstrap 5](https://getbootstrap.com/)
 
 - Bootstrap was used to assist with the responsiveness, styling and icons used on the website.
 
-[Hover.css:](https://ianlunn.github.io/Hover/)
+[Hover.css](https://ianlunn.github.io/Hover/)
 
 - Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
 
@@ -113,11 +117,11 @@
 
 - This is a JavaScript framework which enables easy manipulation of the Document Object Model (DOM) using JQuery syntax.
 
-[Google Fonts:](https://fonts.google.com/)
+[Google Fonts](https://fonts.google.com/)
 
 - Google fonts was used to import the fonts into the main.css file which is used on the project.
 
-[Cloudinary:](https://cloudinary.com/)
+[Cloudinary](https://cloudinary.com/)
 
 - Cloudinary was used to store all media and static files for the project.
 
@@ -126,9 +130,32 @@
 - Paypal is used the main payment method for this project. In a real world scenario it allows users to pay using their
   paypal account or by card.
 
-[GitHub:](https://github.com/)
+[GitHub](https://github.com/)
 
 - GitHub is used for version control and to store the project's code after being pushed to the repository.
+
+## Testing
+
+- The application has been tested on most popular browsers, including mobile versions.
+
+### Different Browsers
+
+- The Page does not support Internet Explorer, but has been tested in the browsers listed below using
+  [Broswerstack](https://www.browserstack.com/live) tool:
+
+|    Browser    |      Result       |
+| :-----------: | :---------------: |
+|    Safari     | No Problems Found |
+| Safari-Iphone | No Problems Found |
+|    Chrome     | No Problems Found |
+|    Firefox    | No Problems Found |
+|     Edge      | No Problems Found |
+|     Opera     | No Problems Found |
+
+### Further Testing
+
+- Tests were performed in a variety of different devices using different browsers, with the help of friends and family,
+  no significant issues were found.
 
 ## Test Payments with Paypal
 
@@ -157,6 +184,44 @@
 | Expiration Date: | 04/2023         |
 | CVV:             | 9277            |
 
-## validation
+## Validation
 
-<img src="https://res.cloudinary.com/frank2021/image/upload/v1639552920/STHLM-foodies/validator_wb3dz0.png">
+- The application passes all HTML and CSS validation tests.
+
+1. [Markup Validation Service](https://validator.w3.org/)
+
+  <img src="https://res.cloudinary.com/frank2021/image/upload/v1639571940/STHLM-foodies/validator_wb3dz0.png">
+
+2. [ CSS Validation Service](https://jigsaw.w3.org/css-validator/)
+
+  <img src="https://res.cloudinary.com/frank2021/image/upload/v1639570781/STHLM-foodies/2021-12-15_7_f1ayha.png">
+
+## Forking from GitHub
+
+- When forking this project from GitHub you will need a to set up a few things in order to run this application:
+
+1. Clone the Repository, or download the files manually from the repository;
+2. Open the files in your development environment;
+3. Set a Virtual Environment (On Windows - Using VScode - and making sure Python is installed)
+
+|  #  |        In Your Terminal         |
+| :-: | :-----------------------------: |
+|  1  |         py -m venv venv         |
+|  2  |      venv\Scripts\activate      |
+|  3  | pip install -r requirements.txt |
+|  4  |     py manage.py runserver      |
+
+- Create a file called env.py, in your root directory and add the following variables listed above to your file.
+  Once you have downloaded the Code to you machine you can follow the steps below on deployment to heroku which include
+  instructions on how to set up the environment variables
+
+|           Name           | Environment Variable |
+| :----------------------: | :------------------: |
+|    Django Secret Key     |      SECRET_KEY      |
+|      CLIENT_SECRET       |    CLIENT_SECRET     |
+|        CLIENT_ID         |      CLIENT_ID       |
+| Heroku Postgres Database |     DATABASE_URL     |
+|   Static Files Storage   |    CLOUDINARY_URL    |
+|     Email Host User      |   EMAIL_HOST_USER    |
+|    Default From Email    |  DEFAULT_FROM_EMAIL  |
+|   App Password(Google)   |   EMAIL_HOST_PASS    |
