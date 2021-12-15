@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %} 
+{% load static %}
 {% block title %}All Products{% endblock %}
 {% block content %}
 
@@ -8,6 +8,10 @@
     <div class="album py-5">
       <div class="pb-3">
         <h1 class="h3">Popular</h1>
+        <div class="col-12 d-flex justify-content-between">
+          <div><b>Popular</b> products purchased</div>
+        </div>
+        <hr />
       </div>
       {% if not products %}
       <div class="col-12">There are currently no products active</div>
@@ -19,8 +23,7 @@
             <div class="card-body px-0 text-center">
               <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">
                 {% for image in product.product_image.all %} {% if image.is_feature%}
-                <img class="img-fluid" src="{{ image.image.url }}"
-                  alt="{{ image.image.alt_text }}" />
+                <img class="img-fluid" src="{{ image.image.url }}" alt="{{ image.image.alt_text }}" />
                 <p class="card-text">{{ product.title }}</p>
               </a>
               <div class="fw-bold mt-1">£{{product.regular_price}}</div>

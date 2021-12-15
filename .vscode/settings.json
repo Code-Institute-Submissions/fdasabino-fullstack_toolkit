@@ -4,6 +4,7 @@
     "allauth",
     "cloudinary",
     "mptt",
-    "paypalcheckoutsdk"
+    "paypalcheckoutsdk",
+    "Preorder"
   ]
 }

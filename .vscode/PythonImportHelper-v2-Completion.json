@@ -926,14 +926,6 @@
         "documentation": {}
     },
     {
-        "label": "TestCase",
-        "importPath": "django.test",
-        "description": "django.test",
-        "isExtraImport": true,
-        "detail": "django.test",
-        "documentation": {}
-    },
-    {
         "label": "JsonResponse",
         "importPath": "django.http.response",
         "description": "django.http.response",

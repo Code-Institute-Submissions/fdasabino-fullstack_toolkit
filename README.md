@@ -1,6 +1,6 @@
 # STHLM-foodies - Fresh food delivered to your door
 
-<img src="">
+<img src="https://res.cloudinary.com/frank2021/image/upload/v1639559966/STHLM-foodies/frame-sthlm_vxctvo.png">
 
 [Deployed Application](https://sthlm-foodies.herokuapp.com/)
 
@@ -68,7 +68,12 @@
 
 #### Order
 
+- The order application handles all the order related features, essentially adding and storing the orders on the database.
+
 #### Store
+
+- The store application handles all the store related features, being responsible for storing all the product data.
+  I have implemented this database utilizing mptt, [Modified Preorder Tree Traversal](https://django-mptt.readthedocs.io/en/latest/overview.html#what-is-modified-preorder-tree-traversal), making data retrieval more efficient, and allowing users (admins) to store data in hierarchical tree.
 
 ## Technologies Used
 
@@ -140,3 +145,7 @@
 | Card Number:     | 340117922777181 |
 | Expiration Date: | 04/2023         |
 | CVV:             | 9277            |
+
+## validation
+
+<img src="https://res.cloudinary.com/frank2021/image/upload/v1639552920/STHLM-foodies/validator_wb3dz0.png">
