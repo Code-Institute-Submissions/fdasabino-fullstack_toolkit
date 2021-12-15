@@ -1491,7 +1491,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nTEMPLATES_DIR = os.path.join(BASE_DIR, \"templates\")\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\nTEMPLATES_DIR = os.path.join(BASE_DIR, \"templates\")\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1500,7 +1500,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "TEMPLATES_DIR = os.path.join(BASE_DIR, \"templates\")\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "TEMPLATES_DIR = os.path.join(BASE_DIR, \"templates\")\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1509,7 +1509,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "SECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
+        "peekOfCode": "SECRET_KEY = os.environ.get(\"SECRET_KEY\")\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = False\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1518,7 +1518,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"cloudinary_storage\",",
+        "peekOfCode": "DEBUG = False\nALLOWED_HOSTS = [\"sthlm-foodies.herokuapp.com\", \"127.0.0.1\", \"localhost\"]\n# Application definition\nINSTALLED_APPS = [\n    \"django.contrib.admin\",\n    \"django.contrib.auth\",\n    \"django.contrib.contenttypes\",\n    \"django.contrib.sessions\",\n    \"django.contrib.messages\",\n    \"cloudinary_storage\",",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1554,7 +1554,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "ROOT_URLCONF = \"core.urls\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [BASE_DIR, \"templates\"],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"context_processors\": [\n                \"django.template.context_processors.debug\",\n                \"django.template.context_processors.request\",",
+        "peekOfCode": "ROOT_URLCONF = \"core.urls\"\nTEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [TEMPLATES_DIR],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"context_processors\": [\n                \"django.template.context_processors.debug\",\n                \"django.template.context_processors.request\",",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1563,7 +1563,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "TEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [BASE_DIR, \"templates\"],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"context_processors\": [\n                \"django.template.context_processors.debug\",\n                \"django.template.context_processors.request\",\n                \"django.contrib.auth.context_processors.auth\",",
+        "peekOfCode": "TEMPLATES = [\n    {\n        \"BACKEND\": \"django.template.backends.django.DjangoTemplates\",\n        \"DIRS\": [TEMPLATES_DIR],\n        \"APP_DIRS\": True,\n        \"OPTIONS\": {\n            \"context_processors\": [\n                \"django.template.context_processors.debug\",\n                \"django.template.context_processors.request\",\n                \"django.contrib.auth.context_processors.auth\",",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1572,7 +1572,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "WSGI_APPLICATION = \"core.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\nDATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}\n# DATABASES = {",
+        "peekOfCode": "WSGI_APPLICATION = \"core.wsgi.application\"\n# Database\n# https://docs.djangoproject.com/en/3.2/ref/settings/#databases\n# DATABASES = {\n# \"default\": {\n# \"ENGINE\": \"django.db.backends.sqlite3\",\n# \"NAME\": BASE_DIR / \"db.sqlite3\",\n# }\n# }\nDATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1581,7 +1581,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "DATABASES = {\n    \"default\": {\n        \"ENGINE\": \"django.db.backends.sqlite3\",\n        \"NAME\": BASE_DIR / \"db.sqlite3\",\n    }\n}\n# DATABASES = {\n# 'default':\n# dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))\n# }",
+        "peekOfCode": "DATABASES = {\"default\": dj_database_url.parse(os.environ.get(\"DATABASE_URL\"))}\n# Password validation\n# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators\nAUTH_PASSWORD_VALIDATORS = [\n    {\n        \"NAME\": \"django.contrib.auth.password_validation.UserAttributeSimilarityValidator\",\n    },\n    {\n        \"NAME\": \"django.contrib.auth.password_validation.MinimumLengthValidator\",\n    },",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1608,7 +1608,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "TIME_ZONE = \"Europe/Stockholm\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\n# STATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"",
+        "peekOfCode": "TIME_ZONE = \"Europe/Stockholm\"\nUSE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1617,7 +1617,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\n# STATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"",
+        "peekOfCode": "USE_I18N = True\nUSE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1626,7 +1626,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\n# STATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")",
+        "peekOfCode": "USE_L10N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1635,7 +1635,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\n# STATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\n# DEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/3.2/howto/static-files/\nSTATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\nDEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1644,7 +1644,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\n# STATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\n# DEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"",
+        "peekOfCode": "STATIC_URL = \"/static/\"\nSTATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\nDEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1653,7 +1653,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "STATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\n# STATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\n# DEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"",
+        "peekOfCode": "STATICFILES_DIRS = [os.path.join(BASE_DIR, \"static\")]\nSTATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\nDEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1662,7 +1662,16 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\n# STATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\n# DEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, \"staticfiles\")\nSTATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\nDEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID",
+        "detail": "core.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_STORAGE",
+        "kind": 5,
+        "importPath": "core.settings",
+        "description": "core.settings",
+        "peekOfCode": "STATICFILES_STORAGE = \"cloudinary_storage.storage.StaticHashedCloudinaryStorage\"\nMEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\nDEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID\nBASKET_SESSION_ID = \"basket\"",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1671,7 +1680,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\n# DEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID\nBASKET_SESSION_ID = \"basket\"\n# paypal",
+        "peekOfCode": "MEDIA_URL = \"/media/\"\nMEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\nDEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID\nBASKET_SESSION_ID = \"basket\"\n# paypal",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1680,7 +1689,16 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\n# DEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID\nBASKET_SESSION_ID = \"basket\"\n# paypal\nCLIENT_SECRET = os.environ.get(\"CLIENT_SECRET\")",
+        "peekOfCode": "MEDIA_ROOT = os.path.join(BASE_DIR, \"media/\")\nDEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID\nBASKET_SESSION_ID = \"basket\"\n# paypal\nCLIENT_SECRET = os.environ.get(\"CLIENT_SECRET\")",
+        "detail": "core.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_FILE_STORAGE",
+        "kind": 5,
+        "importPath": "core.settings",
+        "description": "core.settings",
+        "peekOfCode": "DEFAULT_FILE_STORAGE = \"cloudinary_storage.storage.MediaCloudinaryStorage\"\n# Custom user model\nAUTH_USER_MODEL = \"account.Customer\"\nLOGIN_REDIRECT_URL = \"/account/dashboard\"\nLOGIN_URL = \"/account/login/\"\n# Basket session ID\nBASKET_SESSION_ID = \"basket\"\n# paypal\nCLIENT_SECRET = os.environ.get(\"CLIENT_SECRET\")\nCLIENT_ID = os.environ.get(\"CLIENT_ID\")",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1716,7 +1734,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "BASKET_SESSION_ID = \"basket\"\n# paypal\nCLIENT_SECRET = os.environ.get(\"CLIENT_SECRET\")\nCLIENT_ID = os.environ.get(\"CLIENT_ID\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Email setting\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"",
+        "peekOfCode": "BASKET_SESSION_ID = \"basket\"\n# paypal\nCLIENT_SECRET = os.environ.get(\"CLIENT_SECRET\")\nCLIENT_ID = os.environ.get(\"CLIENT_ID\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Email setting\n# EMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nEMAIL_BACKEND = \"django.core.mail.backends.smtp.EmailBackend\"  # smtp",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1725,7 +1743,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "CLIENT_SECRET = os.environ.get(\"CLIENT_SECRET\")\nCLIENT_ID = os.environ.get(\"CLIENT_ID\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Email setting\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"",
+        "peekOfCode": "CLIENT_SECRET = os.environ.get(\"CLIENT_SECRET\")\nCLIENT_ID = os.environ.get(\"CLIENT_ID\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Email setting\n# EMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nEMAIL_BACKEND = \"django.core.mail.backends.smtp.EmailBackend\"  # smtp\nEMAIL_USE_TLS = True\nEMAIL_PORT = 587",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1734,7 +1752,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "CLIENT_ID = os.environ.get(\"CLIENT_ID\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Email setting\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"",
+        "peekOfCode": "CLIENT_ID = os.environ.get(\"CLIENT_ID\")\n# Default primary key field type\n# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Email setting\n# EMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nEMAIL_BACKEND = \"django.core.mail.backends.smtp.EmailBackend\"  # smtp\nEMAIL_USE_TLS = True\nEMAIL_PORT = 587\nEMAIL_HOST = \"smtp.gmail.com\"",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1743,7 +1761,7 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Email setting\nEMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = \"django.db.models.BigAutoField\"\n# Email setting\n# EMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"\nEMAIL_BACKEND = \"django.core.mail.backends.smtp.EmailBackend\"  # smtp\nEMAIL_USE_TLS = True\nEMAIL_PORT = 587\nEMAIL_HOST = \"smtp.gmail.com\"\nEMAIL_HOST_USER = os.environ.get(\"EMAIL_HOST_USER\")\nEMAIL_HOST_PASSWORD = os.environ.get(\"EMAIL_HOST_PASS\")\nDEFAULT_FROM_EMAIL = os.environ.get(\"EMAIL_HOST_USER\")",
         "detail": "core.settings",
         "documentation": {}
     },
@@ -1752,7 +1770,61 @@
         "kind": 5,
         "importPath": "core.settings",
         "description": "core.settings",
-        "peekOfCode": "EMAIL_BACKEND = \"django.core.mail.backends.console.EmailBackend\"",
+        "peekOfCode": "EMAIL_BACKEND = \"django.core.mail.backends.smtp.EmailBackend\"  # smtp\nEMAIL_USE_TLS = True\nEMAIL_PORT = 587\nEMAIL_HOST = \"smtp.gmail.com\"\nEMAIL_HOST_USER = os.environ.get(\"EMAIL_HOST_USER\")\nEMAIL_HOST_PASSWORD = os.environ.get(\"EMAIL_HOST_PASS\")\nDEFAULT_FROM_EMAIL = os.environ.get(\"EMAIL_HOST_USER\")",
+        "detail": "core.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_USE_TLS",
+        "kind": 5,
+        "importPath": "core.settings",
+        "description": "core.settings",
+        "peekOfCode": "EMAIL_USE_TLS = True\nEMAIL_PORT = 587\nEMAIL_HOST = \"smtp.gmail.com\"\nEMAIL_HOST_USER = os.environ.get(\"EMAIL_HOST_USER\")\nEMAIL_HOST_PASSWORD = os.environ.get(\"EMAIL_HOST_PASS\")\nDEFAULT_FROM_EMAIL = os.environ.get(\"EMAIL_HOST_USER\")",
+        "detail": "core.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_PORT",
+        "kind": 5,
+        "importPath": "core.settings",
+        "description": "core.settings",
+        "peekOfCode": "EMAIL_PORT = 587\nEMAIL_HOST = \"smtp.gmail.com\"\nEMAIL_HOST_USER = os.environ.get(\"EMAIL_HOST_USER\")\nEMAIL_HOST_PASSWORD = os.environ.get(\"EMAIL_HOST_PASS\")\nDEFAULT_FROM_EMAIL = os.environ.get(\"EMAIL_HOST_USER\")",
+        "detail": "core.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_HOST",
+        "kind": 5,
+        "importPath": "core.settings",
+        "description": "core.settings",
+        "peekOfCode": "EMAIL_HOST = \"smtp.gmail.com\"\nEMAIL_HOST_USER = os.environ.get(\"EMAIL_HOST_USER\")\nEMAIL_HOST_PASSWORD = os.environ.get(\"EMAIL_HOST_PASS\")\nDEFAULT_FROM_EMAIL = os.environ.get(\"EMAIL_HOST_USER\")",
+        "detail": "core.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_HOST_USER",
+        "kind": 5,
+        "importPath": "core.settings",
+        "description": "core.settings",
+        "peekOfCode": "EMAIL_HOST_USER = os.environ.get(\"EMAIL_HOST_USER\")\nEMAIL_HOST_PASSWORD = os.environ.get(\"EMAIL_HOST_PASS\")\nDEFAULT_FROM_EMAIL = os.environ.get(\"EMAIL_HOST_USER\")",
+        "detail": "core.settings",
+        "documentation": {}
+    },
+    {
+        "label": "EMAIL_HOST_PASSWORD",
+        "kind": 5,
+        "importPath": "core.settings",
+        "description": "core.settings",
+        "peekOfCode": "EMAIL_HOST_PASSWORD = os.environ.get(\"EMAIL_HOST_PASS\")\nDEFAULT_FROM_EMAIL = os.environ.get(\"EMAIL_HOST_USER\")",
+        "detail": "core.settings",
+        "documentation": {}
+    },
+    {
+        "label": "DEFAULT_FROM_EMAIL",
+        "kind": 5,
+        "importPath": "core.settings",
+        "description": "core.settings",
+        "peekOfCode": "DEFAULT_FROM_EMAIL = os.environ.get(\"EMAIL_HOST_USER\")",
         "detail": "core.settings",
         "documentation": {}
     },
