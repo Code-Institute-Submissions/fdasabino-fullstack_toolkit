@@ -1,6 +1,7 @@
 from decimal import Decimal
 
 from django.conf import settings
+
 from checkout.models import DeliveryOptions
 from store.models import Product
 

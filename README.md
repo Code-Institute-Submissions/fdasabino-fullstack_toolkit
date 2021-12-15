@@ -2,13 +2,17 @@
 
 <img src="https://res.cloudinary.com/frank2021/image/upload/v1639559966/STHLM-foodies/frame-sthlm_vxctvo.png">
 
-[Deployed Application](https://sthlm-foodies.herokuapp.com/)
-
 ## Project Goals
 
 - This page was designed with the intent to create a e-commerce website that allows B2C interactivity.
   Showing the skills required in order to fullfil the requirements of the project milestone number 4 of the Code Institute
   and it's leaning outcomes.
+
+## Deployed Application
+
+- You can access the application [here](https://sthlm-foodies.herokuapp.com/).
+  Please create an account by clicking on the login or register link on the top right corner. You'll need to register an account
+  in order to place an order.
 
 ## UX
 
@@ -16,50 +20,47 @@
   In the section below you will find our user stories and some more information about the user experience and how users
   can interact with this website.
 
-### Visitors can
+## User Stories
 
-- Browse around the website and for products.
-- See products lists and categories allowing faster and smoother ordering.
-- Register on the website.
-- Manage personal accounts, change addresses and password.
-- Delete their personal accounts
+### Visitors can:
 
-### User Stories
+- Browse products by categories.
+- Add, Update and Remove items from their basket.
+- Create a customer account, allowing users to have full control over their account CRUD.
+- Add, Update and Remove alternative delivery addresses.
+- View order history, with a full breakdown of the items ordered.
+- Create and pay for order with ease, and without any additional steps, making it easy to place orders on the go.
+- Pay for products, using paypal or credit card.
 
-- As an user wish to make a purchase directly from the website.
-- As a customer I wish to find relevant information about a specific product.
+### Site owners can:
 
-### Site Owner Goals
+- Add new products and have them automatically display on the website.
+- Edit product details, for example, price description, pictures etc.
+- View the status of all customer orders, so that I can efficiently manage the orders.
+- Check for customer data provided by paypal, and make sure payments went through before the order is sent.
+- Have full control over customer details, for example, addresses, accounts linked, and products ordered.
 
-### First Time Visitor Goals
+## Features
 
-1. As a First Time Visitor, I want to easily understand the main purpose of the page and navigate to the section I need.
-2. As a First Time Visitor, I want to be able to look at products and add them to my favorites before I decide to
-   purchase them.
-
-### Returning Visitor Goals
-
-1. As a Returning Visitor, I want to find updated products and offers on the homepage.
-2. As a Returning Visitor, I want to log in and log out into my account and manage my details.
-
-## Existing Features
+### Existing Features
 
 - This application was divided in 5 main components, that are connected, and are responsible for a different set of
-  features on the application:
+  features on the application. These applications are connected with the django messaging framework and produce feedback
+  to the user.
+
+- Apps are listed below:
 
 #### Account
 
 - This application is responsible for all account related features, login, logout, account creation and deletion,
   password changes and so on.
   I have utilized some templates provided by django allauth, but have overridden the main auth functionality by creating a
-  CustomAccountManager class
-  based on the django-allauth model.
+  custom account manager class based on the django-allauth model.
 
 #### Basket
 
 - The basket application handles all the basket related features such as add, update and remove items. This feature was
-  built using the browser session to
-  hold product data. This application works hand in hand with the checkout and order application.
+  built using the browser session to hold product data. This application works hand in hand with the checkout and order application.
 
 #### Checkout
 
@@ -74,6 +75,16 @@
 
 - The store application handles all the store related features, being responsible for storing all the product data.
   I have implemented this database utilizing mptt, [Modified Preorder Tree Traversal](https://django-mptt.readthedocs.io/en/latest/overview.html#what-is-modified-preorder-tree-traversal), making data retrieval more efficient, and allowing users (admins) to store data in hierarchical tree.
+
+<img src="https://res.cloudinary.com/frank2021/image/upload/v1639561227/STHLM-foodies/sitepoint_tree_azmdyp.gif">
+
+### Features to be implemented
+
+- Automated stock control
+
+- Email when orders are set to completed (i.e. items shipped)
+
+- Add product reviews
 
 ## Technologies Used
 
