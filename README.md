@@ -1,24 +1,21 @@
-# STHLM-foodies - Fresh food delivered to your door
+# STHLM-foodies - Fresh food delivery
 
 <img src="https://res.cloudinary.com/frank2021/image/upload/v1639559966/STHLM-foodies/frame-sthlm_vxctvo.png">
 
 ## Project Goals
 
-- This page was designed with the intent to create a e-commerce website that allows B2C interactivity.
-  Showing the skills required in order to fullfil the requirements of the project milestone number 4 of the Code Institute
-  and it's leaning outcomes.
+This page was designed with the intent to create a e-commerce website that allows B2C interactivity.
+Showing the skills required in order to fullfil the requirements of the project milestone number 4 of the Code Institute and it's leaning outcomes.
 
 ## Deployed Application
 
-- You can access the application [here](https://sthlm-foodies.herokuapp.com/).
-  Please create an account by clicking on the login or register link on the top right corner. You'll need to register an account
-  in order to place an order.
+You can access the application [here](https://sthlm-foodies.herokuapp.com/).
+Please create an account by clicking on the login or register link on the top right corner. You'll need to register an account in order to place an order.
 
 ## UX
 
-- This application was developed to host a multi-product store, that can accommodate a variety of products.
-  In the section below you will find our user stories and some more information about the user experience and how users
-  can interact with this website.
+This application was developed to host a multi-product store, that can accommodate a variety of products.
+In the section below you will find our user stories and some more information about the user experience and how users can interact with this website.
 
 ## User Stories
 
@@ -44,51 +41,48 @@
 
 ### Existing Features
 
-- This application was divided in 5 main components, that are connected, and are responsible for a different set of
-  features on the application. These applications are connected with the django messaging framework and produce feedback
-  to the user.
-
-- Applications are listed below:
+This application was divided in 5 main components, that are connected, and are responsible for a different set of
+features on the application. These applications are connected with the django messaging framework and produce feedback to the user.
 
 #### Core
 
-- Core is the main component, it holds all main functionality involving the application in settings.py.
+Core is the main component, it holds all main functionality involving the application in settings.py.
 
 #### Account
 
-- This application is responsible for all account related features, login, logout, account creation and deletion,
-  password changes and so on.
-  I have utilized some templates provided by django allauth, but have overridden the main auth functionality by creating a
-  custom account manager class based on the django-allauth model.
+This application is responsible for all account related features, login, logout, account creation and deletion,
+password changes and so on.
+I have utilized some templates provided by django allauth, but have overridden the main auth functionality by creating a custom account manager class based on the django-allauth model.
 
 #### Basket
 
-- The basket application handles all the basket related features such as add, update and remove items. This feature was
-  built using the browser session to hold product data. This application works hand in hand with the checkout and order application.
+The basket application handles all the basket related features such as add, update and remove items. This feature was built using the browser session to hold product data. This application works hand in hand with the checkout and order application.
 
 #### Checkout
 
-- The checkout application handles all the checkout related features including delivery method selection, address
-  selection and payment.
+The checkout application handles all the checkout related features including delivery method selection, address
+selection and payment.
 
 #### Order
 
-- The order application handles all the order related features, essentially adding and storing the orders on the database.
+The order application handles all the order related features, essentially adding and storing the orders on the database.
 
 #### Store
 
-- The store application handles all the store related features, being responsible for storing all the product data.
-  I have implemented this database utilizing mptt, [Modified Preorder Tree Traversal](https://django-mptt.readthedocs.io/en/latest/overview.html#what-is-modified-preorder-tree-traversal), making data retrieval more efficient, and allowing users (admins) to store data in hierarchical tree.
+The store application handles all the store related features, being responsible for storing all the product data.
+I have implemented this database utilizing mptt, [Modified Preorder Tree Traversal](https://django-mptt.readthedocs.io/en/latest/overview.html#what-is-modified-preorder-tree-traversal), making data retrieval more efficient, and allowing users (admins) to store data in hierarchical tree.
 
 <img src="https://res.cloudinary.com/frank2021/image/upload/v1639561227/STHLM-foodies/sitepoint_tree_azmdyp.gif">
 
 ### Features to be implemented
 
-- Automated stock control
+- Automated stock control;
 
-- Email when orders are set to completed (i.e. items shipped)
+- Search functionality;
 
-- Add product reviews
+- Email when orders are set to completed (i.e. items shipped);
+
+- Add product reviews;
 
 ## Technologies Used
 
@@ -154,14 +148,11 @@
 
 ### Further Testing
 
-- Tests were performed in a variety of different devices using different browsers, with the help of friends and family,
-  no significant issues were found.
+Tests were performed in a variety of different devices using different browsers, with the help of friends and family, no significant issues were found.
 
 ## Test Payments with Paypal
 
-- To demonstrate the functionality, I have added a third party application paypal as the payment management system. The
-  payments will be taken
-  by using one of the payment methods listed below, or by using the sandbox account provided by paypal.
+To demonstrate the functionality, I have added a third party application paypal as the payment management system. The payments will be taken by using one of the payment methods listed below, or by using the sandbox account provided by paypal.
 
 |                  |                  |
 | ---------------- | ---------------- |
@@ -186,7 +177,7 @@
 
 ## Validation
 
-- The application passes all HTML and CSS validation tests.
+- This application passes all HTML and CSS validation tests.
 
 1. [Markup Validation Service](https://validator.w3.org/)
 
@@ -198,7 +189,7 @@
 
 ## Forking from GitHub
 
-- When forking this project from GitHub you will need a to set up a few things in order to run this application:
+When forking this project from GitHub you will need a to set up a few things in order to run this application:
 
 1. Clone the Repository, or download the files manually from the repository;
 2. Open the files in your development environment;
@@ -211,9 +202,8 @@
 |  3  | pip install -r requirements.txt |
 |  4  |     py manage.py runserver      |
 
-- Create a file called env.py, in your root directory and add the following variables listed above to your file.
-  Once you have downloaded the Code to you machine you can follow the steps below on deployment to heroku which include
-  instructions on how to set up the environment variables
+Create a file called env.py, in your root directory and add the following variables listed above to your file.
+Once you have downloaded the Code to you machine you can follow the steps below on deployment to heroku which include instructions on how to set up the environment variables
 
 |           Name           | Environment Variable |
 | :----------------------: | :------------------: |
