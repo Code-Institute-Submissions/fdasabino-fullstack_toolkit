@@ -121,12 +121,21 @@ I have implemented this database utilizing mptt, [Modified Preorder Tree Travers
 
 [Paypal](https://paypal.com/)
 
-- Paypal is used the main payment method for this project. In a real world scenario it allows users to pay using their
-  paypal account or by card.
+- Paypal is used the main payment method for this project. In a real world scenario it allows users to pay using their paypal account or by card.
 
 [GitHub](https://github.com/)
 
 - GitHub is used for version control and to store the project's code after being pushed to the repository.
+
+## Design
+
+#### Imagery
+
+Images used in this project were taken from [pexels](https://www.pexels.com/), and are free for use.
+
+#### Typography
+
+For the body elements I have chosen 'Source Sans Pro', which is easy to read and flows with the rest of the project, Sans-serif is the fallback.
 
 ## Testing
 
@@ -175,6 +184,11 @@ To demonstrate the functionality, I have added a third party application paypal 
 | Expiration Date: | 04/2023         |
 | CVV:             | 9277            |
 
+- Sandbox Account:
+
+1. User: sb-lcbjg7288697@personal.example.com
+2. Password: I&j/>zw0
+
 ## Validation
 
 - This application passes all HTML and CSS validation tests.
@@ -215,3 +229,106 @@ Once you have downloaded the Code to you machine you can follow the steps below 
 |     Email Host User      |   EMAIL_HOST_USER    |
 |    Default From Email    |  DEFAULT_FROM_EMAIL  |
 |   App Password(Google)   |   EMAIL_HOST_PASS    |
+
+## Deployment to Heroku
+
+- This application has been deployed to Heroku, from a github repository. I have stored some important information
+  (config vars) such as Stripe keys, email information, django secret key, database secret key on the heroku admin panel
+  under config vars.
+
+* (IMPORTANT - Don't forget to set DEBUG to False in settings.py)
+
+1. Create the Heroku app
+
+| #   | Step                  | Action                                                                          |
+| --- | --------------------- | ------------------------------------------------------------------------------- |
+| 1.1 | Create new Heroku App | APP_NAME, Location = Europe                                                     |
+| 1.2 | Add Database to App   | Located in the Resources Tab, Add-ons, search and<br>add e.g. ‘Heroku Postgres’ |
+| 1.3 | Copy DATABASE_URL     | Located in the Settings Tab, in Config Vars, Copy<br>Text                       |
+
+2. Attach the Database (In your editor)
+
+| #   | Step                                             | Action      |
+| --- | ------------------------------------------------ | ----------- |
+| 2.1 | Create new env.py file on top<br>level directory | E.g. env.py |
+
+3. In env.py
+
+| #   | Step                      | Action                                                              |
+| --- | ------------------------- | ------------------------------------------------------------------- |
+| 3.1 | Import os library         | import os                                                           |
+| 3.2 | Set environment variables | os.environ["DATABASE_URL"] = "Paste in Heroku<br>DATABASE_URL Link" |
+| 3.3 | Add in secret key         | os.environ["SECRET_KEY"] = "Make up a<br>randomSecretKey"           |
+
+4. In heroku
+
+| #   | Step                          | Action                        |
+| --- | ----------------------------- | ----------------------------- |
+| 4.1 | Add Secret Key to Config Vars | SECRET_KEY, “randomSecretKey” |
+
+5. In settings.py
+
+| #   | Step                                                                                                                          | Action                                                                                                        |
+| --- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| 5.1 | Reference env.py                                                                                                              | from pathlib import Path<br>import os<br>import dj_database_url<br>if os.path.isfile("env.py"):<br>import env |
+| 5.2 | Remove the insecure secret<br>key and replace - links to the<br>secret key variable on Heroku                                 | SECRET_KEY = os.environ.get('SECRET_KEY')                                                                     |
+| 5.3 | Replace DATABASES Section<br>(Comment out the old<br>DataBases Section)<br>- links to the DATATBASE_URL<br>variable on Heroku | DATABASES = {<br>'default':<br>dj*database_url.parse(os.environ.get("DATABASE*<br>URL"))<br>}                 |
+
+6. In the terminal
+
+| #   | Step            | Code                            |
+| --- | --------------- | ------------------------------- |
+| 6.1 | Make Migrations | python manage.py makemigrations |
+
+7. In Cloudinary.com
+
+| #   | Step                                                      | Code                      |
+| --- | --------------------------------------------------------- | ------------------------- |
+| 7.1 | Copy your CLOUDINARY_URL<br>e.g. API Environment Variable | From Cloudinary Dashboard |
+
+8. In env.py
+
+| #   | Step                                                                                     | Code                                                                 |
+| --- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| 8.1 | Add Cloudinary URL to env.py -<br>be sure to paste in the correct<br>section of the link | os.environ["CLOUDINARY_URL"] =<br>"cloudinary://9444:SUZi@dbhyuj5mc" |
+
+9. In Heroku
+
+| #   | Step                                                                                                 | Code                                                                                          |
+| --- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| 9.1 | Add Cloudinary URL to Heroku<br>Config Vars - be sure to paste<br>in the correct section of the link | Add to Settings tab in Config Vars e.g.<br>COUDINARY_URL,<br>cloudinary://9444:SUZi@dbhyuj5mc |
+
+10. In settings.py
+
+| #    | Step                                                                                                     | Action                                                                                                                                                                                                                                                                                                                                          |
+| ---- | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 10.1 | Add Cloudinary Libraries to<br>installed apps                                                            | ...<br>'cloudinary_storage',<br>'django.contrib.staticfiles',<br>'cloudinary',<br>...<br>(note: order is important)                                                                                                                                                                                                                             |
+| 10.2 | Tell Django to use Cloudinary<br>to store media and static files<br>Place under the Static files<br>Note | STATIC_URL = '/static/'<br>STATICFILES_STORAGE =<br>'cloudinary_storage.storage.StaticHashedCloudinaryS<br>torage'<br>STATICFILES_DIRS = [os.path.join(BASE_DIR,<br>'static')]<br>STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')<br>MEDIA_URL = '/media/'<br>DEFAULT_FILE_STORAGE =<br>'cloudinary_storage.storage.MediaCloudinaryStorage' |
+| 10.3 | Link file to the templates<br>directory in Heroku<br>Place under the BASE_DIR<br>line                    | TEMPLATES_DIR = os.path.join(BASE_DIR,<br>'templates')                                                                                                                                                                                                                                                                                          |
+| 10.3 | Change the templates<br>directory to TEMPLATES_DIR<br>Place within the TEMPLATES<br>array                | 'DIRS': [TEMPLATES_DIR]                                                                                                                                                                                                                                                                                                                         |
+| 10.4 | Add Heroku Hostname to<br>ALLOWED_HOSTS                                                                  | ALLOWED_HOSTS =<br>["PROJ_NAME.herokuapp.com", "localhost"]                                                                                                                                                                                                                                                                                     |
+
+11. In your editor
+
+| #    | Step                                                  | Action                   |
+| ---- | ----------------------------------------------------- | ------------------------ |
+| 11.1 | Make sure to have 3 folders on top<br>level directory | media, static, templates |
+| 11.2 | Create procfile on the top level<br>directory         | Procfile                 |
+
+12. In Procfile
+
+| #    | Step     | Action                       |
+| ---- | -------- | ---------------------------- |
+| 12.1 | Add code | web: gunicorn PROJ_NAME.wsgi |
+
+13. In the terminal
+
+| #    | Step                 | Action                                                     |
+| ---- | -------------------- | ---------------------------------------------------------- |
+| 13.1 | Add, commit and push | git add .<br>git commit -m “Deployment Commit”<br>git push |
+
+14. In Heroku
+
+| #    | Step                                       | Action                                          |
+| ---- | ------------------------------------------ | ----------------------------------------------- |
+| 14.1 | Deploy Content manually<br>through heroku/ | E.g Github as deployment method, on main branch |
