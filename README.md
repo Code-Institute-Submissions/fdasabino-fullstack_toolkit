@@ -97,37 +97,37 @@ I have implemented this database utilizing mptt, [Modified Preorder Tree Travers
 
 ### Frameworks, Libraries & Programs Used
 
-[Django - 3.2.9](https://www.djangoproject.com/)
+- [Django - 3.2.9](https://www.djangoproject.com/)
 
-- Django was used as the main framework for this project.
+Django was used as the main framework for this project.
 
-[Bootstrap 5](https://getbootstrap.com/)
+- [Bootstrap 5](https://getbootstrap.com/)
 
-- Bootstrap was used to assist with the responsiveness, styling and icons used on the website.
+Bootstrap was used to assist with the responsiveness, styling and icons used on the website.
 
-[Hover.css](https://ianlunn.github.io/Hover/)
+- [Hover.css](https://ianlunn.github.io/Hover/)
 
-- Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
+Hover.css was used on the Social Media icons in the footer to add the float transition while being hovered over.
 
-[JQuery](https://jqueryui.com/)
+- [JQuery](https://jqueryui.com/)
 
-- This is a JavaScript framework which enables easy manipulation of the Document Object Model (DOM) using JQuery syntax.
+This is a JavaScript framework which enables easy manipulation of the Document Object Model (DOM) using JQuery syntax.
 
-[Google Fonts](https://fonts.google.com/)
+- [Google Fonts](https://fonts.google.com/)
 
-- Google fonts was used to import the fonts into the main.css file which is used on the project.
+Google fonts was used to import the fonts into the main.css file which is used on the project.
 
-[Cloudinary](https://cloudinary.com/)
+- [Cloudinary](https://cloudinary.com/)
 
-- Cloudinary was used to store all media and static files for the project.
+Cloudinary was used to store all media and static files for the project.
 
-[Paypal](https://paypal.com/)
+- [Paypal](https://paypal.com/)
 
-- Paypal is used the main payment handler for this project. In a real world scenario it allows users to pay using their paypal account or by card.
+Paypal is used the main payment handler for this project. In a real world scenario it allows users to pay using their paypal account or by card.
 
-[GitHub](https://github.com/)
+- [GitHub](https://github.com/)
 
-- GitHub is used for version control and to store the project's code after being pushed to the repository.
+GitHub is used for version control and to store the project's code after being pushed to the repository.
 
 ## Design
 
@@ -141,7 +141,7 @@ For the body elements I have chosen 'Source Sans Pro', which is easy to read and
 
 ## Testing
 
-- The application has been tested on most popular browsers, including mobile versions.
+The application has been tested on most popular browsers, including mobile versions.
 
 ### Different Browsers
 
@@ -186,14 +186,14 @@ To demonstrate the functionality, I have added a third party application paypal 
 | Expiration Date: | 04/2023         |
 | CVV:             | 9277            |
 
-- Sandbox Account:
+Sandbox Account:
 
 1. User: sb-lcbjg7288697@personal.example.com
 2. Password: I&j/>zw0
 
 ## Validation
 
-- This application passes all HTML and CSS validation tests.
+The code passes all HTML and CSS validation tests.
 
 1. [Markup Validation Service](https://validator.w3.org/)
 
@@ -234,11 +234,11 @@ Once you have downloaded the Code to you machine you can follow the steps below 
 
 ## Deployment to Heroku
 
-- This application has been deployed to Heroku, from a github repository. I have stored some important information
-  (config vars) such as Stripe keys, email information, django secret key, database secret key on the heroku admin panel
-  under config vars.
+This application has been deployed to Heroku, from a github repository. I have stored some important information
+(config vars) such as Stripe keys, email information, django secret key, database secret key on the heroku admin panel
+under config vars.
 
-* (IMPORTANT - Don't forget to set DEBUG to False in settings.py)
+(IMPORTANT - Don't forget to set DEBUG to False in settings.py)
 
 1. Create the Heroku app
 
