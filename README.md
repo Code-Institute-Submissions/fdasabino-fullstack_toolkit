@@ -274,7 +274,7 @@ under config vars.
 | --- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | 5.1 | Reference env.py                                                                                                              | from pathlib import Path<br>import os<br>import dj_database_url<br>if os.path.isfile("env.py"):<br>import env |
 | 5.2 | Remove the insecure secret<br>key and replace - links to the<br>secret key variable on Heroku                                 | SECRET_KEY = os.environ.get('SECRET_KEY')                                                                     |
-| 5.3 | Replace DATABASES Section<br>(Comment out the old<br>DataBases Section)<br>- links to the DATATBASE_URL<br>variable on Heroku | DATABASES = {<br>'default':<br>dj*database_url.parse(os.environ.get("DATABASE*<br>URL"))<br>}                 |
+| 5.3 | Replace DATABASES Section<br>(Comment out the old<br>DataBases Section)<br>- links to the DATABASE_URL<br>variable on Heroku | DATABASES = {<br>'default':<br>dj*database_url.parse(os.environ.get("DATABASE*<br>URL"))<br>}                 |
 
 6. In the terminal
 
