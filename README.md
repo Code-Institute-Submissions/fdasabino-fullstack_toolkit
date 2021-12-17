@@ -74,6 +74,8 @@ I have implemented this database utilizing mptt, [Modified Preorder Tree Travers
 
 <img src="https://res.cloudinary.com/frank2021/image/upload/v1639561227/STHLM-foodies/sitepoint_tree_azmdyp.gif">
 
+More detailed information about the relationship between databases can be found at [here](https://res.cloudinary.com/frank2021/image/upload/v1639748386/STHLM-foodies/relationship_diagram_lr413k.jpg).
+
 ### Features to be implemented
 
 - Automated stock control;
@@ -270,10 +272,10 @@ under config vars.
 
 5. In settings.py
 
-| #   | Step                                                                                                                          | Action                                                                                                        |
-| --- | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| 5.1 | Reference env.py                                                                                                              | from pathlib import Path<br>import os<br>import dj_database_url<br>if os.path.isfile("env.py"):<br>import env |
-| 5.2 | Remove the insecure secret<br>key and replace - links to the<br>secret key variable on Heroku                                 | SECRET_KEY = os.environ.get('SECRET_KEY')                                                                     |
+| #   | Step                                                                                                                         | Action                                                                                                        |
+| --- | ---------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| 5.1 | Reference env.py                                                                                                             | from pathlib import Path<br>import os<br>import dj_database_url<br>if os.path.isfile("env.py"):<br>import env |
+| 5.2 | Remove the insecure secret<br>key and replace - links to the<br>secret key variable on Heroku                                | SECRET_KEY = os.environ.get('SECRET_KEY')                                                                     |
 | 5.3 | Replace DATABASES Section<br>(Comment out the old<br>DataBases Section)<br>- links to the DATABASE_URL<br>variable on Heroku | DATABASES = {<br>'default':<br>dj*database_url.parse(os.environ.get("DATABASE*<br>URL"))<br>}                 |
 
 6. In the terminal
