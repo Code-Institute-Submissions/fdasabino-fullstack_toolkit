@@ -5,12 +5,12 @@
 ## Project Goals
 
 This page was designed with the intent to create a e-commerce website that allows B2C interactivity.
-Showing the skills required in order to fullfil the requirements of the project milestone number 4 of the Code Institute and it's leaning outcomes.
+Showing the skills required in order to fullfil the requirements of the project milestone number 4 of the Code Institute and it's learning outcomes.
 
 ## Deployed Application
 
 You can access the application [here](https://sthlm-foodies.herokuapp.com/).
-Please create an account by clicking on the login or register link on the top right corner. You'll need to register an account in order to place an order.
+Please create an account by clicking on the login or register link on the top right corner. You'll need an account to be able to use the application's full functionality.
 
 ## UX
 
@@ -23,7 +23,7 @@ In the section below you will find our user stories and some more information ab
 
 - Browse products by categories.
 - Add, Update and Remove items from their basket.
-- Create a customer account, allowing users to have full control over their account CRUD.
+- Create a customer account, allowing users to have full control over their account performing CRUD functionality.
 - Add, Update and Remove alternative delivery addresses.
 - View order history, with a full breakdown of the items ordered.
 - Create and pay for order with ease, and without any additional steps, making it easy to place orders on the go.
@@ -42,11 +42,11 @@ In the section below you will find our user stories and some more information ab
 ### Existing Features
 
 This application was divided in 5 main components, that are connected, and are responsible for a different set of
-features on the application. These applications are connected with the django messaging framework and produce feedback to the user.
+features. These are connected with the django messaging framework and produce feedback to the user.
 
 #### Core
 
-Core is the main component, it holds all main functionality involving the application in settings.py.
+Core is the main component, it holds all main functionality involving the application in settings.py and urls.py.
 
 #### Account
 
@@ -77,6 +77,8 @@ I have implemented this database utilizing mptt, [Modified Preorder Tree Travers
 ### Features to be implemented
 
 - Automated stock control;
+
+- Automatic delivery address on payment form, to avoid users from having to enter their delivery address twice;
 
 - Search functionality;
 
@@ -121,7 +123,7 @@ I have implemented this database utilizing mptt, [Modified Preorder Tree Travers
 
 [Paypal](https://paypal.com/)
 
-- Paypal is used the main payment method for this project. In a real world scenario it allows users to pay using their paypal account or by card.
+- Paypal is used the main payment handler for this project. In a real world scenario it allows users to pay using their paypal account or by card.
 
 [GitHub](https://github.com/)
 
@@ -294,9 +296,9 @@ Once you have downloaded the Code to you machine you can follow the steps below 
 
 9. In Heroku
 
-| #   | Step                                                                                                 | Code                                                                                          |
-| --- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| 9.1 | Add Cloudinary URL to Heroku<br>Config Vars - be sure to paste<br>in the correct section of the link | Add to Settings tab in Config Vars e.g.<br>COUDINARY_URL,<br>cloudinary://9444:SUZi@dbhyuj5mc |
+| #   | Step                                                                                                 | Code                                                                                           |
+| --- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| 9.1 | Add Cloudinary URL to Heroku<br>Config Vars - be sure to paste<br>in the correct section of the link | Add to Settings tab in Config Vars e.g.<br>CLOUDINARY_URL,<br>cloudinary://9444:SUZi@dbhyuj5mc |
 
 10. In settings.py
 
