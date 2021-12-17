@@ -84,7 +84,7 @@ I have implemented this database utilizing mptt, [Modified Preorder Tree Travers
 
 - Email when orders are set to completed (i.e. items shipped);
 
-- Add product reviews;
+- Add product reviews and feedback;
 
 ## Technologies Used
 
@@ -99,7 +99,7 @@ I have implemented this database utilizing mptt, [Modified Preorder Tree Travers
 
 [Django - 3.2.9](https://www.djangoproject.com/)
 
-- Django was used as the main framework for this project
+- Django was used as the main framework for this project.
 
 [Bootstrap 5](https://getbootstrap.com/)
 
