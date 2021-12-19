@@ -1,18 +1,23 @@
 from django.contrib import messages
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
-
 from store.models import Product
 
 from .basket import Basket
 
 
 def basket_summary(request):
+    """
+    Displays a basket summary.
+    """
     basket = Basket(request)
     return render(request, "basket/basket_summary.html", {"basket": basket})
 
 
 def basket_add(request):
+    """
+    Add an item and the selected quantity to the basket.
+    """
     basket = Basket(request)
     if request.POST.get("action") == "post":
         product_id = int(request.POST.get("productid"))
@@ -26,6 +31,9 @@ def basket_add(request):
 
 
 def basket_delete(request):
+    """
+    Removes items from the users basket.
+    """
     basket = Basket(request)
     if request.POST.get("action") == "post":
         product_id = int(request.POST.get("productid"))
@@ -39,6 +47,9 @@ def basket_delete(request):
 
 
 def basket_update(request):
+    """
+    Allows users to updated their basket.
+    """
     basket = Basket(request)
     if request.POST.get("action") == "post":
         product_id = int(request.POST.get("productid"))
