@@ -8,7 +8,6 @@ from django.template.loader import render_to_string
 from django.urls import reverse
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
-
 from order.models import Order
 from order.views import add, user_orders
 from store.models import Product
@@ -20,12 +19,18 @@ from .tokens import account_activation_token
 
 @login_required
 def wishlist(request):
+    """
+    Returns a list of products saved for later purchase.
+    """
     products = Product.objects.filter(users_wishlist=request.user)
     return render(request, "account/user/user_wishlist.html", {"wishlist": products})
 
 
 @login_required
 def add_to_wishlist(request, id):
+    """
+    Add or remove items from wishlist according to its status.
+    """
     product = get_object_or_404(Product, id=id)
     if product.users_wishlist.filter(id=request.user.id).exists():
         product.users_wishlist.remove(request.user)
@@ -38,19 +43,27 @@ def add_to_wishlist(request, id):
 
 @login_required
 def dashboard(request):
+    """
+    Displays the dashboard view.
+    """
     orders = user_orders(request)
-    return render(
-        request, "account/user/dashboard.html", {"section": "profile", "orders": orders}
-    )
+    return render(request, "account/user/dashboard.html", {"section": "profile", "orders": orders})
 
 
 @login_required
 def edit_details(request):
+    """
+    Displays edit details page.
+    """
     return render(request, "account/user/edit_details.html")
 
 
 @login_required
 def delete_user(request):
+    """
+    Allows users to delete their account.
+    """
+
     user = Customer.objects.get(name=request.user)
     user.is_active = False
     user.save()
@@ -60,6 +73,9 @@ def delete_user(request):
 
 
 def account_register(request):
+    """
+    Account registration.
+    """
 
     if request.user.is_authenticated:
         return redirect("account:dashboard")
@@ -74,6 +90,9 @@ def account_register(request):
 
 
 def account_register_email(registerForm, request):
+    """
+    Account registration email, sends an email to the user with an unique identifier.
+    """
     user = registerForm.save(commit=False)
     user.email = registerForm.cleaned_data["email"]
     user.set_password(registerForm.cleaned_data["password"])
@@ -95,6 +114,10 @@ def account_register_email(registerForm, request):
 
 
 def account_activate(request, uidb64, token):
+    """
+    Account activation page.
+    """
+
     try:
         uid = force_text(urlsafe_base64_decode(uidb64))
         user = Customer.objects.get(pk=uid)
@@ -115,12 +138,20 @@ def account_activate(request, uidb64, token):
 # Addresses
 @login_required
 def view_address(request):
+    """
+    Displays all delivery addresses that user have registered.
+    """
+
     addresses = Address.objects.filter(customer=request.user)
     return render(request, "account/user/addresses.html", {"addresses": addresses})
 
 
 @login_required
 def add_address(request):
+    """
+    Alow users to add addresses.
+    """
+
     if request.method == "POST":
         address_form = UserAddressForm(data=request.POST)
         if address_form.is_valid():
@@ -135,6 +166,9 @@ def add_address(request):
 
 @login_required
 def edit_address(request, id):
+    """
+    Allows user to edit an addresses.
+    """
     if request.method == "POST":
         address = Address.objects.get(pk=id, customer=request.user)
         address_form = UserAddressForm(instance=address, data=request.POST)
@@ -149,12 +183,19 @@ def edit_address(request, id):
 
 @login_required
 def delete_address(request, id):
+    """
+    Allows users to delete an address.
+    """
     address = Address.objects.filter(pk=id, customer=request.user).delete()
     return redirect("account:addresses")
 
 
 @login_required
 def set_default(request, id):
+    """
+    Allows user to set an address to default.
+    """
+
     Address.objects.filter(customer=request.user, default=True).update(default=False)
     Address.objects.filter(pk=id, customer=request.user).update(default=True)
     messages.info(request, "Default delivery address updated.")
@@ -163,6 +204,9 @@ def set_default(request, id):
 
 @login_required
 def user_orders(request):
+    """
+    Displays addresses connected to an specific order.
+    """
     user_id = request.user.id
     orders = Order.objects.filter(user_id=user_id).filter(billing_status=True)
     return render(request, "account/user/user_orders.html", {"orders": orders})
