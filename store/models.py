@@ -16,12 +16,8 @@ class Category(MPTTModel):
         max_length=255,
         unique=True,
     )
-    slug = models.SlugField(
-        verbose_name=_("Category safe URL"), max_length=255, unique=True
-    )
-    parent = TreeForeignKey(
-        "self", on_delete=models.CASCADE, null=True, blank=True, related_name="children"
-    )
+    slug = models.SlugField(verbose_name=_("Category safe URL"), max_length=255, unique=True)
+    parent = TreeForeignKey("self", on_delete=models.CASCADE, null=True, blank=True, related_name="children")
     is_active = models.BooleanField(default=True)
 
     class MPTTMeta:
@@ -67,9 +63,7 @@ class ProductSpecification(models.Model):
     """
 
     product_type = models.ForeignKey(ProductType, on_delete=models.RESTRICT)
-    name = models.CharField(
-        verbose_name=_("Name"), help_text=_("Required"), max_length=255
-    )
+    name = models.CharField(verbose_name=_("Name"), help_text=_("Required"), max_length=255)
 
     class Meta:
         verbose_name = _("Product Specification")
@@ -91,9 +85,7 @@ class Product(models.Model):
         help_text=_("Required"),
         max_length=255,
     )
-    description = models.TextField(
-        verbose_name=_("description"), help_text=_("Not Required"), blank=True
-    )
+    description = models.TextField(verbose_name=_("description"), help_text=_("Not Required"), blank=True)
     slug = models.SlugField(max_length=255)
     regular_price = models.DecimalField(
         verbose_name=_("Regular price"),
@@ -122,13 +114,9 @@ class Product(models.Model):
         help_text=_("Change product visibility"),
         default=True,
     )
-    created_at = models.DateTimeField(
-        _("Created at"), auto_now_add=True, editable=False
-    )
+    created_at = models.DateTimeField(_("Created at"), auto_now_add=True, editable=False)
     updated_at = models.DateTimeField(_("Updated at"), auto_now=True)
-    users_wishlist = models.ManyToManyField(
-        settings.AUTH_USER_MODEL, related_name="user_wishlist", blank=True
-    )
+    users_wishlist = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name="user_wishlist", blank=True)
 
     class Meta:
         ordering = ("-created_at",)
@@ -169,9 +157,7 @@ class ProductImage(models.Model):
     The Product Image table.
     """
 
-    product = models.ForeignKey(
-        Product, on_delete=models.CASCADE, related_name="product_image"
-    )
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name="product_image")
     image = models.ImageField(
         verbose_name=_("image"),
         help_text=_("Upload a product image"),

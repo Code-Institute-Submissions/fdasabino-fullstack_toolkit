@@ -2032,7 +2032,7 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class ProductSpecification(models.Model):\n    \"\"\"\n    The Product Specification Table contains product\n    specification or features for the product types.\n    \"\"\"\n    product_type = models.ForeignKey(ProductType, on_delete=models.RESTRICT)\n    name = models.CharField(\n        verbose_name=_(\"Name\"), help_text=_(\"Required\"), max_length=255\n    )\n    class Meta:",
+        "peekOfCode": "class ProductSpecification(models.Model):\n    \"\"\"\n    The Product Specification Table contains product\n    specification or features for the product types.\n    \"\"\"\n    product_type = models.ForeignKey(ProductType, on_delete=models.RESTRICT)\n    name = models.CharField(verbose_name=_(\"Name\"), help_text=_(\"Required\"), max_length=255)\n    class Meta:\n        verbose_name = _(\"Product Specification\")\n        verbose_name_plural = _(\"Product Specifications\")",
         "detail": "store.models",
         "documentation": {}
     },
@@ -2059,7 +2059,7 @@
         "kind": 6,
         "importPath": "store.models",
         "description": "store.models",
-        "peekOfCode": "class ProductImage(models.Model):\n    \"\"\"\n    The Product Image table.\n    \"\"\"\n    product = models.ForeignKey(\n        Product, on_delete=models.CASCADE, related_name=\"product_image\"\n    )\n    image = models.ImageField(\n        verbose_name=_(\"image\"),\n        help_text=_(\"Upload a product image\"),",
+        "peekOfCode": "class ProductImage(models.Model):\n    \"\"\"\n    The Product Image table.\n    \"\"\"\n    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name=\"product_image\")\n    image = models.ImageField(\n        verbose_name=_(\"image\"),\n        help_text=_(\"Upload a product image\"),\n        upload_to=\"images/\",\n        default=\"images/default.png\",",
         "detail": "store.models",
         "documentation": {}
     },
@@ -2086,7 +2086,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def home(request):\n    products = Product.objects.prefetch_related(\"product_image\").filter(is_active=True)\n    return render(request, \"home.html\", {\"products\": products})\ndef about(request):\n    return render(request, \"store/about.html\")\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(\n        category__in=Category.objects.get(name=category_slug).get_descendants(\n            include_self=True",
+        "peekOfCode": "def home(request):\n    \"\"\"\n    Shows home page.\n    \"\"\"\n    products = Product.objects.prefetch_related(\"product_image\").filter(is_active=True)\n    return render(request, \"home.html\", {\"products\": products})\ndef about(request):\n    \"\"\"\n    Shows about page.\n    \"\"\"",
         "detail": "store.views",
         "documentation": {}
     },
@@ -2095,7 +2095,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def about(request):\n    return render(request, \"store/about.html\")\ndef category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(\n        category__in=Category.objects.get(name=category_slug).get_descendants(\n            include_self=True\n        )\n    )\n    return render(",
+        "peekOfCode": "def about(request):\n    \"\"\"\n    Shows about page.\n    \"\"\"\n    return render(request, \"store/about.html\")\ndef category_list(request, category_slug=None):\n    \"\"\"\n    Shows category list for category slug and its descendants.\n    \"\"\"\n    category = get_object_or_404(Category, slug=category_slug)",
         "detail": "store.views",
         "documentation": {}
     },
@@ -2104,7 +2104,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def category_list(request, category_slug=None):\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(\n        category__in=Category.objects.get(name=category_slug).get_descendants(\n            include_self=True\n        )\n    )\n    return render(\n        request,\n        \"store/category.html\",",
+        "peekOfCode": "def category_list(request, category_slug=None):\n    \"\"\"\n    Shows category list for category slug and its descendants.\n    \"\"\"\n    category = get_object_or_404(Category, slug=category_slug)\n    products = Product.objects.filter(\n        category__in=Category.objects.get(name=category_slug).get_descendants(include_self=True)\n    )\n    return render(\n        request,",
         "detail": "store.views",
         "documentation": {}
     },
@@ -2113,7 +2113,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def product_all(request):\n    products = Product.objects.all()\n    return render(request, \"store/all_products.html\", {\"products\": products})\ndef product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, is_active=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
+        "peekOfCode": "def product_all(request):\n    \"\"\"\n    Displays all products.\n    \"\"\"\n    products = Product.objects.all()\n    return render(request, \"store/all_products.html\", {\"products\": products})\ndef product_detail(request, slug):\n    \"\"\"\n    Displays a single product detail page.\n    \"\"\"",
         "detail": "store.views",
         "documentation": {}
     },
@@ -2122,7 +2122,7 @@
         "kind": 2,
         "importPath": "store.views",
         "description": "store.views",
-        "peekOfCode": "def product_detail(request, slug):\n    product = get_object_or_404(Product, slug=slug, is_active=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
+        "peekOfCode": "def product_detail(request, slug):\n    \"\"\"\n    Displays a single product detail page.\n    \"\"\"\n    product = get_object_or_404(Product, slug=slug, is_active=True)\n    return render(request, \"store/product_detail.html\", {\"product\": product})",
         "detail": "store.views",
         "documentation": {}
     },
@@ -2142,6 +2142,60 @@
         "description": "venv.Scripts.autopep8-script",
         "peekOfCode": "__requires__ = 'autopep8==1.5.4'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
         "detail": "venv.Scripts.autopep8-script",
+        "documentation": {}
+    },
+    {
+        "label": "importlib_load_entry_point",
+        "kind": 2,
+        "importPath": "venv.Scripts.coverage-3.10-script",
+        "description": "venv.Scripts.coverage-3.10-script",
+        "peekOfCode": "def importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')\n    matches = (\n        entry_point\n        for entry_point in distribution(dist_name).entry_points\n        if entry_point.group == group and entry_point.name == name\n    )\n    return next(matches).load()\nglobals().setdefault('load_entry_point', importlib_load_entry_point)\nif __name__ == '__main__':",
+        "detail": "venv.Scripts.coverage-3.10-script",
+        "documentation": {}
+    },
+    {
+        "label": "__requires__",
+        "kind": 5,
+        "importPath": "venv.Scripts.coverage-3.10-script",
+        "description": "venv.Scripts.coverage-3.10-script",
+        "peekOfCode": "__requires__ = 'coverage==5.3.1'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
+        "detail": "venv.Scripts.coverage-3.10-script",
+        "documentation": {}
+    },
+    {
+        "label": "importlib_load_entry_point",
+        "kind": 2,
+        "importPath": "venv.Scripts.coverage-script",
+        "description": "venv.Scripts.coverage-script",
+        "peekOfCode": "def importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')\n    matches = (\n        entry_point\n        for entry_point in distribution(dist_name).entry_points\n        if entry_point.group == group and entry_point.name == name\n    )\n    return next(matches).load()\nglobals().setdefault('load_entry_point', importlib_load_entry_point)\nif __name__ == '__main__':",
+        "detail": "venv.Scripts.coverage-script",
+        "documentation": {}
+    },
+    {
+        "label": "__requires__",
+        "kind": 5,
+        "importPath": "venv.Scripts.coverage-script",
+        "description": "venv.Scripts.coverage-script",
+        "peekOfCode": "__requires__ = 'coverage==5.3.1'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
+        "detail": "venv.Scripts.coverage-script",
+        "documentation": {}
+    },
+    {
+        "label": "importlib_load_entry_point",
+        "kind": 2,
+        "importPath": "venv.Scripts.coverage3-script",
+        "description": "venv.Scripts.coverage3-script",
+        "peekOfCode": "def importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')\n    matches = (\n        entry_point\n        for entry_point in distribution(dist_name).entry_points\n        if entry_point.group == group and entry_point.name == name\n    )\n    return next(matches).load()\nglobals().setdefault('load_entry_point', importlib_load_entry_point)\nif __name__ == '__main__':",
+        "detail": "venv.Scripts.coverage3-script",
+        "documentation": {}
+    },
+    {
+        "label": "__requires__",
+        "kind": 5,
+        "importPath": "venv.Scripts.coverage3-script",
+        "description": "venv.Scripts.coverage3-script",
+        "peekOfCode": "__requires__ = 'coverage==5.3.1'\ntry:\n    from importlib.metadata import distribution\nexcept ImportError:\n    try:\n        from importlib_metadata import distribution\n    except ImportError:\n        from pkg_resources import load_entry_point\ndef importlib_load_entry_point(spec, group, name):\n    dist_name, _, _ = spec.partition('==')",
+        "detail": "venv.Scripts.coverage3-script",
         "documentation": {}
     },
     {
