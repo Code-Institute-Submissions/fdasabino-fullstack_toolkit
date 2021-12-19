@@ -336,3 +336,7 @@ under config vars.
 | #    | Step                                       | Action                                          |
 | ---- | ------------------------------------------ | ----------------------------------------------- |
 | 14.1 | Deploy Content manually<br>through heroku/ | E.g Github as deployment method, on main branch |
+
+## Credits
+
+Big thanks to all the people involved on the testing of the project.

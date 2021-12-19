@@ -1,6 +1,9 @@
 from django import forms
-from django.contrib.auth.forms import (AuthenticationForm, PasswordResetForm,
-                                       SetPasswordForm)
+from django.contrib.auth.forms import (
+    AuthenticationForm,
+    PasswordResetForm,
+    SetPasswordForm,
+)
 
 from .models import Address, Customer
 
@@ -22,9 +25,7 @@ class UserAddressForm(forms.ModelForm):
         self.fields["full_name"].widget.attrs.update(
             {"class": "form-control mb-2 account-form", "placeholder": "Full Name"}
         )
-        self.fields["phone"].widget.attrs.update(
-            {"class": "form-control mb-2 account-form", "placeholder": "Phone"}
-        )
+        self.fields["phone"].widget.attrs.update({"class": "form-control mb-2 account-form", "placeholder": "Phone"})
         self.fields["address_line"].widget.attrs.update(
             {"class": "form-control mb-2 account-form", "placeholder": "Address"}
         )
@@ -111,9 +112,7 @@ class RegistrationForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["name"].widget.attrs.update(
-            {"class": "form-control mb-3", "placeholder": "Full Name"}
-        )
+        self.fields["name"].widget.attrs.update({"class": "form-control mb-3", "placeholder": "Full Name"})
         self.fields["email"].widget.attrs.update(
             {
                 "class": "form-control mb-3",
@@ -121,12 +120,8 @@ class RegistrationForm(forms.ModelForm):
                 "id": "id_email",
             }
         )
-        self.fields["password"].widget.attrs.update(
-            {"class": "form-control mb-3", "placeholder": "Password"}
-        )
-        self.fields["password2"].widget.attrs.update(
-            {"class": "form-control", "placeholder": "Repeat Password"}
-        )
+        self.fields["password"].widget.attrs.update({"class": "form-control mb-3", "placeholder": "Password"})
+        self.fields["password2"].widget.attrs.update({"class": "form-control", "placeholder": "Repeat Password"})
 
 
 class PwdResetForm(PasswordResetForm):
@@ -146,9 +141,7 @@ class PwdResetForm(PasswordResetForm):
         email = self.cleaned_data["email"]
         u = Customer.objects.filter(email=email)
         if not u:
-            raise forms.ValidationError(
-                "Unfortunately we can not find that email address"
-            )
+            raise forms.ValidationError("Unfortunately we can not find that email address")
         return email
 
 

@@ -1096,7 +1096,7 @@
         "kind": 6,
         "importPath": "account.models",
         "description": "account.models",
-        "peekOfCode": "class Address(models.Model):\n    \"\"\"\n    Address table\n    \"\"\"\n    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)\n    customer = models.ForeignKey(\n        Customer, verbose_name=_(\"Customer\"), on_delete=models.CASCADE\n    )\n    full_name = models.CharField(_(\"Full Name\"), max_length=150)\n    phone = models.CharField(_(\"Phone Number\"), max_length=50)",
+        "peekOfCode": "class Address(models.Model):\n    \"\"\"\n    Address table\n    \"\"\"\n    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)\n    customer = models.ForeignKey(Customer, verbose_name=_(\"Customer\"), on_delete=models.CASCADE)\n    full_name = models.CharField(_(\"Full Name\"), max_length=150)\n    phone = models.CharField(_(\"Phone Number\"), max_length=50)\n    postcode = models.CharField(_(\"Postcode\"), max_length=50)\n    address_line = models.CharField(_(\"Address Line 1\"), max_length=255)",
         "detail": "account.models",
         "documentation": {}
     },
@@ -1123,7 +1123,7 @@
         "kind": 5,
         "importPath": "account.urls",
         "description": "account.urls",
-        "peekOfCode": "app_name = \"account\"\nurlpatterns = [\n    path(\n        \"login/\",\n        auth_views.LoginView.as_view(\n            template_name=\"account/user/login.html\", form_class=UserLoginForm\n        ),\n        name=\"login\",\n    ),\n    path(",
+        "peekOfCode": "app_name = \"account\"\nurlpatterns = [\n    path(\n        \"login/\",\n        auth_views.LoginView.as_view(template_name=\"account/user/login.html\", form_class=UserLoginForm),\n        name=\"login\",\n    ),\n    path(\n        \"logout/\",\n        auth_views.LogoutView.as_view(next_page=\"/\"),",
         "detail": "account.urls",
         "documentation": {}
     },
@@ -1132,7 +1132,7 @@
         "kind": 5,
         "importPath": "account.urls",
         "description": "account.urls",
-        "peekOfCode": "urlpatterns = [\n    path(\n        \"login/\",\n        auth_views.LoginView.as_view(\n            template_name=\"account/user/login.html\", form_class=UserLoginForm\n        ),\n        name=\"login\",\n    ),\n    path(\n        \"logout/\",",
+        "peekOfCode": "urlpatterns = [\n    path(\n        \"login/\",\n        auth_views.LoginView.as_view(template_name=\"account/user/login.html\", form_class=UserLoginForm),\n        name=\"login\",\n    ),\n    path(\n        \"logout/\",\n        auth_views.LogoutView.as_view(next_page=\"/\"),\n        name=\"logout\",",
         "detail": "account.urls",
         "documentation": {}
     },
@@ -1420,7 +1420,7 @@
         "kind": 2,
         "importPath": "checkout.views",
         "description": "checkout.views",
-        "peekOfCode": "def deliverychoices(request):\n    deliveryoptions = DeliveryOptions.objects.filter(is_active=True)\n    messages.info(request, \"Please choose a delivery option\")\n    return render(\n        request, \"checkout/delivery_choices.html\", {\"deliveryoptions\": deliveryoptions}\n    )\n@login_required\ndef basket_update_delivery(request):\n    basket = Basket(request)\n    if request.POST.get(\"action\") == \"post\":",
+        "peekOfCode": "def deliverychoices(request):\n    deliveryoptions = DeliveryOptions.objects.filter(is_active=True)\n    messages.info(request, \"Please choose a delivery option\")\n    return render(request, \"checkout/delivery_choices.html\", {\"deliveryoptions\": deliveryoptions})\n@login_required\ndef basket_update_delivery(request):\n    basket = Basket(request)\n    if request.POST.get(\"action\") == \"post\":\n        delivery_option = int(request.POST.get(\"deliveryoption\"))\n        delivery_type = DeliveryOptions.objects.get(id=delivery_option)",
         "detail": "checkout.views",
         "documentation": {}
     },
@@ -1429,7 +1429,7 @@
         "kind": 2,
         "importPath": "checkout.views",
         "description": "checkout.views",
-        "peekOfCode": "def basket_update_delivery(request):\n    basket = Basket(request)\n    if request.POST.get(\"action\") == \"post\":\n        delivery_option = int(request.POST.get(\"deliveryoption\"))\n        delivery_type = DeliveryOptions.objects.get(id=delivery_option)\n        updated_total_price = basket.basket_update_delivery(\n            delivery_type.delivery_price\n        )\n        session = request.session\n        if \"purchase\" not in request.session:",
+        "peekOfCode": "def basket_update_delivery(request):\n    basket = Basket(request)\n    if request.POST.get(\"action\") == \"post\":\n        delivery_option = int(request.POST.get(\"deliveryoption\"))\n        delivery_type = DeliveryOptions.objects.get(id=delivery_option)\n        updated_total_price = basket.basket_update_delivery(delivery_type.delivery_price)\n        session = request.session\n        if \"purchase\" not in request.session:\n            session[\"purchase\"] = {\n                \"delivery_id\": delivery_type.id,",
         "detail": "checkout.views",
         "documentation": {}
     },
@@ -1861,7 +1861,7 @@
         "kind": 6,
         "importPath": "order.models",
         "description": "order.models",
-        "peekOfCode": "class Order(models.Model):\n    user = models.ForeignKey(\n        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name=\"order_user\"\n    )\n    full_name = models.CharField(max_length=50)\n    email = models.EmailField(max_length=254, blank=True)\n    address1 = models.CharField(max_length=250)\n    address2 = models.CharField(max_length=250)\n    city = models.CharField(max_length=100)\n    phone = models.CharField(max_length=100)",
+        "peekOfCode": "class Order(models.Model):\n    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name=\"order_user\")\n    full_name = models.CharField(max_length=50)\n    email = models.EmailField(max_length=254, blank=True)\n    address1 = models.CharField(max_length=250)\n    address2 = models.CharField(max_length=250)\n    city = models.CharField(max_length=100)\n    phone = models.CharField(max_length=100)\n    postal_code = models.CharField(max_length=20)\n    country_code = models.CharField(max_length=4, blank=True)",
         "detail": "order.models",
         "documentation": {}
     },
@@ -1870,7 +1870,7 @@
         "kind": 6,
         "importPath": "order.models",
         "description": "order.models",
-        "peekOfCode": "class OrderItem(models.Model):\n    order = models.ForeignKey(Order, related_name=\"items\", on_delete=models.CASCADE)\n    product = models.ForeignKey(\n        Product, related_name=\"order_items\", on_delete=models.CASCADE\n    )\n    price = models.DecimalField(max_digits=5, decimal_places=2)\n    quantity = models.PositiveIntegerField(default=1)\n    def __str__(self):\n        return str(self.id)",
+        "peekOfCode": "class OrderItem(models.Model):\n    order = models.ForeignKey(Order, related_name=\"items\", on_delete=models.CASCADE)\n    product = models.ForeignKey(Product, related_name=\"order_items\", on_delete=models.CASCADE)\n    price = models.DecimalField(max_digits=5, decimal_places=2)\n    quantity = models.PositiveIntegerField(default=1)\n    def __str__(self):\n        return str(self.id)",
         "detail": "order.models",
         "documentation": {}
     },
