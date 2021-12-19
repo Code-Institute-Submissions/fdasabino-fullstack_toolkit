@@ -1,12 +1,15 @@
+from basket.basket import Basket
 from django.http.response import JsonResponse
 from django.shortcuts import render
-
-from basket.basket import Basket
 
 from .models import Order, OrderItem
 
 
 def add(request):
+    """
+    Add products found in the basket to the order.
+    """
+
     basket = Basket(request)
     if request.POST.get("action") == "post":
 
@@ -38,9 +41,15 @@ def add(request):
 
 
 def payment_confirmation(data):
+    """
+    Displays an order confirmation setting payment status to true.
+    """
     Order.objects.filter(order_key=data).update(billing_status=True)
 
 
 def user_orders(request):
+    """
+    Collects all orders with payment status set to true and display to user.
+    """
     user_id = request.user.id
     return Order.objects.filter(user_id=user_id).filter(billing_status=True)

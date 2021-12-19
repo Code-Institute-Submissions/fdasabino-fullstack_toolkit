@@ -1897,7 +1897,7 @@
         "kind": 2,
         "importPath": "order.views",
         "description": "order.views",
-        "peekOfCode": "def add(request):\n    basket = Basket(request)\n    if request.POST.get(\"action\") == \"post\":\n        order_key = request.POST.get(\"order_key\")\n        user_id = request.user.id\n        baskettotal = basket.get_total_price()\n        # Check if order exists\n        if not Order.objects.filter(order_key=order_key).exists():\n            order = Order.objects.create(\n                user_id=user_id,",
+        "peekOfCode": "def add(request):\n    \"\"\"\n    Add products found in the basket to the order.\n    \"\"\"\n    basket = Basket(request)\n    if request.POST.get(\"action\") == \"post\":\n        order_key = request.POST.get(\"order_key\")\n        user_id = request.user.id\n        baskettotal = basket.get_total_price()\n        # Check if order exists",
         "detail": "order.views",
         "documentation": {}
     },
@@ -1906,7 +1906,7 @@
         "kind": 2,
         "importPath": "order.views",
         "description": "order.views",
-        "peekOfCode": "def payment_confirmation(data):\n    Order.objects.filter(order_key=data).update(billing_status=True)\ndef user_orders(request):\n    user_id = request.user.id\n    return Order.objects.filter(user_id=user_id).filter(billing_status=True)",
+        "peekOfCode": "def payment_confirmation(data):\n    \"\"\"\n    Displays an order confirmation setting payment status to true.\n    \"\"\"\n    Order.objects.filter(order_key=data).update(billing_status=True)\ndef user_orders(request):\n    \"\"\"\n    Collects all orders with payment status set to true and display to user.\n    \"\"\"\n    user_id = request.user.id",
         "detail": "order.views",
         "documentation": {}
     },
@@ -1915,7 +1915,7 @@
         "kind": 2,
         "importPath": "order.views",
         "description": "order.views",
-        "peekOfCode": "def user_orders(request):\n    user_id = request.user.id\n    return Order.objects.filter(user_id=user_id).filter(billing_status=True)",
+        "peekOfCode": "def user_orders(request):\n    \"\"\"\n    Collects all orders with payment status set to true and display to user.\n    \"\"\"\n    user_id = request.user.id\n    return Order.objects.filter(user_id=user_id).filter(billing_status=True)",
         "detail": "order.views",
         "documentation": {}
     },
