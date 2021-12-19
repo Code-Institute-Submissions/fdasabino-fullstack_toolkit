@@ -340,3 +340,5 @@ under config vars.
 ## Credits
 
 Big thanks to all the people involved on the testing of the project.
+
+[![Codeac](https://static.codeac.io/badges/2-408715128.svg 'Codeac')](https://app.codeac.io/github/fdasabino/fullstack_toolkit)
