@@ -17,7 +17,8 @@
 <div class="container">
   <div class="row g-3">
     {% if not deliveryoptions%}
-    <div class="col-12">There are no delivery options <a href="{% url 'store:home' %}">Home</a></div>
+    <div class="col-12">There are currently no delivery options available <a href="{% url 'store:home' %}">back to homepage.</a>
+    </div>
     {% else %}
     <div class="bg-light col-md-4 col-lg-4 order-md-last p-0 order-3 my-auto p-5">
       <div class="d-flex bd-highlight ms-0">

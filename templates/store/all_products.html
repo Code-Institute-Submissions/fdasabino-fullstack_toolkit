@@ -14,7 +14,7 @@
         <hr />
       </div>
       {% if not products %}
-      <div class="col-12">There are currently no products active</div>
+      <div class="col-12">There are currently no products active <a href="{% url 'store:home' %}">back to homepage.</a></div>
       {% else %}
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
         {% for product in products %}

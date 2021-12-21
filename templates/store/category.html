@@ -16,7 +16,7 @@
   <div class="row">
     <div class="album">
       {% if not products %}
-      <div class="col-12">There are currently no products active <a href="{% url 'store:home' %}">Home</a></div>
+      <div class="col-12">There are currently no products active <a href="{% url 'store:home' %}">back to homepage.</a></div>
       {% else %}
       <div class="row">
         {% for product in products %}
@@ -40,4 +40,4 @@
   </div>
 </div>
 
-{% endblock %}
+{% endblock %} 
