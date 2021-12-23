@@ -74,7 +74,7 @@ I have implemented this database utilizing mptt, [Modified Preorder Tree Travers
 
 <img src="https://res.cloudinary.com/frank2021/image/upload/v1639561227/STHLM-foodies/sitepoint_tree_azmdyp.gif">
 
-More detailed information about the relationship between databases can be found at [here](https://res.cloudinary.com/frank2021/image/upload/v1639748386/STHLM-foodies/relationship_diagram_lr413k.jpg).
+More detailed information about the relationship between databases can be found [here](https://res.cloudinary.com/frank2021/image/upload/v1639748386/STHLM-foodies/relationship_diagram_lr413k.jpg).
 
 ### Features to be implemented
 
